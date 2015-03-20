@@ -10,8 +10,13 @@ var io = socketio(server);
 var port = process.env.port;
 
 app.get('/', function (req, res) {
-    res.end('hello');
+    res.sendFile(__dirname + '/client/login/login.html');
 });
+
+app.get('/login.css', function (req, res) {
+    res.sendFile(__dirname + '/client/login/login.css');
+});
+
 
 io.on('connection', function(socket){
    console.log('a user connected');
