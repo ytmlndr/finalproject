@@ -17,7 +17,6 @@ app.get('/login.css', function (req, res) {
     res.sendFile(__dirname + '/client/login/login.css');
 });
 
-
 io.on('connection', function(socket){
    console.log('a user connected');
 });
