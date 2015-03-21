@@ -1,57 +1,15 @@
-/*    --------------------------------------------------
-	:: Login Section
-	-------------------------------------------------- */
-#login {
-    padding-top: 7%;
+#loginbox {
+    margin-top: 50px;
 }
-#login .form-wrap {
-    width: 20%;
-    margin: 0 auto;
+.panel-body {
+    padding-top:30px;
 }
-#login h1 {
-    color: #1fa67b;
-    font-size: 63%;
-    text-align: center;
-    font-weight: bold;
-    padding-bottom: 4%;
+#login-alert {
+    display: none;
 }
-#login .form-group {
-    margin-bottom: 2%;
+.input-group {
+    margin-bottom: 25px;
 }
-#login .btn.btn-custom {
-    margin-top: 8%;
-    font-size: 50%;
-    margin-bottom: 2%;
-    width: 60%;
-}
-
-/*    --------------------------------------------------
-	:: Inputs & Buttons
-	-------------------------------------------------- */
-.form-control {
-    color: #212121;
-}
-.btn-custom {
-    color: #fff;
-    background-color: #1fa67b;
-}
-.btn-custom:hover,
-.btn-custom:focus {
-    color: #fff;
-}
-
-/*    --------------------------------------------------
-    :: Footer
-	-------------------------------------------------- */
-#footer {
-    margin-top: 5%;
-    color: #6d6d6d;
-    font-size: 30%;
-    text-align: center;
-}
-#footer p {
-    margin-bottom: 0;
-}
-#footer a {
-    color: inherit;
+.form-group {
+    margin-top:10px;
 }
