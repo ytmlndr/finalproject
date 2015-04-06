@@ -1,8 +1,8 @@
 /**
  * Created by yotam on 3/23/2015.
  */
-var mongoose = require('mongoose');
-var schema = mongoose.Schema;
+GLOBAL.mongoose = require('mongoose');
+GLOBAL.schema = mongoose.Schema;
 var bcrypt = require('bcrypt-nodejs');
 var GENT_SALT = 10;
 mongoose.connect(require('../../config/database.js').url);
@@ -16,7 +16,9 @@ db.once('open', function callback() {
 var userSchema = new schema({
     username: { type: String, required: true, unique: true },
     password: { type: String, required: true},
-    isDoctor: { type: Boolean, required: false, default: false}
+    isDoctor: { type: Boolean, required: false, default: false},
+    f_name:{type:String},
+    l_name:{type:String}
 });
 
 userSchema.pre('save', function(next) {
@@ -59,3 +61,4 @@ userSchema.methods.comparePassword = function(candidatePassword, cb) {
 };
 
 module.exports = mongoose.model('User', userSchema);
+

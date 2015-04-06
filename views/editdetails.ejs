@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Update Details</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="editdetails.css">
+</head>
+<div class="container">
+    <div id="detailsbox" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <div class="panel-title">Update Details</div>
+            </div>
+            <div class="panel-body">
+                <form action="/editdetails" method="post" id="editdetailsform" class="form-horizontal" role="form">
+                    <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-pencil"></i>
+                    </span>
+                        <input id="firstname" class="form-control" name="fname" value="" placeholder="First Name">
+                    </div>
+                    <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-pencil"></i>
+                    </span>
+                        <input id="lastname" class="form-control" name="lname" placeholder="Last Name">
+                    </div>
+                    <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-pencil"></i>
+                    </span>
+                        <input id="Adrdess" class="form-control" name="addr" placeholder="Address">
+                    </div>
+                    <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-pencil"></i>
+                    </span>
+                        <input id="phone-number" class="form-control" name="phone" placeholder="Phone-Number">
+                    </div>
+                    <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-pencil"></i>
+                    </span>
+                        <input id="email" class="form-control" name="email" placeholder="Email">
+                    </div>
+                    <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-pencil"></i>
+                    </span>
+                        <input id="zipcode" class="form-control" name="zipcode" placeholder="Zip Code">
+                    </div>
+                    <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-pencil"></i>
+                    </span>
+                        <input id="minutes" class="form-control" name="minutes" placeholder="Minutes To Be Notify Before">
+                    </div>
+                    <div class="input-group">
+                        <div class="form-group">
+                            <div class="col-sm-12 controls">
+                                <button id="btn-save" href="#" class="btn btn-success">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                    <li><a href="/profile">Cancel</a></li>
+                </form> <!-- editdetailsform -->
+            </div> <!-- panel-body -->
+        </div> <!-- panel panel-info -->
+    </div> <!-- editdetailsbox -->
+</div>
+</body>
+</html>
