@@ -1,8 +1,10 @@
 var User = require('./models/user');
 var Patient = require('./models/patient');
+var Doctor = require('./models/doctor');
 var URL = require('url');
 var loggedinuser;
 GLOBAL.token; //tokenID will be here
+GLOBAL.Doctors=[];
 
 module.exports = function(app, passport) {
 
@@ -29,6 +31,60 @@ module.exports = function(app, passport) {
 
     app.get('/editdetails', function(req, res) {
         res.render('editdetails', { user : req.user});
+    });
+
+    app.get('/searchdoctor', function(req, res) {
+        res.render('searchdoctor', { Doctors : {}});
+    });
+
+    //Michael Update 17/4
+    app.post('/searchdoctor',function(req,res){
+        GLOBAL.Doctors=[];
+        num=0;// this to count callback
+        num2=0// this to count how many doctors didnt fit to first and last name
+        Doctor.find({"MedicalField": new RegExp(req.body.hiddenMF, 'i'),"Languages":new RegExp(req.body.hiddenLAN,'i')},
+            function(err,doc){
+                console.log(doc);
+                num++;
+                if(err){
+                    console.log(err);
+                }else{
+                    for(x in doc){
+                        User.findOne({userID: parseInt(doc[x].userID,10),"f_name": new RegExp(req.body.fname, 'i'),"l_name": new RegExp(req.body.lname, 'i')}
+                            , function (err, use){
+                                num++;
+                                if(!use){
+                                    num2++;
+                                    console.log("no user found");
+                                }
+                                else if(err){
+                                    console.log(err);
+                                }else{
+                                    Doctor.findOne({userID: parseInt(use.userID,10)},function(err,d){
+                                        num++;
+                                        if(!d){
+                                            console.log("no Doc Found");
+                                        }else{
+                                            console.log(d);
+                                            GLOBAL.Doctors.push({
+                                                fname: use.f_name,
+                                                lname: use.l_name,
+                                                field: d.MedicalField.toString(),
+                                                clinic: d.ClinicAddress.city+", "+ d.ClinicAddress.street,
+                                                phone: d.PhoneNumber,
+                                                lan: d.Languages.toString()
+                                            });
+                                            //This is the only way i know to make render after all callbacks are finished
+                                            if(num == 1+ doc.length + doc.length - num2){
+                                                res.render("searchdoctor", {"Doctors": GLOBAL.Doctors});
+                                            }
+                                        }
+                                    });
+                                }
+                        })
+                    }
+                }
+            });
     });
 
     app.post('/register', function(req, res) {
