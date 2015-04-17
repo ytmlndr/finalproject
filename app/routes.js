@@ -44,7 +44,6 @@ module.exports = function(app, passport) {
         num2=0// this to count how many doctors didnt fit to first and last name
         Doctor.find({"MedicalField": new RegExp(req.body.hiddenMF, 'i'),"Languages":new RegExp(req.body.hiddenLAN,'i')},
             function(err,doc){
-                console.log(doc);
                 num++;
                 if(err){
                     console.log(err);
@@ -55,7 +54,6 @@ module.exports = function(app, passport) {
                                 num++;
                                 if(!use){
                                     num2++;
-                                    console.log("no user found");
                                 }
                                 else if(err){
                                     console.log(err);
@@ -65,7 +63,6 @@ module.exports = function(app, passport) {
                                         if(!d){
                                             console.log("no Doc Found");
                                         }else{
-                                            console.log(d);
                                             GLOBAL.Doctors.push({
                                                 fname: use.f_name,
                                                 lname: use.l_name,
