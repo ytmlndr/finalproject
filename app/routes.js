@@ -32,14 +32,14 @@ module.exports = function(app, passport) {
     });
 
     app.post('/register', function(req, res) {
-        var user = new User({username: req.body.username, password: req.body.password});
+        var user = new User({userID: parseInt(req.body.username,10), password: req.body.password});
         user.save(function(err) {
             if(err) {
                 console.log('error while trying to save new user to db: ' + err);
                 req.session.message = 'could not create user';
                 return res.redirect('/');
             } else {
-                console.log('user ' + user.username + ' saved');
+                console.log('user ' + user.userID + ' saved');
                 req.session.message = 'login with new user';
                 return res.redirect('/');
             }
@@ -48,29 +48,18 @@ module.exports = function(app, passport) {
 
     //Michael Update
     app.post('/editdetails', function(req, res){
-        if(req.body.fname != "" && req.body.lname!= "" && req.body.phone!= "" && req.body.addr!= "" && req.body.zipcode!= "" &&
+        if(req.body.city!= "",req.body.street!= "" && req.body.zipcode!= "" && req.body.phone!= "" &&
             req.body.email!= "" && req.body.minutes!= "") {
             //Working
-            User.update({username: loggedinuser.username}, {
-                $set: {
-                    f_name: req.body.fname,//the content that the user enter
-                    l_name: req.body.lname
-                }
-            }, function (err) {
-                if (err) {
-                    console.log("err");
-                } else {
-                    console.log("User update successful");
-                }
-            });
 
-            Patient.update({userID: loggedinuser.username}, {
+            Patient.update({userID: parseInt(loggedinuser._doc.userID,10)}, {
                 $set: {
-                    PhoneNumber: req.body.phone,
-                    Address: req.body.addr,
-                    ZIP: req.body.zipcode,
-                    Email: req.body.email,
-                    MinutesToBeNotifyBefor: req.body.minutes
+                    "Address.city": req.body.city,
+                    "Address.street": req.body.street,
+                    "Address.ZIP": req.body.zipcode,
+                    "PhoneNumber": req.body.phone,
+                    "Email": req.body.email,
+                    "MinutesToBeNotifyBefor": req.body.minutes
                 }
             }, function (err) {
                 if (err) {
@@ -101,7 +90,7 @@ module.exports = function(app, passport) {
                     return next(err);
                 }
                 console.log('login successfully');
-                Patient.update({userID: user.username}, {
+                Patient.update({userID: user.userID}, {
                     $set: {
                         TokenID: GLOBAL.token //set Token
                     }

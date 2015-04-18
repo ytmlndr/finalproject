@@ -21,7 +21,8 @@ module.exports = function(passport) {
 
     passport.use('local-login', new LocalStrategy({usernameField: 'username', passwordField: 'password'},
         function(username, password, done) {
-            User.findOne({username : username}, function(err, user) {
+            if(username.length!=9) return done(null, false, { message: 'length must be 9.'});
+            User.findOne({userID : parseInt(username,10)}, function(err, user) {
                 if(err) { return done(err); }
                 if(!user) { return done(null, false, { message: 'No user found.'}); }
                 user.comparePassword(password, function (err, isMatch) {

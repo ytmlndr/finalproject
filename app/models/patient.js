@@ -3,13 +3,15 @@
 */
 
 var patientSchema = new GLOBAL.schema({
-    userID: { type: String, required: true, unique: true },
-    PatientID: { type: String, required: true, unique: true },
+    userID: { type: Number, required: true, unique: true },
     PhoneNumber: { type: String},
-    Address: { type: String},
-    ZIP:{type:String},
+    Address:{
+        city:{ type: String},
+        street:{ type: String},
+        ZIP:{type:Number}
+    },
     Email:{type:String},
-    MinutesToBeNotifyBefor:{type:String},
+    MinutesToBeNotifyBefor:{type:Number},
     TokenID:{type:String}
 });
 
