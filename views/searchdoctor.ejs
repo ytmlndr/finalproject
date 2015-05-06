@@ -5,7 +5,9 @@
     <title>Search Doctor</title>
     <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="searchDoctor.css">
 
     <script>
         function changeMF(i) {
@@ -24,8 +26,33 @@
     </script>
 </head>
 <body>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-head">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Welcome</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="/profile">Home<span class="sr-only">(current)</span></a></li>
+                    <li class="active"><a href="#">Schedule appointment</a></li>
+                    <li><a href="#">Cancel appointment</a></li>
+                    <li><a href="/editdetails">Update Details</a></li>
+                    <p class="navbar-text navbar-right"><a href="/logout" class="navbar-link">Log out</a></p>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
 <!-- Search box Start -->
-<form action="/searchdoctor" method="post" >
+<form class='myForm' action="/searchdoctor" method="post" >
     <div class="well carousel-search hidden-sm">
         <div class="btn-group">
             <a  id="MF" name="MF" class="btn btn-default dropdown-toggle btn-select" data-toggle="dropdown" href="#">Select a Medical Field <span class="caret"></span></a>
@@ -93,7 +120,9 @@
         </thead>
         <tbody>
         <% for(var i=0; i < Doctors.length; i++) { %>
-        <tr>
+        <tr class="clickable-row"
+            data-href=
+            "doctorAvailability?&dID=<%=Doctors[i].id%>&dFname=<%= Doctors[i].fname%>&dLname=<%=Doctors[i].lname%>&dClinic=<%=Doctors[i].clinic%>">
             <td><%= Doctors[i].fname %></td>
             <td><%= Doctors[i].lname %></td>
             <td><%= Doctors[i].field %></td>
@@ -105,5 +134,13 @@
         </tbody>
     </table>
 </div>
+<script>
+    $(document).ready(function($){
+        $(".clickable-row").click(function() {
+            window.document.location = $(this).data("href");
+        });
+    });
+</script>
+
 </body>
 </html>

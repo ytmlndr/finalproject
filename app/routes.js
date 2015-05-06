@@ -24,7 +24,6 @@ module.exports = function(app, passport) {
         res.render('profile', { user : req.user});
     });
 
-
     app.get('/register', function(req, res) {
         res.render('register', {user : req.user});
     });
@@ -64,6 +63,7 @@ module.exports = function(app, passport) {
                                             console.log("no Doc Found");
                                         }else{
                                             GLOBAL.Doctors.push({
+                                                id: use.userID,
                                                 fname: use.f_name,
                                                 lname: use.l_name,
                                                 field: d.MedicalField.toString(),
@@ -164,6 +164,17 @@ module.exports = function(app, passport) {
         res.redirect('/');
     });
 
+    app.get('/doctorAvailability', function(req, res){
+        var url_parts = URL.parse(req.url, true);
+        var query = url_parts.query;
+        var fname=query.dFname;
+        var lname=query.dLname;
+        var clinic=query.dClinic;
+        res.render('doctorAvailability', { fname : fname , lname :lname, clinic : clinic});
+
+
+
+    });
     //app.get('/css/index.css', function(req, res) {
     //    res.sendFile('/css/index.css');
     //});

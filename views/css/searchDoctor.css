@@ -1,0 +1,14 @@
+body {
+    padding-top:120px;
+    word-wrap: break-word;
+}
+
+#table-container{
+    margin: 0 auto;
+    width: 90%;
+}
+
+.myForm {
+    margin: 0 auto;
+    width: 90%;
+}
