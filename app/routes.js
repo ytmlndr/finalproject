@@ -1,6 +1,7 @@
 var User = require('./models/user');
 var Patient = require('./models/patient');
 var Doctor = require('./models/doctor');
+var Appointment = require('./models/Appointment');
 var URL = require('url');
 var loggedinuser;
 GLOBAL.token; //tokenID will be here
@@ -24,12 +25,43 @@ module.exports = function(app, passport) {
         res.render('profile', { user : req.user});
     });
 
+    //Michael Update 9/5
+    app.get('/doctorprofile', ensureAuthenticated, function(req, res) {
+        loggedinuser=req.user;
+        res.render('doctorprofile', { user : req.user});
+    });
+
+    app.get('/doctorSchedule', function(req, res) {
+        appo=[];
+        Appointment.find({doctorID: parseInt(loggedinuser._doc.userID,10)},function(err,ap){
+            if(err){
+                console.log(err);
+            }
+            else{
+                for(x in ap){
+                    appo.push({
+                        pid: ap[x].patientID,
+                        date: ap[x].appointment.date,
+                        day: ap[x].appointment.day,
+                        stime: ap[x].appointment.startTime,
+                        etime: ap[x].appointment.endTime
+                    })
+                }
+                res.render('doctorSchedule', { fname : loggedinuser.f_name, lname: loggedinuser.l_name, appointmemts:appo});
+            }
+        });
+    });
+
     app.get('/register', function(req, res) {
         res.render('register', {user : req.user});
     });
 
     app.get('/editdetails', function(req, res) {
         res.render('editdetails', { user : req.user});
+    });
+
+    app.get('/doctoreditdetails', function(req, res) {
+        res.render('doctoreditdetails', { user : req.user});
     });
 
     app.get('/searchdoctor', function(req, res) {
@@ -99,9 +131,30 @@ module.exports = function(app, passport) {
         });
     });
 
-    //Michael Update
+    //Michael Update 9/5
+    app.post('/doctoreditdetails', function(req, res){
+        if(req.body.city!= "" && req.body.street!= "" && req.body.phone!= "" && req.body.minutes!= "") {
+            Doctor.update({userID: parseInt(loggedinuser._doc.userID,10)}, {
+                $set: {
+                    "ClinicAddress.city": req.body.city,
+                    "ClinicAddress.street": req.body.street,
+                    "PhoneNumber": req.body.phone,
+                    "appointmentDuration":req.body.duration
+                }
+            }, function (err) {
+                if (err) {
+                    console.log("err");
+                } else {
+                    console.log("Doctor update successful");
+                }
+            });
+
+            res.render('doctorprofile', {user: req.user});
+        }
+    });
+
     app.post('/editdetails', function(req, res){
-        if(req.body.city!= "",req.body.street!= "" && req.body.zipcode!= "" && req.body.phone!= "" &&
+        if(req.body.city!= "" && req.body.street!= "" && req.body.zipcode!= "" && req.body.phone!= "" &&
             req.body.email!= "" && req.body.minutes!= "") {
             //Working
 
@@ -143,18 +196,22 @@ module.exports = function(app, passport) {
                     return next(err);
                 }
                 console.log('login successfully');
-                Patient.update({userID: user.userID}, {
-                    $set: {
-                        TokenID: GLOBAL.token //set Token
-                    }
-                }, function (err) {
-                    if (err) {
-                        console.log("err");
-                    } else {
-                        console.log("Token Updated");
-                    }
-                });
-                return res.redirect('/profile');
+                if(user.IsDoctor){
+                    return res.redirect('/doctorprofile');
+                }else{
+                    Patient.update({userID: user.userID}, {
+                        $set: {
+                            TokenID: GLOBAL.token //set Token
+                        }
+                    }, function (err) {
+                        if (err) {
+                            console.log("err");
+                        } else {
+                            console.log("Token Updated");
+                        }
+                    });
+                    return res.redirect('/profile');
+                }
             });
         })(req, res, next);
     });

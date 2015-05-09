@@ -16,7 +16,7 @@ db.once('open', function callback() {
 var userSchema = new schema({
     userID: { type: Number, required: true, unique: true },
     password: { type: String, required: true},
-    isDoctor: { type: Boolean, required: false, default: false},
+    IsDoctor: { type: Boolean},
     f_name:{type:String},
     l_name:{type:String}
 });
