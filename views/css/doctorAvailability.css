@@ -5,5 +5,22 @@ body {
 
 #table-container{
     margin: 0 auto;
-    width: 90%;
+    width: 98%;
+}
+
+
+.panel-heading {
+    text-align: center;
+}
+
+table{
+    border: 1px;
+}
+
+td{
+    width: 33%;
+}
+
+.patientName{
+    background-color: #0b97c4;
 }
