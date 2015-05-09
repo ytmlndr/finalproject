@@ -10,8 +10,8 @@ var doctorSchema = new GLOBAL.schema({
     },
     Languages:{type:[String]},
     MedicalField:{type:[String]},
-    WorkDay:{type:[String]}
-
+    WorkDay:{type:[String]},
+    appointmentDuration:{type:Number}
 });
 
 module.exports = mongoose.model('Doctor', doctorSchema);
