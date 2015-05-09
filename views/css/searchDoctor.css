@@ -8,7 +8,28 @@ body {
     width: 90%;
 }
 
+h2 {
+    text-align: center;
+}
+
+table{
+    border: 1px;
+
+    box-shadow: 5px 5px 10px #888888;
+
+
+}
+
+.DoctorName{
+   background-color: #0b97c4;
+}
+
+td, th{
+    width: 50%;
+}
+
 .myForm {
     margin: 0 auto;
     width: 90%;
 }
+

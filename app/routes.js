@@ -98,10 +98,10 @@ module.exports = function(app, passport) {
                                                 id: use.userID,
                                                 fname: use.f_name,
                                                 lname: use.l_name,
-                                                field: d.MedicalField.toString(),
+                                                field: d.MedicalField.toString().replace(/,/g,", "),
                                                 clinic: d.ClinicAddress.city+", "+ d.ClinicAddress.street,
                                                 phone: d.PhoneNumber,
-                                                lan: d.Languages.toString()
+                                                lan: d.Languages.toString().replace(/,/g,", ")
                                             });
                                             //This is the only way i know to make render after all callbacks are finished
                                             if(num == 1+ doc.length + doc.length - num2){

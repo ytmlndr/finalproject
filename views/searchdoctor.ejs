@@ -105,35 +105,63 @@
 </form>
 <!-- Search box End -->
 
+
+<span style='word-wrap:break-word'>
 <div class="container">
     <h2>Doctors</h2>
-    <table id="tab" name="tab" class="table">
-        <thead>
-        <tr>
-            <th>First name</th>
-            <th>Last name</th>
-            <th>Medical Field</th>
-            <th>Clinic Addrees</th>
-            <th>PhoneNumber</th>
-            <th>Languages</th>
-        </tr>
-        </thead>
-        <tbody>
+
         <% for(var i=0; i < Doctors.length; i++) { %>
+
         <tr class="clickable-row"
             data-href=
             "doctorAvailability?&dID=<%=Doctors[i].id%>&dFname=<%= Doctors[i].fname%>&dLname=<%=Doctors[i].lname%>&dClinic=<%=Doctors[i].clinic%>">
-            <td><%= Doctors[i].fname %></td>
-            <td><%= Doctors[i].lname %></td>
-            <td><%= Doctors[i].field %></td>
-            <td><%= Doctors[i].clinic %></td>
-            <td><%= Doctors[i].phone %></td>
-            <td><%= Doctors[i].lan %></td>
+
+            <table id="tab2" name="tab" class="table" >
+                <tr class="DoctorName" class="clickable-row"
+                     data-href=
+                     "doctorAvailability?&dID=<%=Doctors[i].id%>&dFname=<%= Doctors[i].fname%>&dLname=<%=Doctors[i].lname%>&dClinic=<%=Doctors[i].clinic%>">
+
+                    <th>Name: </th>
+                    <th><%= Doctors[i].fname + " " +Doctors[i].lname%> </th>
+
+                </tr>
+                <tr class="clickable-row"
+                    data-href=
+                    "doctorAvailability?&dID=<%=Doctors[i].id%>&dFname=<%= Doctors[i].fname%>&dLname=<%=Doctors[i].lname%>&dClinic=<%=Doctors[i].clinic%>">
+                    <th>Medical Field: </th>
+                    <th>Clinic Addrees: </th>
+                </tr>
+
+                <tr class="clickable-row"
+                    data-href=
+                    "doctorAvailability?&dID=<%=Doctors[i].id%>&dFname=<%= Doctors[i].fname%>&dLname=<%=Doctors[i].lname%>&dClinic=<%=Doctors[i].clinic%>">
+                    <td><%= Doctors[i].field%> </td>
+                    <td><%= Doctors[i].clinic %></td>
+                </tr>
+
+                <tr class="clickable-row"
+                    data-href=
+                    "doctorAvailability?&dID=<%=Doctors[i].id%>&dFname=<%= Doctors[i].fname%>&dLname=<%=Doctors[i].lname%>&dClinic=<%=Doctors[i].clinic%>">
+
+                    <th>Languages:</th>
+                    <th>Phone:</th>
+                </tr>
+                <tr class="clickable-row"
+                    data-href=
+                    "doctorAvailability?&dID=<%=Doctors[i].id%>&dFname=<%= Doctors[i].fname%>&dLname=<%=Doctors[i].lname%>&dClinic=<%=Doctors[i].clinic%>">
+
+                    <td><%=  Doctors[i].lan%> </td>
+                    <td><%= Doctors[i].phone %></td>
+                </tr>
+            </table>
         </tr>
         <% } %>
         </tbody>
-    </table>
+
+
+
 </div>
+    </span>
 <script>
     $(document).ready(function($){
         $(".clickable-row").click(function() {
