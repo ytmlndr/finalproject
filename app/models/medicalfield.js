@@ -1,11 +1,11 @@
-/**
- * Created by Michael on 4/8/2015.
- */
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
-var medicalfieldsSchema = new GLOBAL.schema({
+
+var medicalfieldsSchema = new Schema({
     DoctorsArray: { type: [Number]},
-    MedicalField: { type: String},
-    Description: { type: String}
+    field: { type: String},
+    description: { type: String}
 });
 
 module.exports = mongoose.model('MedicalFields', medicalfieldsSchema );
