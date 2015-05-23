@@ -19,21 +19,12 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.use(session({secret: 'yotamlenderkfiryahalommichaelabramov', resave: true, saveUninitialized: false}));
-
+app.use(express.static(path.join(__dirname,'/js')));
 app.use(express.static(path.join(__dirname, '/views/css')));
-console.log('serving static files at ' + path.join(__dirname, '/views/css'));
 app.use(passport.initialize());
 app.use(passport.session());
 
 require('./app/routes')(app, passport);
-
-
-
-
-
-
-
-
 var pkg = require('./package.json');
 app.set('port', process.env.PORT || 3000);
 var server = app.listen(app.get('port'), function(){
