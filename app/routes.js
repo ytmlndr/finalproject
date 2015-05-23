@@ -118,7 +118,7 @@ module.exports = function (app, passport) {
                 });
             },
             // function to get all doctors from db with filtering
-            function (users, langs, mfs, callback) {
+            function (users, langsToView, mfsToView, callback) {
                 var query = doctor.find({});
                 var userIds = [];
                 var doctors = [];
@@ -130,21 +130,48 @@ module.exports = function (app, passport) {
                 });
 
                 // filtering doctors by userIDs
+                console.log("filtering with " + userIds);
                 query.where('userID').in(userIds);
 
                 // filtering doctors by medical fields
                 if (req.body.mfs) {
-                    query.where('MedicalField').in(req.body.mfs);
+                    var mfs = [];
+                    if(req.body.mfs instanceof Array) {
+                        req.body.mfs.forEach(function(mf) {
+                           mfs.push(mf);
+                        });
+                    } else {
+                        mfs.push(req.body.mfs);
+                    }
+                    console.log("filtering with " + mfs);
+                    query.where('MedicalField').in(mfs);
                 }
 
                 // filtering doctors by languages
                 if (req.body.langs) {
-                    query.where('languages').in(req.body.langs);
+                    var langs = [];
+                    if(req.body.langs instanceof Array) {
+                        req.body.langs.forEach(function(lang) {
+                            langs.push(lang);
+                        });
+                    } else {
+                        langs.push(req.body.langs);
+                    }
+                    console.log("filtering with " + langs);
+                    query.where('Languages').in(langs);
                 }
 
                 if(req.body.days) {
-                    console.log("days = " + req.body.days);
-                    query.where('WorkDay.day').in(req.body.days);
+                    var days = [];
+                    if(req.body.days instanceof Array) {
+                        req.body.days.forEach(function(day) {
+                           days.push(day);
+                        });
+                    } else {
+                        days.push(req.body.days);
+                    }
+                    console.log("filtering with " + days);
+                    query.where('WorkDay.day').in(days);
                 }
 
                 // executing query
@@ -162,10 +189,11 @@ module.exports = function (app, passport) {
                             }
                         });
                         console.log("doctors.length = " + doctors.length);
-                        callback(null, doctors, mfs, langs);
+                        callback(null, doctors, mfsToView, langsToView);
                     }
                     else {
-                        callback(null,{},mfs,langs);
+                        console.log(err);
+                        callback(null, {}, mfsToView, langsToView);
                     }
                 });
             }
