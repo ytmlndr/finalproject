@@ -74,7 +74,7 @@ module.exports = function (app, passport) {
         res.render('doctoreditdetails', {user: req.user});
     });
 
-    app.get('/searchDoctor', function (req, res) {
+    app.get('/searchdoctor', function (req, res) {
         async.waterfall([
             function (callback) {
                 languages.find({}, function (err, docs) {
@@ -88,13 +88,13 @@ module.exports = function (app, passport) {
             }
         ], function (error, mfs, langs) {
             if (error) {
-                res.render("searchDoctor");
+                res.render("searchdoctor");
             }
-            res.render("searchDoctor", {"doctors": {}, "mfs": mfs, "langs": langs});
+            res.render("searchdoctor", {"doctors": {}, "mfs": mfs, "langs": langs});
         });
     });
 
-    app.post('/searchDoctor', function (req, res) {
+    app.post('/searchdoctor', function (req, res) {
         async.waterfall([
             // function to get all languages from db
             function (callback) {
