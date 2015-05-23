@@ -3,8 +3,8 @@ var Schema = mongoose.Schema;
 
 
 var appointmentSchema = new Schema({
-    patientID: { type: Number, required: true, unique: true },
-    doctorID: { type: Number, required: true, unique: true },
+    patientID: { type: Number, required: true },
+    doctorID: { type: Number, required: true},
     date: {type: String},
     day: {type: String},
     startTime: {type: String},
