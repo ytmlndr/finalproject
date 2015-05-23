@@ -1,16 +1,15 @@
-/**
- * Created by Michael on 5/9/2015.
- */
-var AppointmentSchema = new GLOBAL.schema({
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+
+
+var appointmentSchema = new Schema({
     patientID: { type: Number, required: true, unique: true },
     doctorID: { type: Number, required: true, unique: true },
-    appointment: {
-        date: {type: String},
-        day: {type: String},
-        startTime: {type: String},
-        endTime: {type: String}
-    },
+    date: {type: String},
+    day: {type: String},
+    startTime: {type: String},
+    endTime: {type: String},
     pushID:{type:String}
 });
 
-module.exports = mongoose.model('Appointment', AppointmentSchema);
+module.exports = mongoose.model('Appointment', appointmentSchema);
