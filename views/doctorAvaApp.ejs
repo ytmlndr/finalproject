@@ -1,0 +1,89 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Schedule Appointment </title>
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="doctorAvaApp.css">
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-head">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Welcome</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="/profile">Home<span class="sr-only">(current)</span></a></li>
+                <li class="active"><a href="/searchdoctor">Schedule appointment</a></li>
+                <li><a href="#">Cancel appointment</a></li>
+                <li><a href="/editdetails">Update Details</a></li>
+                <p class="navbar-text navbar-right"><a href="/logout" class="navbar-link">Log out</a></p>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="panel panel-default panel-doctor">
+    <div class="panel-heading"><%= doctor.userVals.f_name %> <%= doctor.userVals.l_name %>
+        |  <%= doctor.docVals.PhoneNumber %>  |  <%= doctor.docVals.ClinicAddress.street %>
+        ,<%= doctor.docVals.ClinicAddress.city %></div>
+    <span id="userID" class="hidden"><%=doctor.docVals.userID%></span>
+    <div class="container-fluid container-table">
+        <div class="table-responsive">
+            <table class="table table-hover table-striped">
+                <thead>
+                <tr>
+                    <th class="col-ms-2">Date</th>
+                    <th class="col-ms-2">Day</th>
+                    <th class="col-ms-2">Hour</th>
+                </tr>
+                </thead>
+                <tbody>
+                <% for(var i = 0 ;i < appointments.length; i++) { %>
+                <tr>
+                    <td id="date" class="col-ms-2"><%= appointments[i].date %></td>
+                    <td id="day" class="col-ms-2"><%= appointments[i].day %></td>
+                    <td id="start" class="col-ms-2"><%= appointments[i].start %></td>
+                </tr>
+                <% } %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('tr').click(function () {
+            alert('row was clicked');
+            var date = $(this).children('#date').text();
+            var day = $(this).children('#day').text();
+            var start = $(this).children('#start').text();
+            var userID = $('#userID').text();
+            $.ajax({
+                url: '/scheduleAppointment',
+                type: 'POST',
+                data: {'userID':userID,'date': date, 'day': day, 'start': start},
+                dataType: 'json',
+                success: function (data, textStatus, jqXHR) {
+                    alert('data = ' + data);
+                    if (typeof data.redirect == 'string') {
+                        window.document.location = data.redirect;
+                    }
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>

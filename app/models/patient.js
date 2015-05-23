@@ -1,8 +1,7 @@
-/**
-* Created by Michael on 4/2/2015.
-*/
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
-var patientSchema = new GLOBAL.schema({
+var patientSchema = new Schema({
     userID: { type: Number, required: true, unique: true },
     PhoneNumber: { type: String},
     Address:{
@@ -15,4 +14,4 @@ var patientSchema = new GLOBAL.schema({
     TokenID:{type:String}
 });
 
-module.exports = mongoose.model('Patient', patientSchema);
+module.exports = mongoose.model('patient', patientSchema);

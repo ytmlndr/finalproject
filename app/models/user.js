@@ -1,8 +1,5 @@
-/**
- * Created by yotam on 3/23/2015.
- */
-GLOBAL.mongoose = require('mongoose');
-GLOBAL.schema = mongoose.Schema;
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 var bcrypt = require('bcrypt-nodejs');
 var GENT_SALT = 10;
 mongoose.connect(require('../../config/database.js').url);
@@ -13,7 +10,7 @@ db.once('open', function callback() {
     console.log('connected to db');
 });
 
-var userSchema = new schema({
+var userSchema = new Schema({
     userID: { type: Number, required: true, unique: true },
     password: { type: String, required: true},
     IsDoctor: { type: Boolean},
@@ -60,5 +57,5 @@ userSchema.methods.comparePassword = function(candidatePassword, cb) {
     });
 };
 
-module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.model('user', userSchema);
 

@@ -14,10 +14,7 @@ h2 {
 
 table{
     border: 1px;
-
     box-shadow: 5px 5px 10px #888888;
-
-
 }
 
 .DoctorName{
@@ -28,8 +25,18 @@ td, th{
     width: 50%;
 }
 
-.myForm {
+.searchForm {
     margin: 0 auto;
     width: 90%;
 }
 
+.container-doctor {
+    margin: 0 auto;
+    width: 80%;
+    padding-bottom: 2%;
+    cursor: pointer;
+}
+
+.container-doctor span {
+    display: none;
+}

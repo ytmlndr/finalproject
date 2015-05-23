@@ -1,0 +1,91 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files (x86)\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'bootstrap-timepicker' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.33
+4 verbose node symlink C:\Program Files (x86)\nodejs\\node.exe
+5 warn package.json final-project@0.0.1 No description
+6 warn package.json final-project@0.0.1 No README data
+7 warn package.json mongo@0.1.0 No repository field.
+8 warn package.json mongo@0.1.0 No README data
+9 warn package.json mongoose-schema@0.0.6 No repository field.
+10 verbose readDependencies using package.json deps
+11 verbose cache add [ 'bootstrap-timepicker', null ]
+12 verbose cache add name=undefined spec="bootstrap-timepicker" args=["bootstrap-timepicker",null]
+13 verbose parsed url { protocol: null,
+13 verbose parsed url   slashes: null,
+13 verbose parsed url   auth: null,
+13 verbose parsed url   host: null,
+13 verbose parsed url   port: null,
+13 verbose parsed url   hostname: null,
+13 verbose parsed url   hash: null,
+13 verbose parsed url   search: null,
+13 verbose parsed url   query: null,
+13 verbose parsed url   pathname: 'bootstrap-timepicker',
+13 verbose parsed url   path: 'bootstrap-timepicker',
+13 verbose parsed url   href: 'bootstrap-timepicker' }
+14 silly lockFile afc76f41-bootstrap-timepicker bootstrap-timepicker
+15 verbose lock bootstrap-timepicker C:\Users\yotam\AppData\Roaming\npm-cache\afc76f41-bootstrap-timepicker.lock
+16 silly lockFile afc76f41-bootstrap-timepicker bootstrap-timepicker
+17 silly lockFile afc76f41-bootstrap-timepicker bootstrap-timepicker
+18 verbose addNamed [ 'bootstrap-timepicker', '' ]
+19 verbose addNamed [ null, '*' ]
+20 silly lockFile e20bc005-bootstrap-timepicker bootstrap-timepicker@
+21 verbose lock bootstrap-timepicker@ C:\Users\yotam\AppData\Roaming\npm-cache\e20bc005-bootstrap-timepicker.lock
+22 silly addNameRange { name: 'bootstrap-timepicker', range: '*', hasData: false }
+23 verbose request where is /bootstrap-timepicker
+24 verbose request registry https://registry.npmjs.org/
+25 verbose request id 763a7a536940ed2e
+26 verbose url raw /bootstrap-timepicker
+27 verbose url resolving [ 'https://registry.npmjs.org/', './bootstrap-timepicker' ]
+28 verbose url resolved https://registry.npmjs.org/bootstrap-timepicker
+29 verbose request where is https://registry.npmjs.org/bootstrap-timepicker
+30 info trying registry request attempt 1 at 14:14:37
+31 http GET https://registry.npmjs.org/bootstrap-timepicker
+32 http 404 https://registry.npmjs.org/bootstrap-timepicker
+33 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+33 verbose headers   'content-type': 'application/json',
+33 verbose headers   'cache-control': 'max-age=0',
+33 verbose headers   'content-length': '51',
+33 verbose headers   'accept-ranges': 'bytes',
+33 verbose headers   date: 'Fri, 15 May 2015 11:14:32 GMT',
+33 verbose headers   via: '1.1 varnish',
+33 verbose headers   age: '0',
+33 verbose headers   connection: 'keep-alive',
+33 verbose headers   'x-served-by': 'cache-lcy1123-LCY',
+33 verbose headers   'x-cache': 'MISS',
+33 verbose headers   'x-cache-hits': '0',
+33 verbose headers   'x-timer': 'S1431688472.136312,VS0,VE157' }
+34 silly registry.get cb [ 404,
+34 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+34 silly registry.get     'content-type': 'application/json',
+34 silly registry.get     'cache-control': 'max-age=0',
+34 silly registry.get     'content-length': '51',
+34 silly registry.get     'accept-ranges': 'bytes',
+34 silly registry.get     date: 'Fri, 15 May 2015 11:14:32 GMT',
+34 silly registry.get     via: '1.1 varnish',
+34 silly registry.get     age: '0',
+34 silly registry.get     connection: 'keep-alive',
+34 silly registry.get     'x-served-by': 'cache-lcy1123-LCY',
+34 silly registry.get     'x-cache': 'MISS',
+34 silly registry.get     'x-cache-hits': '0',
+34 silly registry.get     'x-timer': 'S1431688472.136312,VS0,VE157' } ]
+35 silly lockFile e20bc005-bootstrap-timepicker bootstrap-timepicker@
+36 silly lockFile e20bc005-bootstrap-timepicker bootstrap-timepicker@
+37 error 404 404 Not Found: bootstrap-timepicker
+37 error 404
+37 error 404 'bootstrap-timepicker' is not in the npm registry.
+37 error 404 You should bug the author to publish it
+37 error 404 It was specified as a dependency of 'final-project'
+37 error 404
+37 error 404 Note that you can also install from a
+37 error 404 tarball, folder, or http url, or git url.
+38 error System Windows_NT 6.2.9200
+39 error command "C:\\Program Files (x86)\\nodejs\\\\node.exe" "C:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "bootstrap-timepicker"
+40 error cwd C:\Users\yotam\finalproject
+41 error node -v v0.10.33
+42 error npm -v 1.4.28
+43 error code E404
+44 verbose exit [ 1, true ]

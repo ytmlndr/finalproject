@@ -25,7 +25,7 @@
         <div class="collapse navbar-collapse" id="navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
-                <li><a href="/searchdoctor">Schedule appointment</a></li>
+                <li><a href="/searchDoctor">Schedule appointment</a></li>
                 <li><a href="#">Cancel appointment</a></li>
                 <li><a href="/editdetails">Update Details</a></li>
                 <p class="navbar-text navbar-right"><a href="/logout" class="navbar-link">Log out</a></p>
@@ -40,15 +40,19 @@
             <tr>
                 <th>#</th>
                 <th>Date</th>
-                <th>Doctor</th>
-                <th>Location</th>
+                <th>Day</th>
+                <th>Time</th>
             </tr>
-            <tr>
-                <td>1</td>
-                <td>21/05/15</td>
-                <td>Yotam Lender</td>
-                <td>Tel-Aviv Yaffo</td>
-            </tr>
+            <%if(appointments) {%>
+                <%for(var i=0; i<appointments.length; i++) {%>
+                <tr>
+                    <td><%=i+1%></td>
+                    <td><%=appointments[i].date%></td>
+                    <td><%=appointments[i].day%></td>
+                    <td><%=appointments[i].startTime%></td>
+                </tr>
+                <%}%>
+            <%}%>
         </table>
     </div>
 </div>
