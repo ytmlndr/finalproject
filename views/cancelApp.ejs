@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Profile Page</title>
+    <title>Cancel Appointment</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,37 +24,53 @@
 
         <div class="collapse navbar-collapse" id="navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
+                <li ><a href="/profile">Home<span class="sr-only">(current)</span></a></li>
                 <li><a href="/searchdoctor">Schedule Appointment</a></li>
-                <li><a href="/cancelApp">Cancel Appointment</a></li>
+                <li class="active"><a href="#">Cancel Appointment</a></li>
                 <li><a href="/editdetails">Update Details</a></li>
                 <p class="navbar-text navbar-right"><a href="/logout" class="navbar-link">Log out</a></p>
             </ul>
         </div>
     </div>
 </nav>
+
 <div id='table-container' class="panel panel-default">
     <div class="panel-heading">Next appointments</div>
-    <div class="table-responsive">
-        <table class="table table-hover table-bordered">
-            <tr>
-                <th>#</th>
-                <th>Date</th>
-                <th>Day</th>
-                <th>Time</th>
-            </tr>
-            <%if(appointments) {%>
-                <%for(var i=0; i<appointments.length; i++) {%>
+        <div class="table-responsive">
+            <table class="table table-hover table-bordered">
                 <tr>
-                    <td><%=i+1%></td>
-                    <td><%=appointments[i].date%></td>
-                    <td><%=appointments[i].day%></td>
-                    <td><%=appointments[i].startTime%></td>
-                </tr>
+                    <th>#</th>
+                    <th>Date</th>
+                    <th>Day</th>
+                    <th>Time</th>
+                    <th>Cancel</th>
+                  </tr>
+                <%if(appointments) {%>
+                  <%for(var i=0; i<appointments.length; i++) {%>
+                     <tr>
+                        <td><%=i+1%></td>
+                        <td><%=appointments[i].date%></td>
+                        <td><%=appointments[i].day%></td>
+                         <td><%=appointments[i].startTime%></td>
+                        <td>
+                            <div class="input-group">
+                                <div class="form-group">
+                                 <div class="col-sm-12 controls">
+                                     <button id="btn-cancel" href="#" onclick="place(<%=i%>)"class="btn btn-danger">Cancel</button>
+                                 </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <%}%>
                 <%}%>
-            <%}%>
-        </table>
-    </div>
+             </table>
+        </div>
 </div>
+<script type="text/javascript">
+    function place(app){
+        window.document.location = '/cancelApp?app='+app;
+    }
+</script>
 </body>
 </html>

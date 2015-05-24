@@ -27,9 +27,39 @@ module.exports = function (app, passport) {
         loggedUser = req.user;
         var query = Appointment.find({});
         console.log('profile for user ' + loggedUser._doc.userID);
-        query.where('patientID').equals(parseInt(loggedUser._doc.userID)).exec(function(err,appointments) {
-            res.render('profile', {user: req.user, appointments:appointments});
+        query.where('patientID').equals(parseInt(loggedUser._doc.userID)).exec(function (err, appointments) {
+            res.render('profile', {user: req.user, appointments: appointments});
         });
+    });
+
+    app.get('/cancelApp', function (req, res) {
+        var url_parts = URL.parse(req.url, true);
+        var query = url_parts.query;
+        if(query.app != undefined)
+        {
+            var i = parseInt(query.app);
+            var q = Appointment.find({});
+            q.where('patientID').equals(parseInt(loggedUser._doc.userID)).exec(function (err, appointments) {
+                Appointment.where().findOneAndRemove({patientID : appointments[i].patientID,doctorID : appointments[i].doctorID,date : appointments[i].date,
+                    day : appointments[i].day,startTime : appointments[i].startTime},function(err){
+                    if(!err){
+                        console.log("Removed");
+                        q.where('patientID').equals(parseInt(loggedUser._doc.userID)).exec(function (err, appoin) {
+                            res.render('cancelApp', {user: req.user, appointments: appoin});
+                        })
+                    }else{
+                        console.log("Err in remove");
+                        res.render('cancelApp', {user: req.user, appointments: appointments});
+                    }
+                });
+            });
+        }else{
+            loggedUser = req.user;
+            var query = Appointment.find({});
+            query.where('patientID').equals(parseInt(loggedUser._doc.userID)).exec(function (err, appointments) {
+                res.render('cancelApp', {user: req.user, appointments: appointments});
+            });
+        }
     });
 
     app.get('/doctorprofile', ensureAuthenticated, function (req, res) {
@@ -136,8 +166,8 @@ module.exports = function (app, passport) {
                 // filtering doctors by medical fields
                 if (req.body.mfs) {
                     var mfs = [];
-                    if(req.body.mfs instanceof Array) {
-                        req.body.mfs.forEach(function(mf) {
+                    if (req.body.mfs instanceof Array) {
+                        req.body.mfs.forEach(function (mf) {
                             mfs.push(mf);
                         });
                     } else {
@@ -150,8 +180,8 @@ module.exports = function (app, passport) {
                 // filtering doctors by languages
                 if (req.body.langs) {
                     var langs = [];
-                    if(req.body.langs instanceof Array) {
-                        req.body.langs.forEach(function(lang) {
+                    if (req.body.langs instanceof Array) {
+                        req.body.langs.forEach(function (lang) {
                             langs.push(lang);
                         });
                     } else {
@@ -161,10 +191,10 @@ module.exports = function (app, passport) {
                     query.where('Languages').in(langs);
                 }
 
-                if(req.body.days) {
+                if (req.body.days) {
                     var days = [];
-                    if(req.body.days instanceof Array) {
-                        req.body.days.forEach(function(day) {
+                    if (req.body.days instanceof Array) {
+                        req.body.days.forEach(function (day) {
                             days.push(day);
                         });
                     } else {
@@ -177,7 +207,7 @@ module.exports = function (app, passport) {
                 // executing query
                 query.exec(function (err, docs) {
                     // searching doctor in Users collection to retrieve user data
-                    if(docs) {
+                    if (docs) {
                         docs.forEach(function (doc) {
                             for (var i = 0; i < users.length; i++) {
                                 if (users[i].userID == doc.userID) {
@@ -267,8 +297,8 @@ module.exports = function (app, passport) {
 
     app.post('/scheduleAppointment', function (req, res) {
         console.log('inside scheduleAppointment');
-        doctor.findOne({}).where('userID').equals(parseInt(req.body.userID)).exec(function(err,doctor) {
-            if(!err) {
+        doctor.findOne({}).where('userID').equals(parseInt(req.body.userID)).exec(function (err, doctor) {
+            if (!err) {
                 console.log('inside exec callback');
                 var appointment = new Appointment();
                 appointment.patientID = parseInt(loggedUser._doc.userID);
@@ -278,39 +308,39 @@ module.exports = function (app, passport) {
                 appointment.startTime = req.body.start;
 
                 var Mod = require('./pushHandler') // do not include the dot js
-                appointment.endTime= appointment.startTime;
-                var hh=appointment.endTime.toString().split(":")[0];
-                var mm=appointment.endTime.toString().split(":")[1];
+                appointment.endTime = appointment.startTime;
+                var hh = appointment.endTime.toString().split(":")[0];
+                var mm = appointment.endTime.toString().split(":")[1];
 
-                appointment.endTime=Mod.calctNotificationSendTime(req.body.date,hh,mm, doctor.appointmentDuration*(-1));
+                appointment.endTime = Mod.calctNotificationSendTime(req.body.date, hh, mm, doctor.appointmentDuration * (-1));
                 //appointment.endTime = Date.parseExact(req.body.start,"hh:mm")//.addMinutes(doctor.appointmentDuration).toString("hh:mm");
-              // var res = appointment.endTime.toString().split(" ");
-                appointment.endTime=appointment.endTime.toString().split(" ")[4];
-                appointment.endTime=appointment.endTime.toString().substr(0,5);
+                // var res = appointment.endTime.toString().split(" ");
+                appointment.endTime = appointment.endTime.toString().split(" ")[4];
+                appointment.endTime = appointment.endTime.toString().substr(0, 5);
 
                 //push send:
                 //var kfirToken = "APA91bGjErXblLk-F2a6ige4DsO_ZMG_rRmIpdsRiKjs5K2A7fTgcl0Qc4zV2zHTg4y1NXqnw8qrGzTJ4vXvC1gqJQz3_xaoCCls7laczcVC7RduAdD9NAD1bGhiLeXmOQZ9dR-vAQxctzWcl70VXGcLzGzJ368yLILCFjm5eitvlg6orGOUMmY";
                 //var msg="you have an appiuntment at "+appointment.date+" "+appointment.startTime+"!";
                 //var date =appointment.date;
-                patient.findOne({}).where('userID').equals(parseInt(loggedUser._doc.userID)).exec(function(err,pat) {
-                    if(!err){
-                        var NotificationCode=Mod.sendPushHandler(appointment.date,appointment.startTime ,pat.MinutesToBeNotifyBefor,GLOBAL.token).then(function(res2) {
+                patient.findOne({}).where('userID').equals(parseInt(loggedUser._doc.userID)).exec(function (err, pat) {
+                    if (!err) {
+                        var NotificationCode = Mod.sendPushHandler(appointment.date, appointment.startTime, pat.MinutesToBeNotifyBefor, GLOBAL.token).then(function (res2) {
                             console.log("the NotificationCode is:  " + res2); // <<NotificationCode>> need to be saved in the DB!
-                            appointment.pushID=res2;
+                            appointment.pushID = res2;
                             /*    return res;
                              });
                              //end*/
 
                             //appointment.pushID=res;
 
-                            appointment.save(function(err) {
+                            appointment.save(function (err) {
                                 console.log('inside save callback');
-                                if(err) {
+                                if (err) {
                                     console.log(err);
                                 } else {
                                     console.log('Appointment scheduled');
                                     console.log(appointment);
-                                    res.send({redirect:'/profile'});
+                                    res.send({redirect: '/profile'});
                                 }
                             });
                             return res2;
@@ -370,14 +400,14 @@ module.exports = function (app, passport) {
 
     app.get('/doctorAvaApp', function (req, res) {
         async.waterfall([
-                function(callback) {
+                function (callback) {
                     var url_parts = URL.parse(req.url, true);
                     var query = url_parts.query;
-                    doctor.findOne({}).where('userID',parseInt(query.userID)).exec(function (err, doc) {
-                        callback(null,doc,parseInt(query.userID));
+                    doctor.findOne({}).where('userID', parseInt(query.userID)).exec(function (err, doc) {
+                        callback(null, doc, parseInt(query.userID));
                     });
                 },
-                function (doctor, userID,callback) {
+                function (doctor, userID, callback) {
                     var availableApps = [];
                     for (var i = 0; i < doctor.WorkDay.length; i++) {
                         var j = new Date();
@@ -428,27 +458,27 @@ module.exports = function (app, passport) {
                             });
                         }
                     } // workdays FOR loop
-                    availableApps.sort(function(a,b) {
-                        if(a.dateObj.isBefore(b.dateObj)) {
+                    availableApps.sort(function (a, b) {
+                        if (a.dateObj.isBefore(b.dateObj)) {
                             return -1;
-                        } else if(a.dateObj.isAfter(b.dateObj)) {
+                        } else if (a.dateObj.isAfter(b.dateObj)) {
                             return 1;
-                        } else if(Date.parseExact(a.start,"HH:mm").isBefore(Date.parseExact(b.start,"HH:mm"))) {
+                        } else if (Date.parseExact(a.start, "HH:mm").isBefore(Date.parseExact(b.start, "HH:mm"))) {
                             return -1;
-                        } else if(Date.parseExact(a.start,"HH:mm").isAfter(Date.parseExact(b.start,"HH:mm"))) {
+                        } else if (Date.parseExact(a.start, "HH:mm").isAfter(Date.parseExact(b.start, "HH:mm"))) {
                             return 1;
                         } else {
                             return 0;
                         }
                     });
                     user.findOne({}).where('userID').equals(userID).exec(function (err, user) {
-                        callback(null,availableApps,{userVals:user,docVals:doctor});
+                        callback(null, availableApps, {userVals: user, docVals: doctor});
                     });
                 }
-            ], function(err, availableApps,doctor) {
-                if(!err) {
+            ], function (err, availableApps, doctor) {
+                if (!err) {
                     console.log("going to render");
-                    res.render('doctorAvaApp', { doctor: doctor ,appointments: availableApps });
+                    res.render('doctorAvaApp', {doctor: doctor, appointments: availableApps});
                 }
             }
         );
