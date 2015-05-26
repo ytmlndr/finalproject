@@ -1,5 +1,5 @@
 var pushWoosh = require('pushwoosh');
-var pushClient = new pushWoosh("D40E8-60A7D", "B3SxzB47UEjVnbwhqz4HIFvZtyWdkKjvP7QaKSrBvGQTzGztPdzM1okbKqEj69B5dydw4Q2ygZzphbIyX8fD");
+var pushClient = new pushWoosh("71A38-D9E51", "p94mh8YLHX9Cz0PzmaiqIyYSwi57cOON72vlqak1HER3DCeaJVvYqamgEpiLouHSmzwXgFEshyd78lc2rSUm");
 
 function sendPushHandler(date, msg,tokenArry){
 

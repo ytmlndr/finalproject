@@ -8,7 +8,7 @@ var URL = require('url');
 var async = require('async');
 var datejs = require('datejs'); // DO NOT DELETE THIS
 var loggedUser;
-var token; //tokenID will be here
+GLOBAL.token; //tokenID will be here
 
 module.exports = function (app, passport) {
 
@@ -19,7 +19,7 @@ module.exports = function (app, passport) {
         console.log(req.url);
         var url_parts = URL.parse(req.url, true);
         var query = url_parts.query;
-        token = query.tokenID; //GETTING TOKEN FROM URL
+        GLOBAL.token = query.tokenID; //GETTING TOKEN FROM URL
         res.render('index', {message: req.session.messages});
     });
 
@@ -315,7 +315,7 @@ module.exports = function (app, passport) {
                 } else {
                     patient.update({userID: user.userID}, {
                         $set: {
-                            TokenID: token //set Token
+                            TokenID: GLOBAL.token //set Token
                         }
                     }, function (err) {
                         if (err) {
