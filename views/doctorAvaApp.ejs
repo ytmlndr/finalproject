@@ -69,7 +69,7 @@
             var day = $(this).children('#day').text();
             var start = $(this).children('#start').text();
             var userID = $('#userID').text();
-            /*$.ajax({
+            $.ajax({
                 url: '/scheduleAppointment',
                 type: 'POST',
                 data: {'userID':userID,'date': date, 'day': day, 'start': start},
@@ -79,12 +79,7 @@
                         window.document.location = data.redirect;
                     }
                 }
-            });*/
-
-            $.ajax({
-
             });
-
         });
     });
 </script>

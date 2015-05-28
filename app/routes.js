@@ -138,7 +138,7 @@ module.exports = function (app, passport) {
                     var mfs = [];
                     if(req.body.mfs instanceof Array) {
                         req.body.mfs.forEach(function(mf) {
-                           mfs.push(mf);
+                            mfs.push(mf);
                         });
                     } else {
                         mfs.push(req.body.mfs);
@@ -165,7 +165,7 @@ module.exports = function (app, passport) {
                     var days = [];
                     if(req.body.days instanceof Array) {
                         req.body.days.forEach(function(day) {
-                           days.push(day);
+                            days.push(day);
                         });
                     } else {
                         days.push(req.body.days);
@@ -276,17 +276,50 @@ module.exports = function (app, passport) {
                 appointment.date = req.body.date;
                 appointment.day = req.body.day;
                 appointment.startTime = req.body.start;
-                appointment.endTime = Date.parseExact(req.body.start,"hh:mm").addMinutes(doctor.appointmentDuration).toString("HH:mm");
-                appointment.save(function(err) {
-                    console.log('inside save callback');
-                    if(err) {
-                        console.log(err);
-                    } else {
-                       console.log('Appointment scheduled');
-                       console.log(appointment);
-                       res.send({redirect:'/profile'});
-                   }
+
+                var Mod = require('./pushHandler') // do not include the dot js
+                appointment.endTime= appointment.startTime;
+                var hh=appointment.endTime.toString().split(":")[0];
+                var mm=appointment.endTime.toString().split(":")[1];
+
+                appointment.endTime=Mod.calctNotificationSendTime(req.body.date,hh,mm, doctor.appointmentDuration*(-1));
+                //appointment.endTime = Date.parseExact(req.body.start,"hh:mm")//.addMinutes(doctor.appointmentDuration).toString("hh:mm");
+              // var res = appointment.endTime.toString().split(" ");
+                appointment.endTime=appointment.endTime.toString().split(" ")[4];
+                appointment.endTime=appointment.endTime.toString().substr(0,5);
+
+                //push send:
+                //var kfirToken = "APA91bGjErXblLk-F2a6ige4DsO_ZMG_rRmIpdsRiKjs5K2A7fTgcl0Qc4zV2zHTg4y1NXqnw8qrGzTJ4vXvC1gqJQz3_xaoCCls7laczcVC7RduAdD9NAD1bGhiLeXmOQZ9dR-vAQxctzWcl70VXGcLzGzJ368yLILCFjm5eitvlg6orGOUMmY";
+                //var msg="you have an appiuntment at "+appointment.date+" "+appointment.startTime+"!";
+                //var date =appointment.date;
+                patient.findOne({}).where('userID').equals(parseInt(loggedUser._doc.userID)).exec(function(err,pat) {
+                    if(!err){
+                        var NotificationCode=Mod.sendPushHandler(appointment.date,appointment.startTime ,pat.MinutesToBeNotifyBefor,GLOBAL.token).then(function(res2) {
+                            console.log("the NotificationCode is:  " + res2); // <<NotificationCode>> need to be saved in the DB!
+                            appointment.pushID=res2;
+                            /*    return res;
+                             });
+                             //end*/
+
+                            //appointment.pushID=res;
+
+                            appointment.save(function(err) {
+                                console.log('inside save callback');
+                                if(err) {
+                                    console.log(err);
+                                } else {
+                                    console.log('Appointment scheduled');
+                                    console.log(appointment);
+                                    res.send({redirect:'/profile'});
+                                }
+                            });
+                            return res2;
+                        });
+                    }
                 });
+
+
+                //end
             } else {
                 console.log(err);
             }
@@ -396,17 +429,17 @@ module.exports = function (app, passport) {
                         }
                     } // workdays FOR loop
                     availableApps.sort(function(a,b) {
-                       if(a.dateObj.isBefore(b.dateObj)) {
-                           return -1;
-                       } else if(a.dateObj.isAfter(b.dateObj)) {
-                           return 1;
-                       } else if(Date.parseExact(a.start,"HH:mm").isBefore(Date.parseExact(b.start,"HH:mm"))) {
-                           return -1;
-                       } else if(Date.parseExact(a.start,"HH:mm").isAfter(Date.parseExact(b.start,"HH:mm"))) {
-                           return 1;
-                       } else {
-                           return 0;
-                       }
+                        if(a.dateObj.isBefore(b.dateObj)) {
+                            return -1;
+                        } else if(a.dateObj.isAfter(b.dateObj)) {
+                            return 1;
+                        } else if(Date.parseExact(a.start,"HH:mm").isBefore(Date.parseExact(b.start,"HH:mm"))) {
+                            return -1;
+                        } else if(Date.parseExact(a.start,"HH:mm").isAfter(Date.parseExact(b.start,"HH:mm"))) {
+                            return 1;
+                        } else {
+                            return 0;
+                        }
                     });
                     user.findOne({}).where('userID').equals(userID).exec(function (err, user) {
                         callback(null,availableApps,{userVals:user,docVals:doctor});
