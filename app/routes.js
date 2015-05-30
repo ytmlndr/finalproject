@@ -43,6 +43,9 @@ module.exports = function (app, passport) {
                 Appointment.where().findOneAndRemove({patientID : appointments[i].patientID,doctorID : appointments[i].doctorID,date : appointments[i].date,
                     day : appointments[i].day,startTime : appointments[i].startTime},function(err){
                     if(!err){
+                        var Mod = require('./pushHandler') // do not include the dot js
+                        Mod.deletePushHandler(appointments[i].pushID);
+
                         console.log("Removed");
                         q.where('patientID').equals(parseInt(loggedUser._doc.userID)).exec(function (err, appoin) {
                             res.render('cancelApp', {user: req.user, appointments: appoin});
@@ -313,25 +316,16 @@ module.exports = function (app, passport) {
                 var mm = appointment.endTime.toString().split(":")[1];
 
                 appointment.endTime = Mod.calctNotificationSendTime(req.body.date, hh, mm, doctor.appointmentDuration * (-1));
-                //appointment.endTime = Date.parseExact(req.body.start,"hh:mm")//.addMinutes(doctor.appointmentDuration).toString("hh:mm");
-                // var res = appointment.endTime.toString().split(" ");
                 appointment.endTime = appointment.endTime.toString().split(" ")[4];
                 appointment.endTime = appointment.endTime.toString().substr(0, 5);
 
                 //push send:
-                //var kfirToken = "APA91bGjErXblLk-F2a6ige4DsO_ZMG_rRmIpdsRiKjs5K2A7fTgcl0Qc4zV2zHTg4y1NXqnw8qrGzTJ4vXvC1gqJQz3_xaoCCls7laczcVC7RduAdD9NAD1bGhiLeXmOQZ9dR-vAQxctzWcl70VXGcLzGzJ368yLILCFjm5eitvlg6orGOUMmY";
-                //var msg="you have an appiuntment at "+appointment.date+" "+appointment.startTime+"!";
-                //var date =appointment.date;
+                 //var msg="you have an appiuntment at "+appointment.date+" "+appointment.startTime+"!";
                 patient.findOne({}).where('userID').equals(parseInt(loggedUser._doc.userID)).exec(function (err, pat) {
                     if (!err) {
                         var NotificationCode = Mod.sendPushHandler(appointment.date, appointment.startTime, pat.MinutesToBeNotifyBefor, GLOBAL.token).then(function (res2) {
                             console.log("the NotificationCode is:  " + res2); // <<NotificationCode>> need to be saved in the DB!
                             appointment.pushID = res2;
-                            /*    return res;
-                             });
-                             //end*/
-
-                            //appointment.pushID=res;
 
                             appointment.save(function (err) {
                                 console.log('inside save callback');
@@ -347,7 +341,6 @@ module.exports = function (app, passport) {
                         });
                     }
                 });
-
 
                 //end
             } else {

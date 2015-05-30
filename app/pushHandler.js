@@ -54,7 +54,7 @@ function calctNotificationSendTime(i_date,hh,mm, TimeToBeNotifiy){      // TO DO
     //var mm=date.getMinutes();
 
    // HH -= 3; // Because its may be depend on GMT time?
-    MM -= 1; // i don't know why but it sould be like this!
+    MM -= 1; // counting month starting from 0
     if (mm < TimeToBeNotifiy) {
         if (hh === 0) {
             hh = 23;
@@ -62,8 +62,6 @@ function calctNotificationSendTime(i_date,hh,mm, TimeToBeNotifiy){      // TO DO
         } else {
             hh--;
         }
-
-        mm = 60 - (TimeToBeNotifiy - mm);
 
     }else if(mm-TimeToBeNotifiy>=60){
             if (hh === 23) {
@@ -79,6 +77,7 @@ function calctNotificationSendTime(i_date,hh,mm, TimeToBeNotifiy){      // TO DO
 
     date.setFullYear(YY);
     date.setMonth(MM);
+    date.setMonth(MM);      //yotam WHERE DID YOU FIND THIS SHITY MODULE?!
     date.setDate(DD);
     date.setHours(hh);
     date.setMinutes(mm);
