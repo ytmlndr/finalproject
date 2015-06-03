@@ -7,7 +7,6 @@ var languages = require('./models/languages');
 var URL = require('url');
 var async = require('async');
 var datejs = require('datejs'); // DO NOT DELETE THIS
-var loggedUser;
 GLOBAL.token; //tokenID will be here
 
 module.exports = function (app, passport) {
@@ -24,22 +23,21 @@ module.exports = function (app, passport) {
     });
 
     app.get('/profile', ensureAuthenticated, function (req, res) {
-        loggedUser = req.user;
         var query = Appointment.find({});
-        console.log('profile for user ' + loggedUser._doc.userID);
-        query.where('patientID').equals(parseInt(loggedUser._doc.userID)).exec(function (err, appointments) {
+        console.log('profile for user ' + req.session.user.userID);
+        query.where('patientID').equals(parseInt(req.session.user.userID)).exec(function (err, appointments) {
             res.render('profile', {user: req.user, appointments: appointments});
         });
     });
 
-    app.get('/cancelApp', function (req, res) {
+    app.get('/cancelApp', ensureAuthenticated, function (req, res) {
         var url_parts = URL.parse(req.url, true);
         var query = url_parts.query;
         if(query.app != undefined)
         {
             var i = parseInt(query.app);
             var q = Appointment.find({});
-            q.where('patientID').equals(parseInt(loggedUser._doc.userID)).exec(function (err, appointments) {
+            q.where('patientID').equals(parseInt(req.session.user.userID)).exec(function (err, appointments) {
                 Appointment.where().findOneAndRemove({patientID : appointments[i].patientID,doctorID : appointments[i].doctorID,date : appointments[i].date,
                     day : appointments[i].day,startTime : appointments[i].startTime},function(err){
                     if(!err){
@@ -47,7 +45,7 @@ module.exports = function (app, passport) {
                         Mod.deletePushHandler(appointments[i].pushID);
 
                         console.log("Removed");
-                        q.where('patientID').equals(parseInt(loggedUser._doc.userID)).exec(function (err, appoin) {
+                        q.where('patientID').equals(parseInt(req.session.user.userID)).exec(function (err, appoin) {
                             res.render('cancelApp', {user: req.user, appointments: appoin});
                         })
                     }else{
@@ -59,7 +57,7 @@ module.exports = function (app, passport) {
         }else{
             loggedUser = req.user;
             var query = Appointment.find({});
-            query.where('patientID').equals(parseInt(loggedUser._doc.userID)).exec(function (err, appointments) {
+            query.where('patientID').equals(parseInt(req.session.user.userID)).exec(function (err, appointments) {
                 res.render('cancelApp', {user: req.user, appointments: appointments});
             });
         }
@@ -70,9 +68,9 @@ module.exports = function (app, passport) {
         res.render('doctorprofile', {user: req.user});
     });
 
-    app.get('/doctorSchedule', function (req, res) {
+    app.get('/doctorSchedule', ensureAuthenticated, function (req, res) {
         appo = [];
-        Appointment.find({doctorID: parseInt(loggedUser._doc.userID, 10)}, function (err, ap) {
+        Appointment.find({doctorID: parseInt(req.session.user.userID, 10)}, function (err, ap) {
             if (err) {
                 console.log(err);
             }
@@ -87,8 +85,8 @@ module.exports = function (app, passport) {
                     })
                 }
                 res.render('doctorSchedule', {
-                    fname: loggedUser.f_name,
-                    lname: loggedUser.l_name,
+                    fname: req.session.user.f_name,
+                    lname: req.session.user.l_name,
                     appointmemts: appo
                 });
             }
@@ -99,15 +97,15 @@ module.exports = function (app, passport) {
         res.render('register', {user: req.user});
     });
 
-    app.get('/editdetails', function (req, res) {
+    app.get('/editdetails', ensureAuthenticated, function (req, res) {
         res.render('editdetails', {user: req.user});
     });
 
-    app.get('/doctoreditdetails', function (req, res) {
+    app.get('/doctoreditdetails', ensureAuthenticated, function (req, res) {
         res.render('doctoreditdetails', {user: req.user});
     });
 
-    app.get('/searchdoctor', function (req, res) {
+    app.get('/searchdoctor', ensureAuthenticated, function (req, res) {
         async.waterfall([
             function (callback) {
                 languages.find({}, function (err, docs) {
@@ -127,7 +125,7 @@ module.exports = function (app, passport) {
         });
     });
 
-    app.post('/searchdoctor', function (req, res) {
+    app.post('/searchdoctor', ensureAuthenticated, function (req, res) {
         async.waterfall([
             // function to get all languages from db
             function (callback) {
@@ -253,9 +251,9 @@ module.exports = function (app, passport) {
         });
     });
 
-    app.post('/doctoreditdetails', function (req, res) {
+    app.post('/doctoreditdetails', ensureAuthenticated, function (req, res) {
         if (req.body.city != "" && req.body.street != "" && req.body.phone != "" && req.body.minutes != "") {
-            doctor.update({userID: parseInt(loggedUser._doc.userID, 10)}, {
+            doctor.update({userID: parseInt(req.session.user.userID, 10)}, {
                 $set: {
                     "ClinicAddress.city": req.body.city,
                     "ClinicAddress.street": req.body.street,
@@ -274,10 +272,10 @@ module.exports = function (app, passport) {
         }
     });
 
-    app.post('/editdetails', function (req, res) {
+    app.post('/editdetails', ensureAuthenticated, function (req, res) {
         if (req.body.city != "" && req.body.street != "" && req.body.zipcode != "" && req.body.phone != "" &&
             req.body.email != "" && req.body.minutes != "") {
-            patient.update({userID: parseInt(loggedUser._doc.userID, 10)}, {
+            patient.update({userID: parseInt(req.session.user.userID, 10)}, {
                 $set: {
                     "Address.city": req.body.city,
                     "Address.street": req.body.street,
@@ -298,13 +296,13 @@ module.exports = function (app, passport) {
         }
     });
 
-    app.post('/scheduleAppointment', function (req, res) {
+    app.post('/scheduleAppointment', ensureAuthenticated,function (req, res) {
         console.log('inside scheduleAppointment');
+        console.log('trying to schedule for user ' + req.body.userID);
         doctor.findOne({}).where('userID').equals(parseInt(req.body.userID)).exec(function (err, doctor) {
             if (!err) {
-                console.log('inside exec callback');
                 var appointment = new Appointment();
-                appointment.patientID = parseInt(loggedUser._doc.userID);
+                appointment.patientID = parseInt(req.session.user.userID);
                 appointment.doctorID = parseInt(req.body.userID);
                 appointment.date = req.body.date;
                 appointment.day = req.body.day;
@@ -321,11 +319,11 @@ module.exports = function (app, passport) {
 
                 //push send:
                  //var msg="you have an appiuntment at "+appointment.date+" "+appointment.startTime+"!";
-                patient.findOne({}).where('userID').equals(parseInt(loggedUser._doc.userID)).exec(function (err, pat) {
+                patient.findOne({}).where('userID').equals(parseInt(req.session.user.userID)).exec(function (err, pat) {
                     if (!err) {
-                        var NotificationCode = Mod.sendPushHandler(appointment.date, appointment.startTime, pat.MinutesToBeNotifyBefor, GLOBAL.token).then(function (res2) {
-                            console.log("the NotificationCode is:  " + res2); // <<NotificationCode>> need to be saved in the DB!
-                            appointment.pushID = res2;
+                        var NotificationCode = Mod.sendPushHandler(appointment.date, appointment.startTime, pat.MinutesToBeNotifyBefor, GLOBAL.token).then(function (notificationCode) {
+                            console.log("the NotificationCode is:  " + notificationCode); // <<NotificationCode>> need to be saved in the DB!
+                            appointment.pushID = notificationCode;
 
                             appointment.save(function (err) {
                                 console.log('inside save callback');
@@ -337,7 +335,7 @@ module.exports = function (app, passport) {
                                     res.send({redirect: '/profile'});
                                 }
                             });
-                            return res2;
+                            return notificationCode;
                         });
                     }
                 });
@@ -380,6 +378,7 @@ module.exports = function (app, passport) {
                             console.log("Token Updated");
                         }
                     });
+                    req.session.user = user;
                     return res.redirect('/profile');
                 }
             });
@@ -391,7 +390,7 @@ module.exports = function (app, passport) {
         res.redirect('/');
     });
 
-    app.get('/doctorAvaApp', function (req, res) {
+    app.get('/doctorAvaApp', ensureAuthenticated, function (req, res) {
         async.waterfall([
                 function (callback) {
                     var url_parts = URL.parse(req.url, true);

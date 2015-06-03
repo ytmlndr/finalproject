@@ -47,9 +47,9 @@ function calctNotificationSendTime(i_date,hh,mm, TimeToBeNotifiy){      // TO DO
 
     var date = new Date();
 
-    var YY=i_date.split("/")[2]
-    var MM=i_date.split("/")[1]
-    var DD=i_date.split("/")[0]
+    var YY=i_date.split("/")[2];
+    var MM=i_date.split("/")[1];
+    var DD=i_date.split("/")[0];
     //var HH=date.getHours();
     //var mm=date.getMinutes();
 
@@ -73,7 +73,6 @@ function calctNotificationSendTime(i_date,hh,mm, TimeToBeNotifiy){      // TO DO
         }
 
         mm=(mm-TimeToBeNotifiy)%60;
-
 
     date.setFullYear(YY);
     date.setMonth(MM);

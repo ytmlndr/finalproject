@@ -6,6 +6,7 @@ var session         = require('express-session');
 var bodyParser      = require('body-parser');
 var passport        = require('passport');
 var User            = require('./app/models/user');
+var sessionStore = require('sessionstore');
 
 require('./config/passport')(passport);
 
@@ -18,7 +19,8 @@ app.use(bodyParser.json());
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.use(session({secret: 'yotamlenderkfiryahalommichaelabramov', resave: true, saveUninitialized: false}));
+//app.use(session({genid:function(req){return genuuid()}, secret: 'yotamlenderkfiryahalommichaelabramov', resave: false, saveUninitialized: false}));
+app.use(session({store: sessionStore.createSessionStore(), resave:false, saveUninitialized: false, secret: 'yotamlenderkfiryahalommichaelabramov'}));
 app.use(express.static(path.join(__dirname,'/js')));
 app.use(express.static(path.join(__dirname, '/views/css')));
 app.use(passport.initialize());
