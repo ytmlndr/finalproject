@@ -6,7 +6,7 @@ var session         = require('express-session');
 var bodyParser      = require('body-parser');
 var passport        = require('passport');
 var User            = require('./app/models/user');
-var sessionStore = require('sessionstore');
+//var sessionStore = require('sessionstore'); //DO NOT ADD THIS SHIT!!
 
 require('./config/passport')(passport);
 
@@ -20,7 +20,8 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 //app.use(session({genid:function(req){return genuuid()}, secret: 'yotamlenderkfiryahalommichaelabramov', resave: false, saveUninitialized: false}));
-app.use(session({store: sessionStore.createSessionStore(), resave:false, saveUninitialized: false, secret: 'yotamlenderkfiryahalommichaelabramov'}));
+//app.use(session({store: sessionStore.createSessionStore(), resave:false, saveUninitialized: false, secret: 'yotamlenderkfiryahalommichaelabramov'}));
+app.use(session({secret: 'yotamlenderkfiryahalommichaelabramov', resave: true, saveUninitialized: false})); //THIS IS GOLD!!
 app.use(express.static(path.join(__dirname,'/js')));
 app.use(express.static(path.join(__dirname, '/views/css')));
 app.use(passport.initialize());
