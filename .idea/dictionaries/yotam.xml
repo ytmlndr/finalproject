@@ -2,6 +2,7 @@
   <dictionary name="yotam">
     <words>
       <w>addon</w>
+      <w>bcrypt</w>
       <w>datejs</w>
       <w>datetimepicker</w>
       <w>doctoreditdetails</w>

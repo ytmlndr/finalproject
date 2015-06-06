@@ -399,19 +399,25 @@ module.exports = function (app, passport) {
                         callback(null, doc, parseInt(query.userID));
                     });
                 },
-                function (doctor, userID, callback) {
+                function(doctor, userID, callback) {
+                    Appointment.find({}).where('doctorID', userID).exec(function(err, apps) {
+                        callback(null, doctor, userID, apps);
+                    });
+                },
+                function (doctor, userID, doctorAppointments, callback) {
                     var availableApps = [];
                     for (var i = 0; i < doctor.WorkDay.length; i++) {
-                        var j = new Date();
-                        var k = new Date();
+                        console.log('workday ' + i);
+                        var startTimeOfWorkDay = new Date();
+                        var endTimeOfWorkDay = new Date();
                         var hourStart = parseInt(doctor.WorkDay[i].startTime.split(':')[0]);
                         var mintStart = parseInt(doctor.WorkDay[i].startTime.split(':')[1]);
                         var hourEnd = parseInt(doctor.WorkDay[i].endTime.split(':')[0]);
                         var mintEnd = parseInt(doctor.WorkDay[i].endTime.split(':')[1]);
                         var day;
                         var diff;
-                        j.at({hour: hourStart, minute: mintStart});
-                        k.at({hour: hourEnd, minute: mintEnd});
+                        startTimeOfWorkDay.at({hour: hourStart, minute: mintStart});
+                        endTimeOfWorkDay.at({hour: hourEnd, minute: mintEnd});
                         switch (doctor.WorkDay[i].day) {
                             case "Sunday":
                                 day = 0;
@@ -432,24 +438,56 @@ module.exports = function (app, passport) {
                                 day = 5;
                                 break;
                         }
-                        if (j.getDay() <= day) {
-                            diff = day - j.getDay();
+                        if (startTimeOfWorkDay.getDay() <= day) {
+                            diff = day - startTimeOfWorkDay.getDay();
                         }
                         else {
-                            diff = 7 - (j.getDay() - day);
+                            diff = 7 - (startTimeOfWorkDay.getDay() - day);
                         }
-                        j.addDays(diff);
-                        k.addDays(diff);
-                        while (j.isBefore(k)) {
-                            availableApps.push({
-                                date: j.toString("dd/MM/yyyy"),
-                                day: doctor.WorkDay[i].day,
-                                start: j.toString("HH:mm"),
-                                end: j.addMinutes(doctor.appointmentDuration).toString("HH:mm"),
-                                dateObj: j
-                            });
+                        startTimeOfWorkDay.addDays(diff);
+                        endTimeOfWorkDay.addDays(diff);
+                        var hourIsInDoctorAppointments;
+                        while (startTimeOfWorkDay.isBefore(endTimeOfWorkDay)) {
+                            var date = new Date();
+                            var appointmentTime = startTimeOfWorkDay.toTimeString().split(':')[0].toString() + ":" + startTimeOfWorkDay.toTimeString().split(':')[1].toString();
+                            var appointmentDate = startTimeOfWorkDay.getDate() + '/' + (startTimeOfWorkDay.getMonth()+1) + '/' + startTimeOfWorkDay.getFullYear();
+                            console.log('j is ' + appointmentDate + ' ' + appointmentTime);
+                            hourIsInDoctorAppointments = false;
+
+                             // check if there is an appointment at hour j exists
+                            for(var t = 0; t < doctorAppointments.length; t++) {
+                                console.log('comparing between ' + doctorAppointments[t].date + ' ' + appointmentDate + ' and between ' + doctorAppointments[t].startTime + ' ' + appointmentTime);
+                                if ((doctorAppointments[t].date.split('/')[0] == startTimeOfWorkDay.getDate())
+                                    && (doctorAppointments[t].date.split('/')[1] == (startTimeOfWorkDay.getMonth()+1))
+                                    && (doctorAppointments[t].date.split('/')[2] == startTimeOfWorkDay.getFullYear())
+                                    && (doctorAppointments[t].startTime == appointmentTime)) {
+                                    hourIsInDoctorAppointments = true;
+                                    console.log('found hour as an appointment: ' + appointmentTime);
+                                    break;
+                                }
+                            }
+
+                            // clear appointments that are earlier than current time or scheduled
+                            if(((startTimeOfWorkDay.getYear() > date.getYear())
+                                || (startTimeOfWorkDay.getMonth() > date.getMonth() && startTimeOfWorkDay.getFullYear()== date.getFullYear())
+                                || (startTimeOfWorkDay.getDate() > date.getDate() && startTimeOfWorkDay.getMonth() == date.getMonth() && startTimeOfWorkDay.getFullYear() >= date.getFullYear())
+                                || ((startTimeOfWorkDay.getDate() == date.getDate() && startTimeOfWorkDay.getMonth() == date.getMonth() && startTimeOfWorkDay.getFullYear() == date.getFullYear())
+                                && (startTimeOfWorkDay.getHours() >= date.getHours() && startTimeOfWorkDay.getMinutes() > date.getMinutes())))
+                                && !hourIsInDoctorAppointments) {
+                                console.log('going to add an appointment to display');
+                                availableApps.push({
+                                    date: startTimeOfWorkDay.toString("dd/MM/yyyy"),
+                                    day: doctor.WorkDay[i].day,
+                                    start: startTimeOfWorkDay.toString("HH:mm"),
+                                    end: startTimeOfWorkDay.addMinutes(doctor.appointmentDuration).toString("HH:mm"),
+                                    dateObj: startTimeOfWorkDay
+                                });
+                            } else {
+                                startTimeOfWorkDay.addMinutes(doctor.appointmentDuration);
+                            }
                         }
                     } // workdays FOR loop
+                    console.log('starting sort');
                     availableApps.sort(function (a, b) {
                         if (a.dateObj.isBefore(b.dateObj)) {
                             return -1;
@@ -463,6 +501,7 @@ module.exports = function (app, passport) {
                             return 0;
                         }
                     });
+                    console.log('finished sorting');
                     user.findOne({}).where('userID').equals(userID).exec(function (err, user) {
                         callback(null, availableApps, {userVals: user, docVals: doctor});
                     });
