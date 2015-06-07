@@ -36,15 +36,13 @@
     </nav>
 
     <div id='table-container' class="panel panel-default">
-        <div class="panel-heading"><%=fname %> <%= lname%></div>
+        <div class="panel-heading"></div>
         <div class="table-responsive">
             <table class="table table-hover table-bordered">
-                <% for(var i=0; i < appointmemts.length; i++) { %>
+                <% for(var i=0; i < appointments.length; i++) { %>
                 <thead>
                 <tr>
-                    <th class="patientName" colspan="3">Name: **need to fill**  ID: <%= appointmemts[i].pid %></th>
-
-
+                    <th class="patientName" colspan="3">ID: <%= appointments[i].patientID %></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -52,18 +50,12 @@
                     <th>Date</th>
                     <th>Day</th>
                     <th>Time</th>
-
                 </tr>
-
                 <tr>
-
-                    <td><%= appointmemts[i].date %></td>
-                    <td><%= appointmemts[i].day %></td>
-                    <td><%= appointmemts[i].stime %>-<%= appointmemts[i].etime %></td>
-
+                    <td><%= appointments[i].date %></td>
+                    <td><%= appointments[i].day %></td>
+                    <td><%= appointments[i].startTime %>-<%= appointments[i].endTime %></td>
                 </tr>
-
-
                 </tbody>
                 <% } %>
             </table>

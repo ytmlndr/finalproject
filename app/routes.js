@@ -64,32 +64,13 @@ module.exports = function (app, passport) {
     });
 
     app.get('/doctorprofile', ensureAuthenticated, function (req, res) {
-        loggedUser = req.user;
         res.render('doctorprofile', {user: req.user});
     });
 
     app.get('/doctorSchedule', ensureAuthenticated, function (req, res) {
-        appo = [];
-        Appointment.find({doctorID: parseInt(req.session.user.userID, 10)}, function (err, ap) {
-            if (err) {
-                console.log(err);
-            }
-            else {
-                for (x in ap) {
-                    appo.push({
-                        pid: ap[x].patientID,
-                        date: ap[x].appointment.date,
-                        day: ap[x].appointment.day,
-                        stime: ap[x].appointment.startTime,
-                        etime: ap[x].appointment.endTime
-                    })
-                }
-                res.render('doctorSchedule', {
-                    fname: req.session.user.f_name,
-                    lname: req.session.user.l_name,
-                    appointmemts: appo
-                });
-            }
+        var query = Appointment.find({});
+        query.where('doctorID').equals(parseInt(req.session.user.userID)).exec(function (err, appo) {
+            res.render('doctorSchedule',{appointments:appo});
         });
     });
 
@@ -98,11 +79,11 @@ module.exports = function (app, passport) {
     });
 
     app.get('/editdetails', ensureAuthenticated, function (req, res) {
-        res.render('editdetails', {user: req.user});
+        res.render('editdetails', {user: req.user , message:""});
     });
 
     app.get('/doctoreditdetails', ensureAuthenticated, function (req, res) {
-        res.render('doctoreditdetails', {user: req.user});
+        res.render('doctoreditdetails', {user: req.user ,message:""});
     });
 
     app.get('/searchdoctor', ensureAuthenticated, function (req, res) {
@@ -268,7 +249,9 @@ module.exports = function (app, passport) {
                 }
             });
 
-            res.render('doctorprofile', {user: req.user});
+            return res.redirect('/doctorprofile');
+        } else{
+            res.render('doctoreditdetails',{message: "All Fields Must Be Not Empty"});
         }
     });
 
@@ -292,7 +275,10 @@ module.exports = function (app, passport) {
                 }
             });
 
-            res.render('profile', {user: req.user});
+            return res.redirect('/profile');
+        }
+        else{
+            res.render('editdetails',{message: "All Fields Must Be Not Empty"});
         }
     });
 
@@ -365,6 +351,7 @@ module.exports = function (app, passport) {
                 }
                 console.log('login successfully');
                 if (user.IsDoctor) {
+                    req.session.user = user;
                     return res.redirect('/doctorprofile');
                 } else {
                     patient.update({userID: user.userID}, {

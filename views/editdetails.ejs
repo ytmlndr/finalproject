@@ -40,6 +40,9 @@
                 <div class="panel-title">Update Details</div>
             </div>
             <div class="panel-body">
+                <% if (message.length > 0) { %>
+                <div class="alert alert-danger"><%= message%></div>
+                <% } %>
                 <form action="/editdetails" method="post" id="editdetailsform" class="form-horizontal" role="form">
                     <div class="input-group">
                     <span class="input-group-addon">
