@@ -9,8 +9,8 @@
 </head>
 <body>
     <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-            <div class="navbar-head">
+
+            <div class="container-fluid" class="navbar-head">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
@@ -29,7 +29,7 @@
                     <p class="navbar-text navbar-right"><a href="/logout" class="navbar-link">Log out</a></p>
                 </ul>
             </div>
-        </div>
+
     </nav>
     <form class='searchForm' action="/searchdoctor" method="post" >
         <div class="well carousel-search hidden-sm">
@@ -80,7 +80,7 @@
             <table class="table table-responsive table-striped">
                 <tr>
                     <th class="col-ms-1">Name:</th>
-                    <th class="col-md-3"><%=doctors[i].userVals.f_name%> <%=doctors[i].userVals.l_name%></th>
+                    <th class="col-md-3"><%=doctors[i].userVals.f_name + ' ' + doctors[i].userVals.l_name%></th>
                 </tr>
                 <tr>
                     <td class="col-ms-1">Phone Number:</td>
@@ -88,12 +88,12 @@
                 </tr>
                 <tr>
                     <td class="col-ms-1">Address:</td>
-                    <td class="col-ms-3"><%=doctors[i].docVals.ClinicAddress.street%>,<%=doctors[i].docVals.ClinicAddress.city%></td>
+                    <td class="col-ms-3"><%=doctors[i].docVals.ClinicAddress.street + ' ' +doctors[i].docVals.ClinicAddress.city%></td>
                 </tr>
-                <%var workDaysString = [];%>
-                <%for(var j=0; j<doctors[i].docVals.WorkDay.length; j++) {%>
-                    <%workDaysString.push(doctors[i].docVals.WorkDay[j].day);%>
-                <%}%>
+                <%var workDaysString = [];
+                for(var j=0; j<doctors[i].docVals.WorkDay.length; j++) {
+                    workDaysString.push(' ' + doctors[i].docVals.WorkDay[j].day);
+                }%>
                 <tr>
                     <td class="col-ms-1">Working Days:</td>
                     <td class="col-ms-3"><%=workDaysString%></td>

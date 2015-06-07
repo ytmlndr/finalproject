@@ -1,6 +1,11 @@
+body {
+    padding-top: 50px;
+    word-wrap: break-word;
+}
+
 .panel-doctor {
     margin: 0 auto;
-    width:50%;
+    width:95%;
     margin-top: 5%;
 }
 

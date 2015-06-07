@@ -10,31 +10,31 @@
 </head>
 <body>
 <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid">
-        <div class="navbar-head">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Welcome</a>
-        </div>
 
-        <div class="collapse navbar-collapse" id="navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li><a href="/profile">Home<span class="sr-only">(current)</span></a></li>
-                <li ><a href="/searchdoctor">Schedule appointment</a></li>
-                <li><a href="/cancelApp">Cancel appointment</a></li>
-                <li class="active"><a href="#">Update Details</a></li>
-                <p class="navbar-text navbar-right"><a href="/logout" class="navbar-link">Log out</a></p>
-            </ul>
-        </div>
+    <div class="container-fluid" class="navbar-head">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Welcome</a>
     </div>
+
+    <div class="collapse navbar-collapse" id="navbar-collapse-1">
+        <ul class="nav navbar-nav">
+            <li ><a href="/profile">Home<span class="sr-only">(current)</span></a></li>
+            <li><a href="/searchdoctor">Schedule Appointment</a></li>
+            <li class="active"><a href="#">Cancel Appointment</a></li>
+            <li><a href="/editdetails">Update Details</a></li>
+            <p class="navbar-text navbar-right"><a href="/logout" class="navbar-link">Log out</a></p>
+        </ul>
+    </div>
+
 </nav>
 
-<div class="container">
-    <div id="detailsbox" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+
+    <div class="container" id="detailsbox" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
         <div class="panel panel-info">
             <div class="panel-heading">
                 <div class="panel-title">Update Details</div>
@@ -82,6 +82,6 @@
             </div> <!-- panel-body -->
         </div> <!-- panel panel-info -->
     </div> <!-- editdetailsbox -->
-</div>
+
 </body>
 </html>

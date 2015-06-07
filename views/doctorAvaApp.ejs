@@ -35,9 +35,9 @@
 </nav>
 
 <div class="panel panel-default panel-doctor">
-    <div class="panel-heading"><%= doctor.userVals.f_name %> <%= doctor.userVals.l_name %>
-        |  <%= doctor.docVals.PhoneNumber %>  |  <%= doctor.docVals.ClinicAddress.street %>
-        ,<%= doctor.docVals.ClinicAddress.city %></div>
+    <div class="panel-heading"><%= doctor.userVals.f_name + ' ' + doctor.userVals.l_name +
+        ' | ' + doctor.docVals.PhoneNumber + ' | ' + doctor.docVals.ClinicAddress.street +
+        ',' +  doctor.docVals.ClinicAddress.city %></div>
     <span id="userID" class="hidden"><%=doctor.docVals.userID%></span>
     <div class="container-fluid container-table">
         <div class="table-responsive">

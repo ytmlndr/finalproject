@@ -243,7 +243,7 @@ module.exports = function (app, passport) {
                 }
             }, function (err) {
                 if (err) {
-                    console.log("err");
+                    res.render('doctoreditdetails',{message: "All Fields Must Be Not Empty"});
                 } else {
                     console.log("doctor update successful");
                 }
@@ -269,7 +269,7 @@ module.exports = function (app, passport) {
                 }
             }, function (err) {
                 if (err) {
-                    console.log("err");
+                    res.render('editdetails',{message: "All Fields Must Be Not Empty"});
                 } else {
                     console.log("patient update successful");
                 }

@@ -1,11 +1,11 @@
 body {
-    padding-top:120px;
+    padding-top:80px;
     word-wrap: break-word;
 }
 
 #table-container{
     margin: 0 auto;
-    width: 90%;
+    width: 95%;
 }
 
 h2 {
@@ -15,6 +15,7 @@ h2 {
 table{
     border: 1px;
     box-shadow: 5px 5px 10px #888888;
+    width: 95%;
 }
 
 .DoctorName{
@@ -23,16 +24,17 @@ table{
 
 td, th{
     width: 50%;
+    margin: 0 0;
 }
 
 .searchForm {
     margin: 0 auto;
-    width: 90%;
+    width: 95%;
 }
 
 .container-doctor {
     margin: 0 auto;
-    width: 80%;
+    width: 95%;
     padding-bottom: 2%;
     cursor: pointer;
 }
@@ -40,3 +42,10 @@ td, th{
 .container-doctor span {
     display: none;
 }
+
+button{
+    margin: 0 auto;
+    padding: 0 0;
+}
+
+.col-sm-12 controls
