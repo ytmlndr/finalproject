@@ -38,17 +38,19 @@
     <div class="table-responsive">
         <table class="table table-hover table-bordered">
             <tr>
-                <th>#</th>
+                <th>Doctor</th>
                 <th>Date</th>
                 <th>Day</th>
                 <th>Time</th>
             </tr>
             <%if(appointments) {
-                for(var i=0; i<appointments.length; i++) {%>
+                for(var i=0; i<appointments.length; i++) {
+
+            %>
                 <tr>
-                    <td><%=i+1%></td>
-                    <td><%=appointments[i].date%></td>
-                    <td><%=appointments[i].day%></td>
+                    <td><%=appointments[i].doctorName%></td>
+                    <td><%=appointments[i].date.substr(0,6) + appointments[i].date.substr(8,2)%></td>
+                    <td><%=appointments[i].day.substr(0,3)%></td>
                     <td><%=appointments[i].startTime%></td>
                 </tr>
                 <%}

@@ -22,6 +22,7 @@ module.exports = function (app, passport) {
         res.render('index', {message: req.session.messages});
     });
 
+
     app.get('/profile', ensureAuthenticated, function (req, res) {
         var query = Appointment.find({});
         console.log('profile for user ' + req.session.user.userID);
@@ -284,12 +285,14 @@ module.exports = function (app, passport) {
 
     app.post('/scheduleAppointment', ensureAuthenticated,function (req, res) {
         console.log('inside scheduleAppointment');
-        console.log('trying to schedule for user ' + req.body.userID);
-        doctor.findOne({}).where('userID').equals(parseInt(req.body.userID)).exec(function (err, doctor) {
+        console.log('trying to schedule for user ' + req.body.doctorID);
+        doctor.findOne({}).where('userID').equals(parseInt(req.body.doctorID)).exec(function (err, doctor) {
             if (!err) {
                 var appointment = new Appointment();
                 appointment.patientID = parseInt(req.session.user.userID);
-                appointment.doctorID = parseInt(req.body.userID);
+                appointment.patientName = req.session.user.f_name + ' ' + req.session.user.l_name;
+                appointment.doctorID = parseInt(req.body.doctorID);
+                appointment.doctorName = req.body.doctorName;
                 appointment.date = req.body.date;
                 appointment.day = req.body.day;
                 appointment.startTime = req.body.start;
@@ -496,7 +499,7 @@ module.exports = function (app, passport) {
             ], function (err, availableApps, doctor) {
                 if (!err) {
                     console.log("going to render");
-                    res.render('doctorAvaApp', {doctor: doctor, appointments: availableApps});
+                    res.render('doctorAvaApp', {doctor: doctor, availableappointments: availableApps});
                 }
             }
         );
