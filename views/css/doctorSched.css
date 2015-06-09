@@ -1,0 +1,50 @@
+body {
+    padding-top:80px;
+    word-wrap: break-word;
+}
+
+#table-container{
+    margin: 0 auto;
+    width: 95%;
+}
+
+h2 {
+    text-align: center;
+}
+
+table{
+    border: 1px;
+    box-shadow: 5px 5px 10px #888888;
+    width: 95%;
+}
+
+.DoctorName{
+   background-color: #0b97c4;
+}
+
+td, th{
+    margin: 0 0;
+}
+
+.searchForm {
+    margin: 0 auto;
+    width: 95%;
+}
+
+.container-doctor {
+    margin: 0 auto;
+    width: 95%;
+    padding-bottom: 2%;
+    cursor: pointer;
+}
+
+.container-doctor span {
+    display: none;
+}
+
+button{
+    margin: 0 auto;
+    padding: 0 0;
+}
+
+.col-sm-12 controls

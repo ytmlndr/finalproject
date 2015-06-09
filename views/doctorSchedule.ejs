@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="doctorAvailability.css">
-        <link rel="stylesheet" href="searchDoctor.css">
+        <link rel="stylesheet" href="DoctorSched.css">
     </head>
     <body>
 
@@ -42,7 +42,13 @@
                 <% for(var i=0; i < appointments.length; i++) { %>
                 <thead>
                 <tr>
-                    <th class="patientName" colspan="3">ID: <%= appointments[i].patientID %></th>
+                    <th class="patientName">Patient ID:</th>
+                    <th class="patientName" colspan="2"><%=appointments[i].patientID%></th>
+
+                </tr>
+                <tr>
+                    <th class="patientName">Patient Name:</th>
+                    <th class="patientName" colspan="2"><%=appointments[i].patientName%></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -52,9 +58,9 @@
                     <th>Time</th>
                 </tr>
                 <tr>
-                    <td><%= appointments[i].date %></td>
-                    <td><%= appointments[i].day %></td>
-                    <td><%= appointments[i].startTime + '-' +  appointments[i].endTime %></td>
+                    <td><%=appointments[i].date.substr(0,6) + appointments[i].date.substr(8,2)%></td>
+                    <td><%=appointments[i].day.substr(0,3)%></td>
+                    <td><%= appointments[i].startTime + ' - ' +  appointments[i].endTime %></td>
                 </tr>
                 </tbody>
                 <% } %>
