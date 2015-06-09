@@ -27,6 +27,7 @@ module.exports = function (app, passport) {
         var query = Appointment.find({});
         console.log('profile for user ' + req.session.user.userID);
         query.where('patientID').equals(parseInt(req.session.user.userID)).exec(function (err, appointments) {
+            appointments.sort(compareAppointments);
             res.render('profile', {user: req.user, appointments: appointments});
         });
     });
@@ -70,8 +71,9 @@ module.exports = function (app, passport) {
 
     app.get('/doctorSchedule', ensureAuthenticated, function (req, res) {
         var query = Appointment.find({});
-        query.where('doctorID').equals(parseInt(req.session.user.userID)).exec(function (err, appo) {
-            res.render('doctorSchedule',{appointments:appo});
+        query.where('doctorID').equals(parseInt(req.session.user.userID)).exec(function (err, appointments) {
+            appointments.sort(compareAppointments);
+            res.render('doctorSchedule',{appointments:appointments});
         });
     });
 
@@ -468,8 +470,8 @@ module.exports = function (app, passport) {
                                 availableApps.push({
                                     date: startTimeOfWorkDay.toString("dd/MM/yyyy"),
                                     day: doctor.WorkDay[i].day,
-                                    start: startTimeOfWorkDay.toString("HH:mm"),
-                                    end: startTimeOfWorkDay.addMinutes(doctor.appointmentDuration).toString("HH:mm"),
+                                    startTime: startTimeOfWorkDay.toString("HH:mm"),
+                                    endTime: startTimeOfWorkDay.addMinutes(doctor.appointmentDuration).toString("HH:mm"),
                                     dateObj: startTimeOfWorkDay
                                 });
                             } else {
@@ -477,21 +479,9 @@ module.exports = function (app, passport) {
                             }
                         }
                     } // workdays FOR loop
-                    console.log('starting sort');
-                    availableApps.sort(function (a, b) {
-                        if (a.dateObj.isBefore(b.dateObj)) {
-                            return -1;
-                        } else if (a.dateObj.isAfter(b.dateObj)) {
-                            return 1;
-                        } else if (Date.parseExact(a.start, "HH:mm").isBefore(Date.parseExact(b.start, "HH:mm"))) {
-                            return -1;
-                        } else if (Date.parseExact(a.start, "HH:mm").isAfter(Date.parseExact(b.start, "HH:mm"))) {
-                            return 1;
-                        } else {
-                            return 0;
-                        }
-                    });
-                    console.log('finished sorting');
+
+                    availableApps.sort(compareAppointments);
+
                     user.findOne({}).where('userID').equals(userID).exec(function (err, user) {
                         callback(null, availableApps, {userVals: user, docVals: doctor});
                     });
@@ -513,5 +503,16 @@ module.exports = function (app, passport) {
         }
         console.log('user is not authenticated');
         res.redirect('/login');
+    }
+
+    function compareAppointments(a,b) {
+        if (a.date < b.date)
+            return -1;
+        if (a.date > b.date)
+            return 1;
+        if (a.startTime < b.startTime)
+            return -1;
+        else
+            return 1;
     }
 };

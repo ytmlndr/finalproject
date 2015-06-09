@@ -22,6 +22,10 @@ table{
    background-color: #0b97c4;
 }
 
+thead{
+    background: lightslategray;
+}
+
 td, th{
     margin: 0 0;
 }
