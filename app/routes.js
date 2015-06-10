@@ -28,7 +28,8 @@ module.exports = function (app, passport) {
         console.log('profile for user ' + req.session.user.userID);
         query.where('patientID').equals(parseInt(req.session.user.userID)).exec(function (err, appointments) {
             appointments.sort(compareAppointments);
-            res.render('profile', {user: req.user, appointments: appointments});
+            var nextAppointments = appointments.filter(removeOldAppointments);
+            res.render('profile', {user: req.user, appointments: nextAppointments});
         });
     });
 
@@ -459,13 +460,6 @@ module.exports = function (app, passport) {
                                 }
                             }
 
-                            // clear appointments that are earlier than current time or scheduled
-                            if(((startTimeOfWorkDay.getYear() > date.getYear())
-                                || (startTimeOfWorkDay.getMonth() > date.getMonth() && startTimeOfWorkDay.getFullYear()== date.getFullYear())
-                                || (startTimeOfWorkDay.getDate() > date.getDate() && startTimeOfWorkDay.getMonth() == date.getMonth() && startTimeOfWorkDay.getFullYear() >= date.getFullYear())
-                                || ((startTimeOfWorkDay.getDate() == date.getDate() && startTimeOfWorkDay.getMonth() == date.getMonth() && startTimeOfWorkDay.getFullYear() == date.getFullYear())
-                                && (startTimeOfWorkDay.getHours() >= date.getHours() && startTimeOfWorkDay.getMinutes() > date.getMinutes())))
-                                && !hourIsInDoctorAppointments) {
                                 console.log('going to add an appointment to display');
                                 availableApps.push({
                                     date: startTimeOfWorkDay.toString("dd/MM/yyyy"),
@@ -474,22 +468,20 @@ module.exports = function (app, passport) {
                                     endTime: startTimeOfWorkDay.addMinutes(doctor.appointmentDuration).toString("HH:mm"),
                                     dateObj: startTimeOfWorkDay
                                 });
-                            } else {
-                                startTimeOfWorkDay.addMinutes(doctor.appointmentDuration);
-                            }
                         }
                     } // workdays FOR loop
 
                     availableApps.sort(compareAppointments);
-
+                    var nextavailableApps = availableApps.filter(removeOldAppointments);
                     user.findOne({}).where('userID').equals(userID).exec(function (err, user) {
-                        callback(null, availableApps, {userVals: user, docVals: doctor});
+                        callback(null, nextavailableApps, {userVals: user, docVals: doctor});
                     });
                 }
-            ], function (err, availableApps, doctor) {
+            ], function (err, nextavailableApps, doctor) {
                 if (!err) {
                     console.log("going to render");
-                    res.render('doctorAvaApp', {doctor: doctor, availableappointments: availableApps});
+
+                    res.render('doctorAvaApp', {doctor: doctor, availableappointments: nextavailableApps});
                 }
             }
         );
@@ -506,13 +498,43 @@ module.exports = function (app, passport) {
     }
 
     function compareAppointments(a,b) {
-        if (a.date < b.date)
+        if (a.date.split('/')[2] < b.date.split('/')[2])
             return -1;
-        if (a.date > b.date)
+        if (a.date.split('/')[2] > b.date.split('/')[2])
+            return 1;
+        if (a.date.split('/')[1] < b.date.split('/')[1])
+            return -1;
+        if (a.date.split('/')[1] > b.date.split('/')[1])
+            return 1;
+        if (a.date.split('/')[0] < b.date.split('/')[0])
+            return -1;
+        if (a.date.split('/')[0] > b.date.split('/')[0])
             return 1;
         if (a.startTime < b.startTime)
             return -1;
         else
             return 1;
+    }
+
+    function removeOldAppointments(apo){
+        var now = new Date();
+        var apodate = new Date();
+
+        apodate.setYear(apo.date.split('/')[2]);
+        apodate.setMonth(apo.date.split('/')[1]-1);
+        apodate.setDate(apo.date.split('/')[0]);
+        apodate.setHours(apo.startTime.split(':')[0]);
+        apodate.setMinutes(apo.startTime.split(':')[1]);
+
+        if (now.isBefore(apodate))
+            return apo;
+
+       /* return ((apo.date.split('/')[2] > now.getYear.splice(0,2)) ||
+                    (apo.date.split('/')[2] == now.getYear.splice(0,2) &&
+                        (apo.date.split('/')[1] > (now.getMonth()+1) ||
+                            (apo.date.split('/')[1] == (now.getMonth()+1) &&
+                            apo.date.split('/')[0] >= (now.getDate()) &&
+                            apo.startTime > now.getTime))));*/
+
     }
 };
