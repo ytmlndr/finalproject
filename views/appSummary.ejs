@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Profile Page</title>
+    <title>Appointment Summary</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="profile.css">
-
 </head>
 <body>
 <nav class="navbar navbar-default navbar-fixed-top">
@@ -34,23 +33,7 @@
         </div>
     </div>
 </nav>
-<form action="/doctorprofile" method="post" id="docprofileform" class="form-horizontal" role="form">
-    <% if (message.length > 0) { %>
-    <div class="alert alert-danger"><%= message%></div>
-    <% } %>
-<div class="input-group">
-                    <span class="input-group-addon">
-                        <i class="glyphicon glyphicon-pencil"></i>
-                    </span>
-    <input id="pid" class="form-control"  name="pid" placeholder="Enter Patient Id To Add Summary">
-</div>
-<div class="input-group">
-    <div class="form-group">
-        <div class="col-sm-12 controls">
-            <button id="btn-submit" href="#" class="btn btn-success">Submit</button>
-        </div>
-    </div>
-</div>
-</form>
+
+
 </body>
 </html>

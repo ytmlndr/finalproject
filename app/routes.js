@@ -67,7 +67,7 @@ module.exports = function (app, passport) {
     });
 
     app.get('/doctorprofile', ensureAuthenticated, function (req, res) {
-        res.render('doctorprofile', {user: req.user});
+        res.render('doctorprofile', {user: req.user, message:""});
     });
 
     app.get('/doctorSchedule', ensureAuthenticated, function (req, res) {
@@ -89,6 +89,11 @@ module.exports = function (app, passport) {
 
     app.get('/doctoreditdetails', ensureAuthenticated, function (req, res) {
         res.render('doctoreditdetails', {user: req.user ,message:""});
+    });
+
+    app.get('/appSummary', ensureAuthenticated, function (req, res) {
+        console.log("in App Summary");
+        res.render('appSummary', {user: req.user ,message:""});
     });
 
     app.get('/searchdoctor', ensureAuthenticated, function (req, res) {
@@ -222,6 +227,43 @@ module.exports = function (app, passport) {
         });
     });
 
+    app.post('/doctorprofile', ensureAuthenticated, function (req, res) {
+        var query = Appointment.find({});
+
+        if(req.body.pid.length==29){ // Maccabi
+            req.body.pid = req.body.pid.substring(8,17);
+        }
+        if(req.body.pid.length==33){ // Clallit
+            req.body.pid = req.body.pid.substring(19,28);
+        }
+        if(req.body.pid.length==38){ // Meaohedet
+            req.body.pid = req.body.pid.substring(8,17);
+        }
+        if(req.body.pid.length==21){ // Leomit
+            req.body.pid = req.body.pid.substring(3,12);
+        }
+        query.where('patientID','doctorID').equals(parseInt(req.body.pid),parseInt(req.session.user.userID)).exec(function (err, appointments) {
+            if(appointments) {
+                appointments.sort(compareAppointments);
+                var nextAppointment = appointments.filter(removeOldAppointments);
+                nextAppointment = nextAppointment[0];
+                var today = new Date();
+
+                if ( nextAppointment && ((nextAppointment.date.split('/')[1] - 1) == today.getMonth() &&
+                    nextAppointment.date.split('/')[0] == today.getDate())) {
+                    //res.redirect('/appSummary', {user: req.user, appointments: nextAppointment});
+                    res.redirect('/appSummary');
+                } else {
+                    res.render('/doctorprofile', {message: "Patient Dose Not Have Appointments Today"});
+                }
+            }
+            else{
+                console.log("NoT Found Appointments");
+                res.render('/doctorprofile', {message: "Patient Dose Not Have Appointments Today"});
+            }
+        });
+    });
+
     app.post('/register', function (req, res) {
         var user = new user({userID: parseInt(req.body.username, 10), password: req.body.password});
         user.save(function (err) {
@@ -306,7 +348,7 @@ module.exports = function (app, passport) {
                 var hh = appointment.endTime.toString().split(":")[0];
                 var mm = appointment.endTime.toString().split(":")[1];
 
-                appointment.endTime = Mod.calctNotificationSendTime(req.body.date, hh, mm, doctor.appointmentDuration * (-1));
+                appointment.endTime = Mod.calctNotificationSendTime(req.body.date, hh, mm, doctor.appointmentDuration);
                 appointment.endTime = appointment.endTime.toString().split(" ")[4];
                 appointment.endTime = appointment.endTime.toString().substr(0, 5);
 
@@ -359,7 +401,7 @@ module.exports = function (app, passport) {
                 console.log('login successfully');
                 if (user.IsDoctor) {
                     req.session.user = user;
-                    return res.redirect('/doctorprofile');
+                    return res.render('doctorprofile',{user: req.user , message:""});
                 } else {
                     patient.update({userID: user.userID}, {
                         $set: {
