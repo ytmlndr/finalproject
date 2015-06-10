@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c47c2ab-8e88-477a-9e25-c9fbe40f9261" name="Default" comment="* add doctor name to appointment shown in profile&#10;* changed some var names in doctorAvaAPP&#10;* profile, doctorSched  appointment sort!&#10;* changed the sorting algo (one for all)&#10;* update &#10;&#10;update!">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/css/doctorSched.css" afterPath="$PROJECT_DIR$/views/css/doctorSched.css" />
+    <list default="true" id="9c47c2ab-8e88-477a-9e25-c9fbe40f9261" name="Default" comment="* add doctor name to appointment shown in profile&#10;* changed some var names in doctorAvaAPP&#10;* profile, doctorSched  appointment sort!&#10;* changed the sorting algo (one for all)&#10;&#10;* fix bug when clearing appointments that are earlier than current time or scheduled - in doctorAvaApp&#10;&#10;&#10;update!">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes.js" afterPath="$PROJECT_DIR$/app/routes.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -28,23 +27,23 @@
       <file leaf-file-name="routes.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/routes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.56920075">
-              <caret line="469" column="35" selection-start-line="469" selection-start-column="35" selection-end-line="469" selection-end-column="35" />
+            <state vertical-scroll-proportion="0.6296296">
+              <caret line="76" column="77" selection-start-line="76" selection-start-column="77" selection-end-line="76" selection-end-column="77" />
               <folding>
                 <element signature="e#503#845#0" expanded="false" />
                 <element signature="e#1442#3065#0" expanded="false" />
                 <element signature="e#3140#3202#0" expanded="false" />
-                <element signature="e#3620#3677#0" expanded="false" />
-                <element signature="e#3750#3823#0" expanded="false" />
-                <element signature="e#3902#3980#0" expanded="false" />
-                <element signature="e#4054#4662#0" expanded="false" />
-                <element signature="e#4737#9205#0" expanded="false" />
-                <element signature="e#9255#9821#0" expanded="false" />
-                <element signature="e#9901#10806#0" expanded="false" />
-                <element signature="e#10880#11927#0" expanded="false" />
-                <element signature="e#12008#14813#0" expanded="false" />
-                <element signature="e#14866#16260#0" expanded="false" />
-                <element signature="e#16307#16363#0" expanded="false" />
+                <element signature="e#3702#3759#0" expanded="false" />
+                <element signature="e#3832#3905#0" expanded="false" />
+                <element signature="e#3984#4062#0" expanded="false" />
+                <element signature="e#4136#4744#0" expanded="false" />
+                <element signature="e#4819#9287#0" expanded="false" />
+                <element signature="e#9337#9903#0" expanded="false" />
+                <element signature="e#9983#10888#0" expanded="false" />
+                <element signature="e#10962#12009#0" expanded="false" />
+                <element signature="e#12090#14895#0" expanded="false" />
+                <element signature="e#14948#16342#0" expanded="false" />
+                <element signature="e#16389#16445#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -55,6 +54,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-0.65384614">
               <caret line="49" column="21" selection-start-line="49" selection-start-column="21" selection-end-line="49" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="doctorSchedule.ejs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/doctorSchedule.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.65384614">
+              <caret line="42" column="22" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -470,7 +479,13 @@
       <option name="project" value="LOCAL" />
       <updated>1433883009729</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="* add doctor name to appointment shown in profile&#10;* changed some var names in doctorAvaAPP&#10;* profile, doctorSched  appointment sort!&#10;* changed the sorting algo (one for all)&#10;&#10;* fix bug when clearing appointments that are earlier than current time or scheduled - in doctorAvaApp&#10;&#10;&#10;update!">
+      <created>1433923062669</created>
+      <option name="number" value="00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1433923062669</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -486,8 +501,9 @@
     <frame x="0" y="0" width="1280" height="984" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17405063" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17405063" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32996634" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17230098" sideWeight="0.48869047" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4456693" sideWeight="0.534407" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.336" sideWeight="0.49050632" order="9" side_tool="false" content_ui="tabs" />
@@ -498,7 +514,6 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4342857" sideWeight="0.64636075" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17230098" sideWeight="0.48869047" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -506,6 +521,27 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37322834" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32996634" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17230098" sideWeight="0.48869047" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4456693" sideWeight="0.534407" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.336" sideWeight="0.49050632" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34857142" sideWeight="0.46559298" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.47982553" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" x="-2" y="128" width="1366" height="482" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17405063" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37322834" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4342857" sideWeight="0.64636075" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -537,7 +573,8 @@
     <MESSAGE value="* add doctor name to appointment shown in profile&#10;* changed some var names in doctorAvaAPP" />
     <MESSAGE value="* add doctor name to appointment shown in profile&#10;* changed some var names in doctorAvaAPP&#10;&#10;update!" />
     <MESSAGE value="* add doctor name to appointment shown in profile&#10;* changed some var names in doctorAvaAPP&#10;* profile, doctorSched  appointment sort!&#10;* changed the sorting algo (one for all)&#10;&#10;update!" />
-    <option name="LAST_COMMIT_MESSAGE" value="* add doctor name to appointment shown in profile&#10;* changed some var names in doctorAvaAPP&#10;* profile, doctorSched  appointment sort!&#10;* changed the sorting algo (one for all)&#10;&#10;update!" />
+    <MESSAGE value="* add doctor name to appointment shown in profile&#10;* changed some var names in doctorAvaAPP&#10;* profile, doctorSched  appointment sort!&#10;* changed the sorting algo (one for all)&#10;&#10;* fix bug when clearing appointments that are earlier than current time or scheduled - in doctorAvaApp&#10;&#10;&#10;update!" />
+    <option name="LAST_COMMIT_MESSAGE" value="* add doctor name to appointment shown in profile&#10;* changed some var names in doctorAvaAPP&#10;* profile, doctorSched  appointment sort!&#10;* changed the sorting algo (one for all)&#10;&#10;* fix bug when clearing appointments that are earlier than current time or scheduled - in doctorAvaApp&#10;&#10;&#10;update!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -892,14 +929,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/doctorSchedule.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="42" column="22" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/css/doctorSched.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -924,25 +953,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/doctorSchedule.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.65384614">
+          <caret line="42" column="22" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/routes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.56920075">
-          <caret line="469" column="35" selection-start-line="469" selection-start-column="35" selection-end-line="469" selection-end-column="35" />
+        <state vertical-scroll-proportion="0.6296296">
+          <caret line="76" column="77" selection-start-line="76" selection-start-column="77" selection-end-line="76" selection-end-column="77" />
           <folding>
             <element signature="e#503#845#0" expanded="false" />
             <element signature="e#1442#3065#0" expanded="false" />
             <element signature="e#3140#3202#0" expanded="false" />
-            <element signature="e#3620#3677#0" expanded="false" />
-            <element signature="e#3750#3823#0" expanded="false" />
-            <element signature="e#3902#3980#0" expanded="false" />
-            <element signature="e#4054#4662#0" expanded="false" />
-            <element signature="e#4737#9205#0" expanded="false" />
-            <element signature="e#9255#9821#0" expanded="false" />
-            <element signature="e#9901#10806#0" expanded="false" />
-            <element signature="e#10880#11927#0" expanded="false" />
-            <element signature="e#12008#14813#0" expanded="false" />
-            <element signature="e#14866#16260#0" expanded="false" />
-            <element signature="e#16307#16363#0" expanded="false" />
+            <element signature="e#3702#3759#0" expanded="false" />
+            <element signature="e#3832#3905#0" expanded="false" />
+            <element signature="e#3984#4062#0" expanded="false" />
+            <element signature="e#4136#4744#0" expanded="false" />
+            <element signature="e#4819#9287#0" expanded="false" />
+            <element signature="e#9337#9903#0" expanded="false" />
+            <element signature="e#9983#10888#0" expanded="false" />
+            <element signature="e#10962#12009#0" expanded="false" />
+            <element signature="e#12090#14895#0" expanded="false" />
+            <element signature="e#14948#16342#0" expanded="false" />
+            <element signature="e#16389#16445#0" expanded="false" />
           </folding>
         </state>
       </provider>

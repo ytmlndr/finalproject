@@ -74,7 +74,8 @@ module.exports = function (app, passport) {
         var query = Appointment.find({});
         query.where('doctorID').equals(parseInt(req.session.user.userID)).exec(function (err, appointments) {
             appointments.sort(compareAppointments);
-            res.render('doctorSchedule',{appointments:appointments});
+           var nextAppointments = appointments.filter(removeOldAppointments);
+            res.render('doctorSchedule',{appointments:nextAppointments});
         });
     });
 
@@ -528,13 +529,5 @@ module.exports = function (app, passport) {
 
         if (now.isBefore(apodate))
             return apo;
-
-       /* return ((apo.date.split('/')[2] > now.getYear.splice(0,2)) ||
-                    (apo.date.split('/')[2] == now.getYear.splice(0,2) &&
-                        (apo.date.split('/')[1] > (now.getMonth()+1) ||
-                            (apo.date.split('/')[1] == (now.getMonth()+1) &&
-                            apo.date.split('/')[0] >= (now.getDate()) &&
-                            apo.startTime > now.getTime))));*/
-
     }
 };
