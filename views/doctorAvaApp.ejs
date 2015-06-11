@@ -37,8 +37,9 @@
 <div class="panel panel-default panel-doctor">
     <div id="doctorDetails" class="panel-heading"><%= doctor.userVals.f_name + ' ' + doctor.userVals.l_name +
         ' | ' + doctor.docVals.PhoneNumber + ' | ' + doctor.docVals.ClinicAddress.street +
-        ',' +  doctor.docVals.ClinicAddress.city %></div>
-    <span id="doctorID" class="hidden"><%=doctor.docVals.userID%></span>
+        ',' + doctor.docVals.ClinicAddress.city %></div>
+    <span id="doctorID" class="hidden"><%= doctor.docVals.userID %></span>
+
     <div class="container-fluid container-table">
         <div class="table-responsive">
             <table class="table table-hover table-striped">
@@ -63,7 +64,7 @@
     </div>
 </div>
 <script type="text/javascript">
-    $(document).ready(function() {
+    $(document).ready(function () {
         $('tr').click(function () {
             var date = $(this).children('#date').text();
             var day = $(this).children('#day').text();
@@ -73,7 +74,7 @@
             $.ajax({
                 url: '/scheduleAppointment',
                 type: 'POST',
-                data: {'doctorID':doctorID,'date': date, 'day': day, 'start': start, 'doctorName': doctorName},
+                data: {'doctorID': doctorID, 'date': date, 'day': day, 'start': start, 'doctorName': doctorName},
                 dataType: 'json',
                 success: function (data, textStatus, jqXHR) {
                     if (typeof data.redirect == 'string') {

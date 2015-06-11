@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="editdetails.css">
     <link rel="stylesheet" href="profile.css">
 </head>
 <body>
@@ -34,6 +35,32 @@
     </div>
 </nav>
 
+<div class="container">
+    <div id="detailsbox" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <div class="panel-title">Enter Summary, <%=pid %>, <%=pname %>, <%=date %> </div>
+            </div>
+            <div class="panel-body">
+                <form action="/appSummary?pid=<%=pid %>" method="post" id="docprofileform" class="form-horizontal" role="form">
+                    <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-pencil"></i>
+                    </span>
+                        <textarea class="form-control" name="sum" id="sum" rows="6"></textarea>
+                    </div>
+                    <div class="input-group">
+                        <div class="form-group">
+                            <div class="col-sm-12 controls">
+                                <button id="btn-submit" href="#" class="btn btn-success">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>

@@ -1,80 +1,87 @@
 <!DOCTYPE html>
 <html>
 <head lang="en">
-	<meta charset="UTF-8">
-	<title>Update Details</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
-	<link rel="stylesheet" href="editdetails.css">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Update Details</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="editdetails.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 <nav class="navbar navbar-default navbar-fixed-top">
-	<div class="container-fluid">
-		<div class="navbar-head">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="#">Welcome</a>
-		</div>
+    <div class="container-fluid">
+        <div class="navbar-head">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Welcome</a>
+        </div>
 
-		<div class="collapse navbar-collapse" id="navbar-collapse-1">
-			<ul class="nav navbar-nav">
-				<li ><a href="/doctorprofile">Home<span class="sr-only">(current)</span></a></li>
-				<li><a href="/doctorSchedule">My Schedule</a></li>
+        <div class="collapse navbar-collapse" id="navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="/doctorprofile">Home<span class="sr-only">(current)</span></a></li>
+                <li><a href="/doctorSchedule">My Schedule</a></li>
                 <li><a href="#">Appointments History</a></li>
-				<li class="active" ><a href="#">Update Details</a></li>
-				<p class="navbar-text navbar-right"><a href="/logout" class="navbar-link">Log out</a></p>
-			</ul>
-		</div>
-	</div>
+                <li class="active"><a href="#">Update Details</a></li>
+                <p class="navbar-text navbar-right"><a href="/logout" class="navbar-link">Log out</a></p>
+            </ul>
+        </div>
+    </div>
 </nav>
 
 <div class="container">
-	<div id="detailsbox" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-		<div class="panel panel-info">
-			<div class="panel-heading">
-				<div class="panel-title">Update Details</div>
-			</div>
-			<div class="panel-body">
+    <div id="detailsbox" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <div class="panel-title">Update Details</div>
+            </div>
+            <div class="panel-body">
                 <% if (message.length > 0) { %>
-                <div class="alert alert-danger"><%= message%></div>
+                <div class="alert alert-danger"><%= message %></div>
                 <% } %>
-				<form action="/doctoreditdetails" method="post" id="editdetailsform" class="form-horizontal" role="form">
-					<div class="input-group">
+                <form action="/doctoreditdetails" method="post" id="editdetailsform" class="form-horizontal"
+                      role="form">
+                    <div class="input-group">
 					<span class="input-group-addon">
 						<i class="glyphicon glyphicon-pencil"></i>
 					</span>
-						<input id="city" class="form-control" name="city" placeholder="clinic city">
-						<input id="street" class="form-control" name="street" placeholder="clinic street">
-					</div>
-					<div class="input-group">
+                        <input id="city" class="form-control" name="city" placeholder="clinic city">
+                        <input id="street" class="form-control" name="street" placeholder="clinic street">
+                    </div>
+                    <div class="input-group">
 					<span class="input-group-addon">
 						<i class="glyphicon glyphicon-pencil"></i>
 					</span>
-						<input id="phone-number" class="form-control" name="phone" placeholder="Phone-Number">
-					</div>
-					<div class="input-group">
+                        <input id="phone-number" class="form-control" name="phone" placeholder="Phone-Number">
+                    </div>
+                    <div class="input-group">
 					<span class="input-group-addon">
 						<i class="glyphicon glyphicon-pencil"></i>
 					</span>
-						<input id="appointment-duration" class="form-control" type="number" name="duration" placeholder="Appointment Duration time (10,15,20)">
-					</div>
-					<div class="input-group">
-						<div class="form-group">
-							<div class="col-sm-12 controls">
-								<button id="btn-save" href="#" class="btn btn-success">Save</button>
-							</div>
-						</div>
-					</div>
-					<li><a href="/doctorprofile">Cancel</a></li>
-				</form> <!-- editdetailsform -->
-			</div> <!-- panel-body -->
-		</div> <!-- panel panel-info -->
-	</div> <!-- editdetailsbox -->
+                        <input id="appointment-duration" class="form-control" type="number" name="duration"
+                               placeholder="Appointment Duration time (10,15,20)">
+                    </div>
+                    <div class="input-group">
+                        <div class="form-group">
+                            <div class="col-sm-12 controls">
+                                <button id="btn-save" href="#" class="btn btn-success">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                    <li><a href="/doctorprofile">Cancel</a></li>
+                </form>
+                <!-- editdetailsform -->
+            </div>
+            <!-- panel-body -->
+        </div>
+        <!-- panel panel-info -->
+    </div>
+    <!-- editdetailsbox -->
 </div>
 </body>
 </html>

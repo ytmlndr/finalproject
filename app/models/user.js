@@ -11,30 +11,30 @@ db.once('open', function callback() {
 });
 
 var userSchema = new Schema({
-    userID: { type: Number, required: true, unique: true },
-    password: { type: String, required: true},
-    IsDoctor: { type: Boolean},
-    f_name:{type:String},
-    l_name:{type:String}
+    userID: {type: Number, required: true, unique: true},
+    password: {type: String, required: true},
+    IsDoctor: {type: Boolean},
+    f_name: {type: String},
+    l_name: {type: String}
 });
 
-userSchema.pre('save', function(next) {
+userSchema.pre('save', function (next) {
     var user = this;
     console.log('starting hashing process for user ' + user.username);
-    if(!user.isModified('password')) {
+    if (!user.isModified('password')) {
         console.log('user password is not modified');
         return next();
     }
-    bcrypt.genSalt(GENT_SALT, function(err, salt) {
+    bcrypt.genSalt(GENT_SALT, function (err, salt) {
         console.log('generating user salt');
-        if(err) {
+        if (err) {
             console.log('could not generate user salt');
             return next(err);
         }
         var progress = 0;
-        bcrypt.hash(user.password, salt, progress, function(err, hash) {
+        bcrypt.hash(user.password, salt, progress, function (err, hash) {
             console.log('generating user hash');
-            if(err) {
+            if (err) {
                 console.log('could not create hash ');
                 return next(err);
             }
@@ -45,10 +45,10 @@ userSchema.pre('save', function(next) {
     });
 });
 
-userSchema.methods.comparePassword = function(candidatePassword, cb) {
+userSchema.methods.comparePassword = function (candidatePassword, cb) {
     console.log('comparing passwords');
-    bcrypt.compare(candidatePassword, this.password, function(err, isMatch) {
-        if(err) {
+    bcrypt.compare(candidatePassword, this.password, function (err, isMatch) {
+        if (err) {
             console.log('encoutered error');
             return cb(err);
         }

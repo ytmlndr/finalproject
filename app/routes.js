@@ -36,14 +36,18 @@ module.exports = function (app, passport) {
     app.get('/cancelApp', ensureAuthenticated, function (req, res) {
         var url_parts = URL.parse(req.url, true);
         var query = url_parts.query;
-        if(query.app != undefined)
-        {
+        if (query.app != undefined) {
             var i = parseInt(query.app);
             var q = Appointment.find({});
             q.where('patientID').equals(parseInt(req.session.user.userID)).exec(function (err, appointments) {
-                Appointment.where().findOneAndRemove({patientID : appointments[i].patientID,doctorID : appointments[i].doctorID,date : appointments[i].date,
-                    day : appointments[i].day,startTime : appointments[i].startTime},function(err){
-                    if(!err){
+                Appointment.where().findOneAndRemove({
+                    patientID: appointments[i].patientID,
+                    doctorID: appointments[i].doctorID,
+                    date: appointments[i].date,
+                    day: appointments[i].day,
+                    startTime: appointments[i].startTime
+                }, function (err) {
+                    if (!err) {
                         var Mod = require('./pushHandler') // do not include the dot js
                         Mod.deletePushHandler(appointments[i].pushID);
 
@@ -51,13 +55,13 @@ module.exports = function (app, passport) {
                         q.where('patientID').equals(parseInt(req.session.user.userID)).exec(function (err, appoin) {
                             res.render('cancelApp', {user: req.user, appointments: appoin});
                         })
-                    }else{
+                    } else {
                         console.log("Err in remove");
                         res.render('cancelApp', {user: req.user, appointments: appointments});
                     }
                 });
             });
-        }else{
+        } else {
             loggedUser = req.user;
             var query = Appointment.find({});
             query.where('patientID').equals(parseInt(req.session.user.userID)).exec(function (err, appointments) {
@@ -67,15 +71,15 @@ module.exports = function (app, passport) {
     });
 
     app.get('/doctorprofile', ensureAuthenticated, function (req, res) {
-        res.render('doctorprofile', {user: req.user, message:""});
+        res.render('doctorprofile', {user: req.user, message: ""});
     });
 
     app.get('/doctorSchedule', ensureAuthenticated, function (req, res) {
         var query = Appointment.find({});
         query.where('doctorID').equals(parseInt(req.session.user.userID)).exec(function (err, appointments) {
             appointments.sort(compareAppointments);
-           var nextAppointments = appointments.filter(removeOldAppointments);
-            res.render('doctorSchedule',{appointments:nextAppointments});
+            var nextAppointments = appointments.filter(removeOldAppointments);
+            res.render('doctorSchedule', {appointments: nextAppointments});
         });
     });
 
@@ -84,16 +88,50 @@ module.exports = function (app, passport) {
     });
 
     app.get('/editdetails', ensureAuthenticated, function (req, res) {
-        res.render('editdetails', {user: req.user , message:""});
+        res.render('editdetails', {user: req.user, message: ""});
     });
 
     app.get('/doctoreditdetails', ensureAuthenticated, function (req, res) {
-        res.render('doctoreditdetails', {user: req.user ,message:""});
+        res.render('doctoreditdetails', {user: req.user, message: ""});
     });
 
     app.get('/appSummary', ensureAuthenticated, function (req, res) {
-        console.log("in App Summary");
-        res.render('appSummary', {user: req.user ,message:""});
+        var url_parts = URL.parse(req.url, true);
+        var query = url_parts.query;
+        res.render('appSummary', {user: req.user, pid: query.pid, pname: query.pname, date: query.date});
+    });
+
+    app.post('/appSummary', ensureAuthenticated, function (req, res) {
+        var url_parts = URL.parse(req.url, true);
+        var query = url_parts.query;
+        var q = Appointment.find({});
+        q.where('patientID', 'doctorID').equals(parseInt(query.pid), parseInt(req.session.user.userID)).exec(function (err, appointments) {
+            appointments.sort(compareAppointments);
+            var nextAppointment = appointments.filter(removeOldAppointments);
+            nextAppointment = nextAppointment[0];
+            var today = new Date();
+            if (nextAppointment && ((nextAppointment.date.split('/')[1] - 1) == today.getMonth() &&
+                nextAppointment.date.split('/')[0] == today.getDate())) {
+                Appointment.update({
+                    doctorID: parseInt(req.session.user.userID, 10),
+                    patientID: parseInt(query.pid, 10),
+                    date: nextAppointment.date,
+                    startTime: nextAppointment.startTime,
+                    endTime: nextAppointment.endTime
+                }, {
+                    $set: {
+                        "summary": req.body.sum
+                    }
+                }, function (err) {
+                    if (err) {
+                        res.render('appSummary');
+                    } else {
+                        console.log("summary update successful");
+                        res.redirect("/doctorprofile");
+                    }
+                });
+            }
+        });
     });
 
     app.get('/searchdoctor', ensureAuthenticated, function (req, res) {
@@ -230,36 +268,35 @@ module.exports = function (app, passport) {
     app.post('/doctorprofile', ensureAuthenticated, function (req, res) {
         var query = Appointment.find({});
 
-        if(req.body.pid.length==29){ // Maccabi
-            req.body.pid = req.body.pid.substring(8,17);
+        if (req.body.pid.length == 29) { // Maccabi
+            req.body.pid = req.body.pid.substring(8, 17);
         }
-        if(req.body.pid.length==33){ // Clallit
-            req.body.pid = req.body.pid.substring(19,28);
+        if (req.body.pid.length == 33) { // Clallit
+            req.body.pid = req.body.pid.substring(19, 28);
         }
-        if(req.body.pid.length==38){ // Meaohedet
-            req.body.pid = req.body.pid.substring(8,17);
+        if (req.body.pid.length == 38) { // Meaohedet
+            req.body.pid = req.body.pid.substring(8, 17);
         }
-        if(req.body.pid.length==21){ // Leomit
-            req.body.pid = req.body.pid.substring(3,12);
+        if (req.body.pid.length == 21) { // Leomit
+            req.body.pid = req.body.pid.substring(3, 12);
         }
-        query.where('patientID','doctorID').equals(parseInt(req.body.pid),parseInt(req.session.user.userID)).exec(function (err, appointments) {
-            if(appointments) {
+        query.where('patientID', 'doctorID').equals(parseInt(req.body.pid), parseInt(req.session.user.userID)).exec(function (err, appointments) {
+            if (appointments) {
                 appointments.sort(compareAppointments);
                 var nextAppointment = appointments.filter(removeOldAppointments);
                 nextAppointment = nextAppointment[0];
                 var today = new Date();
 
-                if ( nextAppointment && ((nextAppointment.date.split('/')[1] - 1) == today.getMonth() &&
+                if (nextAppointment && ((nextAppointment.date.split('/')[1] - 1) == today.getMonth() &&
                     nextAppointment.date.split('/')[0] == today.getDate())) {
-                    //res.redirect('/appSummary', {user: req.user, appointments: nextAppointment});
-                    res.redirect('/appSummary');
+                    res.redirect('/appSummary?pid=' + nextAppointment.patientID + "&pname=" + nextAppointment.patientName + "&date=" + nextAppointment.date);
                 } else {
-                    res.render('/doctorprofile', {message: "Patient Dose Not Have Appointments Today"});
+                    res.render('doctorprofile', {message: "Patient Dose Not Have Appointments Today"});
                 }
             }
-            else{
+            else {
                 console.log("NoT Found Appointments");
-                res.render('/doctorprofile', {message: "Patient Dose Not Have Appointments Today"});
+                res.render('doctorprofile', {message: "Patient Dose Not Have Appointments Today"});
             }
         });
     });
@@ -290,15 +327,15 @@ module.exports = function (app, passport) {
                 }
             }, function (err) {
                 if (err) {
-                    res.render('doctoreditdetails',{message: "All Fields Must Be Not Empty"});
+                    res.render('doctoreditdetails', {message: "All Fields Must Be Not Empty"});
                 } else {
                     console.log("doctor update successful");
                 }
             });
 
             return res.redirect('/doctorprofile');
-        } else{
-            res.render('doctoreditdetails',{message: "All Fields Must Be Not Empty"});
+        } else {
+            res.render('doctoreditdetails', {message: "All Fields Must Be Not Empty"});
         }
     });
 
@@ -316,7 +353,7 @@ module.exports = function (app, passport) {
                 }
             }, function (err) {
                 if (err) {
-                    res.render('editdetails',{message: "All Fields Must Be Not Empty"});
+                    res.render('editdetails', {message: "All Fields Must Be Not Empty"});
                 } else {
                     console.log("patient update successful");
                 }
@@ -324,12 +361,12 @@ module.exports = function (app, passport) {
 
             return res.redirect('/profile');
         }
-        else{
-            res.render('editdetails',{message: "All Fields Must Be Not Empty"});
+        else {
+            res.render('editdetails', {message: "All Fields Must Be Not Empty"});
         }
     });
 
-    app.post('/scheduleAppointment', ensureAuthenticated,function (req, res) {
+    app.post('/scheduleAppointment', ensureAuthenticated, function (req, res) {
         console.log('inside scheduleAppointment');
         console.log('trying to schedule for user ' + req.body.doctorID);
         doctor.findOne({}).where('userID').equals(parseInt(req.body.doctorID)).exec(function (err, doctor) {
@@ -353,7 +390,7 @@ module.exports = function (app, passport) {
                 appointment.endTime = appointment.endTime.toString().substr(0, 5);
 
                 //push send:
-                 //var msg="you have an appiuntment at "+appointment.date+" "+appointment.startTime+"!";
+                //var msg="you have an appiuntment at "+appointment.date+" "+appointment.startTime+"!";
                 patient.findOne({}).where('userID').equals(parseInt(req.session.user.userID)).exec(function (err, pat) {
                     if (!err) {
                         var NotificationCode = Mod.sendPushHandler(appointment.date, appointment.startTime, pat.MinutesToBeNotifyBefor, GLOBAL.token).then(function (notificationCode) {
@@ -401,7 +438,7 @@ module.exports = function (app, passport) {
                 console.log('login successfully');
                 if (user.IsDoctor) {
                     req.session.user = user;
-                    return res.render('doctorprofile',{user: req.user , message:""});
+                    return res.render('doctorprofile', {user: req.user, message: ""});
                 } else {
                     patient.update({userID: user.userID}, {
                         $set: {
@@ -435,8 +472,8 @@ module.exports = function (app, passport) {
                         callback(null, doc, parseInt(query.userID));
                     });
                 },
-                function(doctor, userID, callback) {
-                    Appointment.find({}).where('doctorID', userID).exec(function(err, apps) {
+                function (doctor, userID, callback) {
+                    Appointment.find({}).where('doctorID', userID).exec(function (err, apps) {
                         callback(null, doctor, userID, apps);
                     });
                 },
@@ -486,15 +523,15 @@ module.exports = function (app, passport) {
                         while (startTimeOfWorkDay.isBefore(endTimeOfWorkDay)) {
                             var date = new Date();
                             var appointmentTime = startTimeOfWorkDay.toTimeString().split(':')[0].toString() + ":" + startTimeOfWorkDay.toTimeString().split(':')[1].toString();
-                            var appointmentDate = startTimeOfWorkDay.getDate() + '/' + (startTimeOfWorkDay.getMonth()+1) + '/' + startTimeOfWorkDay.getFullYear();
+                            var appointmentDate = startTimeOfWorkDay.getDate() + '/' + (startTimeOfWorkDay.getMonth() + 1) + '/' + startTimeOfWorkDay.getFullYear();
                             console.log('j is ' + appointmentDate + ' ' + appointmentTime);
                             hourIsInDoctorAppointments = false;
 
-                             // check if there is an appointment at hour j exists
-                            for(var t = 0; t < doctorAppointments.length; t++) {
+                            // check if there is an appointment at hour j exists
+                            for (var t = 0; t < doctorAppointments.length; t++) {
                                 console.log('comparing between ' + doctorAppointments[t].date + ' ' + appointmentDate + ' and between ' + doctorAppointments[t].startTime + ' ' + appointmentTime);
                                 if ((doctorAppointments[t].date.split('/')[0] == startTimeOfWorkDay.getDate())
-                                    && (doctorAppointments[t].date.split('/')[1] == (startTimeOfWorkDay.getMonth()+1))
+                                    && (doctorAppointments[t].date.split('/')[1] == (startTimeOfWorkDay.getMonth() + 1))
                                     && (doctorAppointments[t].date.split('/')[2] == startTimeOfWorkDay.getFullYear())
                                     && (doctorAppointments[t].startTime == appointmentTime)) {
                                     hourIsInDoctorAppointments = true;
@@ -503,14 +540,14 @@ module.exports = function (app, passport) {
                                 }
                             }
 
-                                console.log('going to add an appointment to display');
-                                availableApps.push({
-                                    date: startTimeOfWorkDay.toString("dd/MM/yyyy"),
-                                    day: doctor.WorkDay[i].day,
-                                    startTime: startTimeOfWorkDay.toString("HH:mm"),
-                                    endTime: startTimeOfWorkDay.addMinutes(doctor.appointmentDuration).toString("HH:mm"),
-                                    dateObj: startTimeOfWorkDay
-                                });
+                            console.log('going to add an appointment to display');
+                            availableApps.push({
+                                date: startTimeOfWorkDay.toString("dd/MM/yyyy"),
+                                day: doctor.WorkDay[i].day,
+                                startTime: startTimeOfWorkDay.toString("HH:mm"),
+                                endTime: startTimeOfWorkDay.addMinutes(doctor.appointmentDuration).toString("HH:mm"),
+                                dateObj: startTimeOfWorkDay
+                            });
                         }
                     } // workdays FOR loop
 
@@ -540,7 +577,7 @@ module.exports = function (app, passport) {
         res.redirect('/login');
     }
 
-    function compareAppointments(a,b) {
+    function compareAppointments(a, b) {
         if (a.date.split('/')[2] < b.date.split('/')[2])
             return -1;
         if (a.date.split('/')[2] > b.date.split('/')[2])
@@ -559,12 +596,12 @@ module.exports = function (app, passport) {
             return 1;
     }
 
-    function removeOldAppointments(apo){
+    function removeOldAppointments(apo) {
         var now = new Date();
         var apodate = new Date();
 
         apodate.setYear(apo.date.split('/')[2]);
-        apodate.setMonth(apo.date.split('/')[1]-1);
+        apodate.setMonth(apo.date.split('/')[1] - 1);
         apodate.setDate(apo.date.split('/')[0]);
         apodate.setHours(apo.startTime.split(':')[0]);
         apodate.setMinutes(apo.startTime.split(':')[1]);

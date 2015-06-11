@@ -9,40 +9,48 @@
 
 </head>
 <body>
-    <div class="container">
-        <div id="loginbox" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-            <div class="panel panel-info">
-                <div class="panel-heading">
-                    <div class="panel-title">Sign In</div>
-                </div>
-                <div class="panel-body">
-                    <% if (message.length > 0) { %>
-                        <div class="alert alert-danger"><%= message%></div>
-                    <% } %>
-                    <form action="/login" method="post" id="loginform" class="form-horizontal" role="form">
-                        <div class="input-group">
+<div class="container">
+    <div id="loginbox" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <div class="panel-title">Sign In</div>
+            </div>
+            <div class="panel-body">
+                <% if (message.length > 0) { %>
+                <div class="alert alert-danger"><%= message %></div>
+                <% } %>
+                <form action="/login" method="post" id="loginform" class="form-horizontal" role="form">
+                    <div class="input-group">
                     <span class="input-group-addon">
                         <i class="glyphicon glyphicon-user"></i>
                     </span>
-                            <input id="login-username" type="number" oninput="checkLength()" class="form-control" name="username" value="" placeholder="id">
-                        </div> <!-- username input-group -->
-                        <div class="input-group">
+                        <input id="login-username" type="number" oninput="checkLength()" class="form-control"
+                               name="username" value="" placeholder="id">
+                    </div>
+                    <!-- username input-group -->
+                    <div class="input-group">
                     <span class="input-group-addon">
                         <i class="glyphicon glyphicon-lock"></i>
                     </span>
-                            <input id="login-password" type="password" class="form-control" name="password" placeholder="password">
-                        </div> <!-- password input-group -->
-                        <div class="input-group">
-                            <div class="form-group">
-                                <div class="col-sm-12 controls">
-                                    <button id="btn-login" href="#" class="btn btn-success">Login</button>
-                                </div>
+                        <input id="login-password" type="password" class="form-control" name="password"
+                               placeholder="password">
+                    </div>
+                    <!-- password input-group -->
+                    <div class="input-group">
+                        <div class="form-group">
+                            <div class="col-sm-12 controls">
+                                <button id="btn-login" href="#" class="btn btn-success">Login</button>
                             </div>
                         </div>
-                    </form> <!-- loginform -->
-                </div> <!-- panel-body -->
-            </div> <!-- panel panel-info -->
-        </div> <!-- loginbox -->
+                    </div>
+                </form>
+                <!-- loginform -->
+            </div>
+            <!-- panel-body -->
+        </div>
+        <!-- panel panel-info -->
     </div>
+    <!-- loginbox -->
+</div>
 </body>
 </html>

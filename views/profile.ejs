@@ -13,7 +13,8 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-head">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -43,18 +44,17 @@
                 <th>Day</th>
                 <th>Time</th>
             </tr>
-            <%if(appointments) {
-                for(var i=0; i<appointments.length; i++) {
-
+            <% if(appointments) {
+            for(var i = 0; i < appointments.length; i++) {
             %>
-                <tr>
-                    <td><%=appointments[i].doctorName%></td>
-                    <td><%=appointments[i].date.substr(0,6) + appointments[i].date.substr(8,2)%></td>
-                    <td><%=appointments[i].day.substr(0,3)%></td>
-                    <td><%=appointments[i].startTime%></td>
-                </tr>
-                <%}
-            }%>
+            <tr>
+                <td><%= appointments[i].doctorName %></td>
+                <td><%= appointments[i].date.substr(0, 6) + appointments[i].date.substr(8, 2) %></td>
+                <td><%= appointments[i].day.substr(0, 3) %></td>
+                <td><%= appointments[i].startTime %></td>
+            </tr>
+            <% }
+            } %>
         </table>
     </div>
 </div>

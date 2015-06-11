@@ -8,105 +8,114 @@
     <link rel="stylesheet" href="searchDoctor.css">
 </head>
 <body>
-    <nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-default navbar-fixed-top">
 
-            <div class="container-fluid" class="navbar-head">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Welcome</a>
-            </div>
-
-            <div class="collapse navbar-collapse" id="navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li><a href="/profile">Home<span class="sr-only">(current)</span></a></li>
-                    <li class="active"><a href="#">Schedule Appointment</a></li>
-                    <li><a href="/cancelApp">Cancel Appointment</a></li>
-                    <li><a href="/editdetails">Update Details</a></li>
-                    <p class="navbar-text navbar-right"><a href="/logout" class="navbar-link">Log out</a></p>
-                </ul>
-            </div>
-
-    </nav>
-    <form class='searchForm' action="/searchdoctor" method="post" >
-        <div class="well carousel-search hidden-sm">
-            <div class="btn-group">
-                <input id="firstname" class="form-control" name="fname" value="" placeholder="First Name">
-            </div>
-            <div class="btn-group">
-                <input id="lastname" class="form-control" name="lname" value="" placeholder="Last Name">
-            </div>
-            <div class="btn-group">
-                <button data-toggle="dropdown" class="btn btn-default dropdown-toggle"  data-placeholder="Medical Fields">Medical Fields<span class="caret"></span></button>
-                <ul class="dropdown-menu">
-                <%for(var i=0; i<mfs.length; i++) {%>
-                    <li><input type="checkbox" id="mf<%=i%>" name="mfs" value="<%= mfs[i].field %>"><label for="mf<%=i%>"><%=mfs[i].field%></label></li>
-                <%}%>
-                </ul>
-            </div>
-            <div class="btn-group">
-                <button data-toggle="dropdown" class="btn btn-default dropdown-toggle"  data-placeholder="Medical Fields">Languages<span class="caret"></span></button>
-                <ul class="dropdown-menu">
-                <%for(var i=0; i<langs.length; i++) {%>
-                    <li><input type="checkbox" id="lang<%=i%>" name="langs" value="<%=langs[i].language%>"><label for="lang<%=i%>"><%=langs[i].language%></label></li>
-                <%}%>
-                </ul>
-            </div>
-            <div class="btn-group">
-                <button data-toggle="dropdown" class="btn btn-default dropdown-toggle"  data-placeholder="Days">Days<span class="caret"></span></button>
-                <ul class="dropdown-menu">
-                    <li><input type="checkbox" id="day0" name="days" value="Sunday"><label for="day0">Sunday</label></li>
-                    <li><input type="checkbox" id="day1" name="days" value="Monday"><label for="day1">Monday</label></li>
-                    <li><input type="checkbox" id="day2" name="days" value="Tuesday"><label for="day2">Tuesday</label></li>
-                    <li><input type="checkbox" id="day3" name="days" value="Wednesday"><label for="day3">Wednesday</label></li>
-                    <li><input type="checkbox" id="day4" name="days" value="Thursday"><label for="day4">Thursday</label></li>
-                    <li><input type="checkbox" id="day5" name="days" value="Friday"><label for="day5">Friday</label></li>
-                </ul>
-            </div>
-
-            <div class="btn-group">
-                    <button type="submit" id="btnSearch" class="btn btn-primary">Search</button>
-            </div>
-            <div class="btn-group">
-                <a href="/profile">Cancel</a>
-            </div>
+    <div class="container-fluid">
+        <div class="navbar-head">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Welcome</a>
         </div>
-    </form>
-    <%for(var i=0; i<doctors.length; i++) {%>
-        <div class="container-fluid container-doctor">
-            <table class="table table-responsive table-striped">
-                <tr>
-                    <th class="col-ms-1">Name:</th>
-                    <th class="col-md-3"><%=doctors[i].userVals.f_name + ' ' + doctors[i].userVals.l_name%></th>
-                </tr>
-                <tr>
-                    <td class="col-ms-1">Phone Number:</td>
-                    <td class="col-ms-3"><%=doctors[i].docVals.PhoneNumber%></td>
-                </tr>
-                <tr>
-                    <td class="col-ms-1">Address:</td>
-                    <td class="col-ms-3"><%=doctors[i].docVals.ClinicAddress.street + ' ' +doctors[i].docVals.ClinicAddress.city%></td>
-                </tr>
-                <%var workDaysString = [];
-                for(var j=0; j<doctors[i].docVals.WorkDay.length; j++) {
-                    workDaysString.push(' ' + doctors[i].docVals.WorkDay[j].day);
-                }%>
-                <tr>
-                    <td class="col-ms-1">Working Days:</td>
-                    <td class="col-ms-3"><%=workDaysString%></td>
-                </tr>
-                <span><%=doctors[i].userVals.userID%></span>
-            </table>
+
+        <div class="collapse navbar-collapse" id="navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="/profile">Home<span class="sr-only">(current)</span></a></li>
+                <li class="active"><a href="#">Schedule Appointment</a></li>
+                <li><a href="/cancelApp">Cancel Appointment</a></li>
+                <li><a href="/editdetails">Update Details</a></li>
+                <p class="navbar-text navbar-right"><a href="/logout" class="navbar-link">Log out</a></p>
+            </ul>
         </div>
-    <%}%>
+    </div>
+</nav>
+<form class='searchForm' action="/searchdoctor" method="post">
+    <div class="well carousel-search hidden-sm">
+        <div class="btn-group">
+            <input id="firstname" class="form-control" name="fname" value="" placeholder="First Name">
+        </div>
+        <div class="btn-group">
+            <input id="lastname" class="form-control" name="lname" value="" placeholder="Last Name">
+        </div>
+        <div class="btn-group">
+            <button data-toggle="dropdown" class="btn btn-default dropdown-toggle" data-placeholder="Medical Fields">
+                Medical Fields<span class="caret"></span></button>
+            <ul class="dropdown-menu">
+                <% for(var i = 0; i < mfs.length; i++) { %>
+                <li><input type="checkbox" id="mf<%= i %>" name="mfs" value="<%= mfs[i].field %>"><label
+                            for="mf<%= i %>"><%= mfs[i].field %></label></li>
+                <% } %>
+            </ul>
+        </div>
+        <div class="btn-group">
+            <button data-toggle="dropdown" class="btn btn-default dropdown-toggle" data-placeholder="Medical Fields">
+                Languages<span class="caret"></span></button>
+            <ul class="dropdown-menu">
+                <% for(var i = 0; i < langs.length; i++) { %>
+                <li><input type="checkbox" id="lang<%= i %>" name="langs" value="<%= langs[i].language %>"><label
+                            for="lang<%= i %>"><%= langs[i].language %></label></li>
+                <% } %>
+            </ul>
+        </div>
+        <div class="btn-group">
+            <button data-toggle="dropdown" class="btn btn-default dropdown-toggle" data-placeholder="Days">Days<span
+                        class="caret"></span></button>
+            <ul class="dropdown-menu">
+                <li><input type="checkbox" id="day0" name="days" value="Sunday"><label for="day0">Sunday</label></li>
+                <li><input type="checkbox" id="day1" name="days" value="Monday"><label for="day1">Monday</label></li>
+                <li><input type="checkbox" id="day2" name="days" value="Tuesday"><label for="day2">Tuesday</label></li>
+                <li><input type="checkbox" id="day3" name="days" value="Wednesday"><label for="day3">Wednesday</label>
+                </li>
+                <li><input type="checkbox" id="day4" name="days" value="Thursday"><label for="day4">Thursday</label>
+                </li>
+                <li><input type="checkbox" id="day5" name="days" value="Friday"><label for="day5">Friday</label></li>
+            </ul>
+        </div>
+
+        <div class="btn-group">
+            <button type="submit" id="btnSearch" class="btn btn-primary">Search</button>
+        </div>
+        <div class="btn-group">
+            <a href="/profile">Cancel</a>
+        </div>
+    </div>
+</form>
+<% for(var i = 0; i < doctors.length; i++) { %>
+<div class="container-fluid container-doctor">
+    <table class="table table-responsive table-striped">
+        <tr>
+            <th class="col-ms-1">Name:</th>
+            <th class="col-md-3"><%= doctors[i].userVals.f_name + ' ' + doctors[i].userVals.l_name %></th>
+        </tr>
+        <tr>
+            <td class="col-ms-1">Phone Number:</td>
+            <td class="col-ms-3"><%= doctors[i].docVals.PhoneNumber %></td>
+        </tr>
+        <tr>
+            <td class="col-ms-1">Address:</td>
+            <td class="col-ms-3"><%= doctors[i].docVals.ClinicAddress.street + ' ' + doctors[i].docVals.ClinicAddress.city %></td>
+        </tr>
+        <% var workDaysString = [];
+            for (var j = 0; j < doctors[i].docVals.WorkDay.length; j++) {
+                workDaysString.push(' ' + doctors[i].docVals.WorkDay[j].day);
+            } %>
+        <tr>
+            <td class="col-ms-1">Working Days:</td>
+            <td class="col-ms-3"><%= workDaysString %></td>
+        </tr>
+        <span><%= doctors[i].userVals.userID %></span>
+    </table>
+</div>
+<% } %>
 <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="dropdowns-enhancement.js"></script>
 <script type="text/javascript">
-    $('.container-doctor').click(function() {
+    $('.container-doctor').click(function () {
         window.document.location = '/doctorAvaApp?userID=' + $(this).children('span').text();
     })
 </script>
