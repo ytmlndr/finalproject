@@ -5,7 +5,7 @@ function sendPushHandler(i_date, i_appintmentTime, i_timeToBeNotify, i_tokenArry
 
     // setup config vars
     var icon = "http://s30.postimg.org/puwlu78vl/doctor1.png";
-    var android_header = "FP-T2";
+    var android_header = "AppointMe";
     var msg = "you have an appiontment at " + i_date + " " + i_appintmentTime + "!";      // TO DO - choose better msg :)
 
     // Converts the date as required from Pushwoosh

@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c47c2ab-8e88-477a-9e25-c9fbe40f9261" name="Default" comment="* update the 'cencel appointment.ejs' file to show the doctor name for each appointment">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/cancelApp.ejs" afterPath="$PROJECT_DIR$/views/cancelApp.ejs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/Appointment.js" afterPath="$PROJECT_DIR$/app/models/Appointment.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/pushHandler.js" afterPath="$PROJECT_DIR$/app/pushHandler.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes.js" afterPath="$PROJECT_DIR$/app/routes.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="finalproject.iws" />
@@ -28,18 +29,28 @@
       <file leaf-file-name="routes.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/routes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-23.448277">
-              <caret line="65" column="43" selection-start-line="65" selection-start-column="36" selection-end-line="65" selection-end-column="43" />
+            <state vertical-scroll-proportion="-10.75">
+              <caret line="294" column="39" selection-start-line="294" selection-start-column="39" selection-end-line="294" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pushHandler.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pushHandler.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/pushHandler.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.48324516">
+            <state vertical-scroll-proportion="0.0">
               <caret line="40" column="23" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Appointment.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/models/Appointment.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.26984128">
+              <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -48,7 +59,7 @@
       <file leaf-file-name="cancelApp.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/cancelApp.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.423077">
+            <state vertical-scroll-proportion="0.0">
               <caret line="43" column="26" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
               <folding />
             </state>
@@ -113,15 +124,15 @@
         <option value="$PROJECT_DIR$/views/doctorSchedule.ejs" />
         <option value="$PROJECT_DIR$/views/index.ejs" />
         <option value="$PROJECT_DIR$/views/register.ejs" />
-        <option value="$PROJECT_DIR$/app/models/Appointment.js" />
         <option value="$PROJECT_DIR$/app/models/doctor.js" />
         <option value="$PROJECT_DIR$/app/models/medicalfield.js" />
         <option value="$PROJECT_DIR$/app/models/patient.js" />
         <option value="$PROJECT_DIR$/app/models/user.js" />
         <option value="$PROJECT_DIR$/server.js" />
-        <option value="$PROJECT_DIR$/app/routes.js" />
         <option value="$PROJECT_DIR$/views/cancelApp.ejs" />
         <option value="$PROJECT_DIR$/app/pushHandler.js" />
+        <option value="$PROJECT_DIR$/app/models/Appointment.js" />
+        <option value="$PROJECT_DIR$/app/routes.js" />
       </list>
     </option>
   </component>
@@ -175,7 +186,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -243,6 +253,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -483,7 +494,13 @@
       <option name="project" value="LOCAL" />
       <updated>1434030605637</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="* update the 'cencel appointment.ejs' file to show the doctor name for each appointment">
+      <created>1434054665232</created>
+      <option name="number" value="00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1434054665232</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -890,13 +907,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Appointment.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/doctor.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -957,17 +967,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-23.448277">
-          <caret line="65" column="43" selection-start-line="65" selection-start-column="36" selection-end-line="65" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/cancelApp.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.423077">
+        <state vertical-scroll-proportion="0.0">
           <caret line="43" column="26" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
           <folding />
         </state>
@@ -975,8 +977,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/pushHandler.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48324516">
+        <state vertical-scroll-proportion="0.0">
           <caret line="40" column="23" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.75">
+          <caret line="294" column="39" selection-start-line="294" selection-start-column="39" selection-end-line="294" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Appointment.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.26984128">
+          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
           <folding />
         </state>
       </provider>

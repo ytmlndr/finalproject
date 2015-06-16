@@ -57,7 +57,7 @@ module.exports = function (app, passport) {
 
                         console.log("Removed");
                         q.where('patientID').equals(parseInt(req.session.user.userID)).exec(function (err, appoin) {
-                           appoin.sort(compareAppointments);
+                            appoin.sort(compareAppointments);
                             var nextAppointments = appoin.filter(removeOldAppointments);
                             res.render('cancelApp', {user: req.user, appointments: nextAppointments});
                         })
@@ -480,8 +480,8 @@ module.exports = function (app, passport) {
                         callback(null, doc, parseInt(query.userID));
                     });
                 },
-                function(doctor, userID, callback) {
-                    Appointment.find({}).where('doctorID', userID).exec(function(err, apps) {
+                function (doctor, userID, callback) {
+                    Appointment.find({}).where('doctorID', userID).exec(function (err, apps) {
                         callback(null, doctor, userID, apps);
                     });
                 },
@@ -531,15 +531,15 @@ module.exports = function (app, passport) {
                         while (startTimeOfWorkDay.isBefore(endTimeOfWorkDay)) {
                             var date = new Date();
                             var appointmentTime = startTimeOfWorkDay.toTimeString().split(':')[0].toString() + ":" + startTimeOfWorkDay.toTimeString().split(':')[1].toString();
-                            var appointmentDate = startTimeOfWorkDay.getDate() + '/' + (startTimeOfWorkDay.getMonth()+1) + '/' + startTimeOfWorkDay.getFullYear();
+                            var appointmentDate = startTimeOfWorkDay.getDate() + '/' + (startTimeOfWorkDay.getMonth() + 1) + '/' + startTimeOfWorkDay.getFullYear();
                             console.log('j is ' + appointmentDate + ' ' + appointmentTime);
                             hourIsInDoctorAppointments = false;
 
                             // check if there is an appointment at hour j exists
-                            for(var t = 0; t < doctorAppointments.length; t++) {
+                            for (var t = 0; t < doctorAppointments.length; t++) {
                                 //console.log('comparing between ' + doctorAppointments[t].date + ' ' + appointmentDate + ' and between ' + doctorAppointments[t].startTime + ' ' + appointmentTime);
                                 if ((doctorAppointments[t].date.split('/')[0] == startTimeOfWorkDay.getDate())
-                                    && (doctorAppointments[t].date.split('/')[1] == (startTimeOfWorkDay.getMonth()+1))
+                                    && (doctorAppointments[t].date.split('/')[1] == (startTimeOfWorkDay.getMonth() + 1))
                                     && (doctorAppointments[t].date.split('/')[2] == startTimeOfWorkDay.getFullYear())
                                     && (doctorAppointments[t].startTime == appointmentTime)) {
                                     hourIsInDoctorAppointments = true;
@@ -547,10 +547,9 @@ module.exports = function (app, passport) {
                                     break;
 
 
-
                                 }
                             }
-                            if(hourIsInDoctorAppointments == false) {
+                            if (hourIsInDoctorAppointments == false) {
                                 console.log('going to add an appointment to display');
                                 availableApps.push({
                                     date: startTimeOfWorkDay.toString("dd/MM/yyyy"),
@@ -559,7 +558,7 @@ module.exports = function (app, passport) {
                                     endTime: startTimeOfWorkDay.addMinutes(doctor.appointmentDuration).toString("HH:mm"),
                                     dateObj: startTimeOfWorkDay
                                 });
-                            }else{
+                            } else {
                                 startTimeOfWorkDay.addMinutes(doctor.appointmentDuration).toString("HH:mm");
                             }
                         }

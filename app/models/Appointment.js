@@ -10,7 +10,9 @@ var appointmentSchema = new Schema({
     date: {type: String},
     day: {type: String},
     startTime: {type: String},
+    realStartTime: {type: String},
     endTime: {type: String},
+    realEndTime: {type: String},
     pushID: {type: String},
     summary: {type: String}
 });
