@@ -7,6 +7,7 @@ var languages = require('./models/languages');
 var URL = require('url');
 var async = require('async');
 var datejs = require('datejs'); // DO NOT DELETE THIS
+var utils = require('./functionsUtils');
 GLOBAL.token; //tokenID will be here
 
 module.exports = function (app, passport) {
@@ -27,8 +28,8 @@ module.exports = function (app, passport) {
         var query = Appointment.find({});
         console.log('profile for user ' + req.session.user.userID);
         query.where('patientID').equals(parseInt(req.session.user.userID)).exec(function (err, appointments) {
-            appointments.sort(compareAppointments);
-            var nextAppointments = appointments.filter(removeOldAppointments);
+            appointments.sort(utils.compareAppointments);
+            var nextAppointments = appointments.filter(utils.removeOldAppointments);
             res.render('profile', {user: req.user, appointments: nextAppointments});
         });
     });
@@ -41,8 +42,8 @@ module.exports = function (app, passport) {
             var q = Appointment.find({});
             q.where('patientID').equals(parseInt(req.session.user.userID)).exec(function (err, appointments) {
 
-                appointments.sort(compareAppointments);
-                var nextAppointments = appointments.filter(removeOldAppointments);
+                appointments.sort(utils.compareAppointments);
+                var nextAppointments = appointments.filter(utils.removeOldAppointments);
 
                 Appointment.where().findOneAndRemove({
                     patientID: nextAppointments[i].patientID,
@@ -57,8 +58,8 @@ module.exports = function (app, passport) {
 
                         console.log("Removed");
                         q.where('patientID').equals(parseInt(req.session.user.userID)).exec(function (err, appoin) {
-                            appoin.sort(compareAppointments);
-                            var nextAppointments = appoin.filter(removeOldAppointments);
+                            appoin.sort(utils.compareAppointments);
+                            var nextAppointments = appoin.filter(utils.removeOldAppointments);
                             res.render('cancelApp', {user: req.user, appointments: nextAppointments});
                         })
                     } else {
@@ -71,8 +72,8 @@ module.exports = function (app, passport) {
             loggedUser = req.user;
             var query = Appointment.find({});
             query.where('patientID').equals(parseInt(req.session.user.userID)).exec(function (err, appointments) {
-                appointments.sort(compareAppointments);
-                var nextAppointments = appointments.filter(removeOldAppointments);
+                appointments.sort(utils.compareAppointments);
+                var nextAppointments = appointments.filter(utils.removeOldAppointments);
                 res.render('cancelApp', {user: req.user, appointments: nextAppointments});
             });
         }
@@ -85,8 +86,8 @@ module.exports = function (app, passport) {
     app.get('/doctorSchedule', ensureAuthenticated, function (req, res) {
         var query = Appointment.find({});
         query.where('doctorID').equals(parseInt(req.session.user.userID)).exec(function (err, appointments) {
-            appointments.sort(compareAppointments);
-            var nextAppointments = appointments.filter(removeOldAppointments);
+            appointments.sort(utils.compareAppointments);
+            var nextAppointments = appointments.filter(utils.removeOldAppointments);
             res.render('doctorSchedule', {appointments: nextAppointments});
         });
     });
@@ -114,8 +115,8 @@ module.exports = function (app, passport) {
         var query = url_parts.query;
         var q = Appointment.find({});
         q.where('patientID', 'doctorID').equals(parseInt(query.pid), parseInt(req.session.user.userID)).exec(function (err, appointments) {
-            appointments.sort(compareAppointments);
-            var nextAppointment = appointments.filter(removeOldAppointments);
+            appointments.sort(utils.compareAppointments);
+            var nextAppointment = appointments.filter(utils.removeOldAppointments);
             nextAppointment = nextAppointment[0];
             var today = new Date();
             if (nextAppointment && ((nextAppointment.date.split('/')[1] - 1) == today.getMonth() &&
@@ -290,8 +291,8 @@ module.exports = function (app, passport) {
         }
         query.where('patientID', 'doctorID').equals(parseInt(req.body.pid), parseInt(req.session.user.userID)).exec(function (err, appointments) {
             if (appointments) {
-                appointments.sort(compareAppointments);
-                var nextAppointment = appointments.filter(removeOldAppointments);
+                appointments.sort(utils.compareAppointments);
+                var nextAppointment = appointments.filter(utils.removeOldAppointments);
                 nextAppointment = nextAppointment[0];
                 var today = new Date();
 
@@ -387,6 +388,8 @@ module.exports = function (app, passport) {
                 appointment.date = req.body.date;
                 appointment.day = req.body.day;
                 appointment.startTime = req.body.start;
+                appointment.realStartTime = req.body.start;
+
 
                 var Mod = require('./pushHandler') // do not include the dot js
                 appointment.endTime = appointment.startTime;
@@ -396,7 +399,7 @@ module.exports = function (app, passport) {
                 appointment.endTime = Mod.calctNotificationSendTime(req.body.date, hh, mm, doctor.appointmentDuration * (-1));
                 appointment.endTime = appointment.endTime.toString().split(" ")[4];
                 appointment.endTime = appointment.endTime.toString().substr(0, 5);
-
+                appointment.realEndTime = appointment.endTime;
                 //push send:
                 //var msg="you have an appiuntment at "+appointment.date+" "+appointment.startTime+"!";
                 patient.findOne({}).where('userID').equals(parseInt(req.session.user.userID)).exec(function (err, pat) {
@@ -554,8 +557,8 @@ module.exports = function (app, passport) {
                                 availableApps.push({
                                     date: startTimeOfWorkDay.toString("dd/MM/yyyy"),
                                     day: doctor.WorkDay[i].day,
-                                    startTime: startTimeOfWorkDay.toString("HH:mm"),
-                                    endTime: startTimeOfWorkDay.addMinutes(doctor.appointmentDuration).toString("HH:mm"),
+                                    realStartTime: startTimeOfWorkDay.toString("HH:mm"),
+                                    realEndTime: startTimeOfWorkDay.addMinutes(doctor.appointmentDuration).toString("HH:mm"),
                                     dateObj: startTimeOfWorkDay
                                 });
                             } else {
@@ -564,8 +567,8 @@ module.exports = function (app, passport) {
                         }
                     } // workdays FOR loop
 
-                    availableApps.sort(compareAppointments);
-                    var nextavailableApps = availableApps.filter(removeOldAppointments);
+                    availableApps.sort(utils.compareAppointments);
+                    var nextavailableApps = availableApps.filter(utils.removeOldAppointments);
                     user.findOne({}).where('userID').equals(userID).exec(function (err, user) {
                         callback(null, nextavailableApps, {userVals: user, docVals: doctor});
                     });
@@ -603,7 +606,7 @@ module.exports = function (app, passport) {
             return -1;
         if (a.date.split('/')[0] > b.date.split('/')[0])
             return 1;
-        if (a.startTime < b.startTime)
+        if (a.realStartTime < b.realStartTime)
             return -1;
         else
             return 1;
