@@ -1,7 +1,6 @@
-
 module.exports = {
 
-    compareAppointments: function(a, b) {
+    compareAppointments: function (a, b) {
         if (a.date.split('/')[2] < b.date.split('/')[2])
             return -1;
         if (a.date.split('/')[2] > b.date.split('/')[2])
@@ -20,22 +19,21 @@ module.exports = {
             return 1;
     },
 
-    removeOldAppointments: function(apo) {
+    removeOldAppointments: function (apo) {
         var now = new Date();
         var apodate = new Date();
 
         apodate.setYear(apo.date.split('/')[2]);
         apodate.setMonth(apo.date.split('/')[1] - 1);
         apodate.setDate(apo.date.split('/')[0]);
-        apodate.setHours(apo.startTime.split(':')[0]);
-        apodate.setMinutes(apo.startTime.split(':')[1]);
-
+        apodate.setHours(apo.realEndTime.split(':')[0]);
+        apodate.setMinutes(apo.realEndTime.split(':')[1]);
         if (now.isBefore(apodate))
             return apo;
     },
 
-    diffInMinutesBetweenTwoHours: function(a, b) {
-        return (parseInt(a.split(":")[0])*60 + parseInt(a.split(":")[1])) - (parseInt(b.split(":")[0])*60 + parseInt(b.split(":")[1]));
+    diffInMinutesBetweenTwoHours: function (a, b) {
+        return (parseInt(a.split(":")[0]) * 60 + parseInt(a.split(":")[1])) - (parseInt(b.split(":")[0]) * 60 + parseInt(b.split(":")[1]));
     }
 
 };

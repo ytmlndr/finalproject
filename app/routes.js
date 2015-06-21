@@ -8,6 +8,7 @@ var URL = require('url');
 var async = require('async');
 var datejs = require('datejs'); // DO NOT DELETE THIS
 var utils = require('./functionsUtils');
+var delayNotification = require('../config/delayNotifierComponent');
 GLOBAL.token; //tokenID will be here
 
 module.exports = function (app, passport) {
@@ -22,7 +23,6 @@ module.exports = function (app, passport) {
         GLOBAL.token = query.tokenID; //GETTING TOKEN FROM URL
         res.render('index', {message: req.session.messages});
     });
-
 
     app.get('/profile', ensureAuthenticated, function (req, res) {
         var query = Appointment.find({});
@@ -50,7 +50,7 @@ module.exports = function (app, passport) {
                     doctorID: nextAppointments[i].doctorID,
                     date: nextAppointments[i].date,
                     day: nextAppointments[i].day,
-                    startTime: nextAppointments[i].startTime
+                    realStartTime: nextAppointments[i].realStartTime
                 }, function (err) {
                     if (!err) {
                         var Mod = require('./pushHandler') // do not include the dot js
@@ -108,6 +108,7 @@ module.exports = function (app, passport) {
         var url_parts = URL.parse(req.url, true);
         var query = url_parts.query;
         res.render('appSummary', {user: req.user, pid: query.pid, pname: query.pname, date: query.date});
+
     });
 
     app.post('/appSummary', ensureAuthenticated, function (req, res) {
@@ -125,8 +126,7 @@ module.exports = function (app, passport) {
                     doctorID: parseInt(req.session.user.userID, 10),
                     patientID: parseInt(query.pid, 10),
                     date: nextAppointment.date,
-                    startTime: nextAppointment.startTime,
-                    endTime: nextAppointment.endTime
+                    startTime: nextAppointment.startTime
                 }, {
                     $set: {
                         "summary": req.body.sum
@@ -275,40 +275,56 @@ module.exports = function (app, passport) {
     });
 
     app.post('/doctorprofile', ensureAuthenticated, function (req, res) {
-        var query = Appointment.find({});
+            var query = Appointment.find({});
 
-        if (req.body.pid.length == 29) { // Maccabi
-            req.body.pid = req.body.pid.substring(8, 17);
-        }
-        if (req.body.pid.length == 33) { // Clallit
-            req.body.pid = req.body.pid.substring(19, 28);
-        }
-        if (req.body.pid.length == 38) { // Meaohedet
-            req.body.pid = req.body.pid.substring(8, 17);
-        }
-        if (req.body.pid.length == 21) { // Leomit
-            req.body.pid = req.body.pid.substring(3, 12);
-        }
-        query.where('patientID', 'doctorID').equals(parseInt(req.body.pid), parseInt(req.session.user.userID)).exec(function (err, appointments) {
-            if (appointments) {
-                appointments.sort(utils.compareAppointments);
-                var nextAppointment = appointments.filter(utils.removeOldAppointments);
-                nextAppointment = nextAppointment[0];
-                var today = new Date();
+            if (req.body.pid.length == 29) { // Maccabi
+                req.body.pid = req.body.pid.substring(8, 17);
+            }
+            if (req.body.pid.length == 33) { // Clallit
+                req.body.pid = req.body.pid.substring(19, 28);
+            }
+            if (req.body.pid.length == 38) { // Meaohedet
+                req.body.pid = req.body.pid.substring(8, 17);
+            }
+            if (req.body.pid.length == 21) { // Leomit
+                req.body.pid = req.body.pid.substring(3, 12);
+            }
+            query.where('patientID', 'doctorID').equals(parseInt(req.body.pid), parseInt(req.session.user.userID)).exec(function (err, appointments) {
+                if (appointments) {
+                    appointments.sort(utils.compareAppointments);
+                    var nextAppointment = appointments.filter(utils.removeOldAppointments);
+                    nextAppointment = nextAppointment[0];
+                    var today = new Date();
 
-                if (nextAppointment && ((nextAppointment.date.split('/')[1] - 1) == today.getMonth() &&
-                    nextAppointment.date.split('/')[0] == today.getDate())) {
-                    res.redirect('/appSummary?pid=' + nextAppointment.patientID + "&pname=" + nextAppointment.patientName + "&date=" + nextAppointment.date);
-                } else {
+                    if (nextAppointment && ((nextAppointment.date.split('/')[1] - 1) == today.getMonth() &&
+                        nextAppointment.date.split('/')[0] == today.getDate())) {
+                        res.redirect('/appSummary?pid=' + nextAppointment.patientID + "&pname=" + nextAppointment.patientName + "&date=" + nextAppointment.date);
+
+
+                        //////
+                        ////////
+
+                        doctor.findOne({}).where('userID').equals(parseInt(parseInt(nextAppointment.doctorID))).exec(function (err, doctor) {
+                            if (!err) {
+
+                                nextAppointment.realStartTime = today.getHours() + ':' + today.getMinutes();
+                                delayNotification.patientEnter(nextAppointment, doctor.appointmentDuration);
+                            }
+                        });
+
+
+                    } else {
+                        res.render('doctorprofile', {message: "Patient Dose Not Have Appointments Today"});
+                    }
+                }
+                else {
+                    console.log("NoT Found Appointments");
                     res.render('doctorprofile', {message: "Patient Dose Not Have Appointments Today"});
                 }
-            }
-            else {
-                console.log("NoT Found Appointments");
-                res.render('doctorprofile', {message: "Patient Dose Not Have Appointments Today"});
-            }
-        });
-    });
+            });
+        }
+    )
+    ;
 
     app.post('/register', function (req, res) {
         var user = new user({userID: parseInt(req.body.username, 10), password: req.body.password});
@@ -390,21 +406,20 @@ module.exports = function (app, passport) {
                 appointment.startTime = req.body.start;
                 appointment.realStartTime = req.body.start;
 
-
-                var Mod = require('./pushHandler') // do not include the dot js
                 appointment.endTime = appointment.startTime;
                 var hh = appointment.endTime.toString().split(":")[0];
                 var mm = appointment.endTime.toString().split(":")[1];
-
+                var Mod = require('./pushHandler') // do not include the dot js
                 appointment.endTime = Mod.calctNotificationSendTime(req.body.date, hh, mm, doctor.appointmentDuration * (-1));
                 appointment.endTime = appointment.endTime.toString().split(" ")[4];
                 appointment.endTime = appointment.endTime.toString().substr(0, 5);
                 appointment.realEndTime = appointment.endTime;
+                appointment.delayTime = 0;
                 //push send:
                 //var msg="you have an appiuntment at "+appointment.date+" "+appointment.startTime+"!";
                 patient.findOne({}).where('userID').equals(parseInt(req.session.user.userID)).exec(function (err, pat) {
                     if (!err) {
-                        var NotificationCode = Mod.sendPushHandler(appointment.date, appointment.startTime, pat.MinutesToBeNotifyBefor, GLOBAL.token).then(function (notificationCode) {
+                        var NotificationCode = Mod.sendPushHandler(appointment.date, appointment.realStartTime, pat.MinutesToBeNotifyBefor, GLOBAL.token).then(function (notificationCode) {
                             console.log("the NotificationCode is:  " + notificationCode); // <<NotificationCode>> need to be saved in the DB!
                             appointment.pushID = notificationCode;
 
@@ -535,16 +550,18 @@ module.exports = function (app, passport) {
                             var date = new Date();
                             var appointmentTime = startTimeOfWorkDay.toTimeString().split(':')[0].toString() + ":" + startTimeOfWorkDay.toTimeString().split(':')[1].toString();
                             var appointmentDate = startTimeOfWorkDay.getDate() + '/' + (startTimeOfWorkDay.getMonth() + 1) + '/' + startTimeOfWorkDay.getFullYear();
-                            console.log('j is ' + appointmentDate + ' ' + appointmentTime);
+                            //console.log('j is ' + appointmentDate + ' ' + appointmentTime);
                             hourIsInDoctorAppointments = false;
 
                             // check if there is an appointment at hour j exists
                             for (var t = 0; t < doctorAppointments.length; t++) {
+                                var diffBetweenAppo = utils.diffInMinutesBetweenTwoHours(doctorAppointments[t].startTime, appointmentTime);
                                 //console.log('comparing between ' + doctorAppointments[t].date + ' ' + appointmentDate + ' and between ' + doctorAppointments[t].startTime + ' ' + appointmentTime);
                                 if ((doctorAppointments[t].date.split('/')[0] == startTimeOfWorkDay.getDate())
                                     && (doctorAppointments[t].date.split('/')[1] == (startTimeOfWorkDay.getMonth() + 1))
                                     && (doctorAppointments[t].date.split('/')[2] == startTimeOfWorkDay.getFullYear())
-                                    && (doctorAppointments[t].startTime == appointmentTime)) {
+                                    && (diffBetweenAppo >= 0 && diffBetweenAppo < doctor.appointmentDuration)) {
+                                    // && (doctorAppointments[t].startTime == appointmentTime)) {
                                     hourIsInDoctorAppointments = true;
                                     console.log('found hour as an appointment: ' + appointmentTime);
                                     break;
@@ -553,12 +570,14 @@ module.exports = function (app, passport) {
                                 }
                             }
                             if (hourIsInDoctorAppointments == false) {
-                                console.log('going to add an appointment to display');
+                                //console.log('going to add an appointment to display');
                                 availableApps.push({
                                     date: startTimeOfWorkDay.toString("dd/MM/yyyy"),
                                     day: doctor.WorkDay[i].day,
+                                    startTime: startTimeOfWorkDay.toString("HH:mm"),
                                     realStartTime: startTimeOfWorkDay.toString("HH:mm"),
-                                    realEndTime: startTimeOfWorkDay.addMinutes(doctor.appointmentDuration).toString("HH:mm"),
+                                    endTime: startTimeOfWorkDay.addMinutes(doctor.appointmentDuration).toString("HH:mm"),
+                                    realEndTime: startTimeOfWorkDay.toString("HH:mm"),
                                     dateObj: startTimeOfWorkDay
                                 });
                             } else {
@@ -593,36 +612,5 @@ module.exports = function (app, passport) {
         res.redirect('/login');
     }
 
-    function compareAppointments(a, b) {
-        if (a.date.split('/')[2] < b.date.split('/')[2])
-            return -1;
-        if (a.date.split('/')[2] > b.date.split('/')[2])
-            return 1;
-        if (a.date.split('/')[1] < b.date.split('/')[1])
-            return -1;
-        if (a.date.split('/')[1] > b.date.split('/')[1])
-            return 1;
-        if (a.date.split('/')[0] < b.date.split('/')[0])
-            return -1;
-        if (a.date.split('/')[0] > b.date.split('/')[0])
-            return 1;
-        if (a.realStartTime < b.realStartTime)
-            return -1;
-        else
-            return 1;
-    }
-
-    function removeOldAppointments(apo) {
-        var now = new Date();
-        var apodate = new Date();
-
-        apodate.setYear(apo.date.split('/')[2]);
-        apodate.setMonth(apo.date.split('/')[1] - 1);
-        apodate.setDate(apo.date.split('/')[0]);
-        apodate.setHours(apo.startTime.split(':')[0]);
-        apodate.setMinutes(apo.startTime.split(':')[1]);
-
-        if (now.isBefore(apodate))
-            return apo;
-    }
-};
+}
+;

@@ -61,7 +61,7 @@
             <tr>
                 <td><%= appointments[i].date.substr(0, 6) + appointments[i].date.substr(8, 2) %></td>
                 <td><%= appointments[i].day.substr(0, 3) %></td>
-                <td><%= appointments[i].startTime + ' - ' + appointments[i].endTime %></td>
+                <td><%= appointments[i].realStartTime + ' - ' + appointments[i].realEndTime %></td>
             </tr>
             </tbody>
             <% } %>

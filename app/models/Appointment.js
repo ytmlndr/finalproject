@@ -13,6 +13,7 @@ var appointmentSchema = new Schema({
     realStartTime: {type: String},
     endTime: {type: String},
     realEndTime: {type: String},
+    delayTime: {type: Number, required: true},
     pushID: {type: String},
     summary: {type: String}
 });

@@ -53,7 +53,7 @@
                 <td><%= appointments[i].doctorName %></td>
                 <td><%= appointments[i].date.substr(0, 6) + appointments[i].date.substr(8, 2) %></td>
                 <td><%= appointments[i].day.substr(0, 3) %></td>
-                <td><%= appointments[i].startTime %></td>
+                <td><%= appointments[i].realStartTime %></td>
                 <td>
                     <div class="input-group" class="form-group" class="col-sm-12 controls">
                         <button id="btn-cancel" href="#" onclick="place(<%= i %>)" class="btn btn-danger">Cancel
