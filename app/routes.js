@@ -306,8 +306,14 @@ module.exports = function (app, passport) {
 
                         doctor.findOne({}).where('userID').equals(parseInt(parseInt(nextAppointment.doctorID))).exec(function (err, doctor) {
                             if (!err) {
-
-                                nextAppointment.realStartTime = today.getHours() + ':' + today.getMinutes();
+                                var realminute;
+                                if (today.getMinutes() < 10) {
+                                    realminute = '0' + today.getMinutes();
+                                }
+                                else {
+                                    realminute = today.getMinutes();
+                                }
+                                nextAppointment.realStartTime = today.getHours() + ':' + realminute;
                                 delayNotification.patientEnter(nextAppointment, doctor.appointmentDuration);
                             }
                         });
@@ -419,7 +425,7 @@ module.exports = function (app, passport) {
                 //var msg="you have an appiuntment at "+appointment.date+" "+appointment.startTime+"!";
                 patient.findOne({}).where('userID').equals(parseInt(req.session.user.userID)).exec(function (err, pat) {
                     if (!err) {
-                        var NotificationCode = Mod.sendPushHandler(appointment.date, appointment.realStartTime, pat.MinutesToBeNotifyBefor, GLOBAL.token).then(function (notificationCode) {
+                        var NotificationCode = Mod.sendPushHandler(appointment.date, appointment.realStartTime, pat.MinutesToBeNotifyBefor, GLOBAL.token, false).then(function (notificationCode) {
                             console.log("the NotificationCode is:  " + notificationCode); // <<NotificationCode>> need to be saved in the DB!
                             appointment.pushID = notificationCode;
 
@@ -466,17 +472,19 @@ module.exports = function (app, passport) {
                     req.session.user = user;
                     return res.render('doctorprofile', {user: req.user, message: ""});
                 } else {
-                    patient.update({userID: user.userID}, {
-                        $set: {
-                            TokenID: GLOBAL.token //set Token
-                        }
-                    }, function (err) {
-                        if (err) {
-                            console.log("err");
-                        } else {
-                            console.log("Token Updated");
-                        }
-                    });
+                    if (GLOBAL.token) {
+                        patient.update({userID: user.userID}, {
+                            $set: {
+                                TokenID: GLOBAL.token //set Token
+                            }
+                        }, function (err) {
+                            if (err) {
+                                console.log("err");
+                            } else {
+                                console.log("Token Updated");
+                            }
+                        });
+                    }
                     req.session.user = user;
                     return res.redirect('/profile');
                 }

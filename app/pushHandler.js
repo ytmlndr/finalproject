@@ -1,12 +1,16 @@
 var pushWoosh = require('pushwoosh');
 var pushClient = new pushWoosh("87E34-AE233", "dAL8eLeKKzvRv6iX0CvEqSBlE2R8pPvHArPNdxBsn9OGxujeaBKvjVMqGSrtWSwxOz7xuIjM5hDfJaA40ohj");
 
-function sendPushHandler(i_date, i_appintmentTime, i_timeToBeNotify, i_tokenArry) {
+function sendPushHandler(i_date, i_appintmentTime, i_timeToBeNotify, i_tokenArry, i_delaymessage) {
 
     // setup config vars
     var icon = "http://s30.postimg.org/puwlu78vl/doctor1.png";
     var android_header = "AppointMe";
-    var msg = "you have an appiontment at " + i_date + " " + i_appintmentTime + "!";      // TO DO - choose better msg :)
+    var msg;
+    if (i_delaymessage == false)
+        msg = "You have an appiontment at " + i_date + " " + i_appintmentTime + "!";      // TO DO - choose better msg :)
+    else
+        msg = "Delay detected!, new Estimated time is:" + i_appintmentTime + "!";
 
     // Converts the date as required from Pushwoosh
 
@@ -56,9 +60,14 @@ function calctNotificationSendTime(i_date, hh, mm, TimeToBeNotifiy) {      // TO
     if (mm < TimeToBeNotifiy) {
         if (hh === 0) {
             hh = 23;
+            if (TimeToBeNotifiy > 60)
+                hh--;
+
             date = date - 1;
         } else {
             hh--;
+            if (TimeToBeNotifiy > 60)
+                hh--;
         }
 
     } else if (mm - TimeToBeNotifiy >= 60) {
@@ -70,7 +79,7 @@ function calctNotificationSendTime(i_date, hh, mm, TimeToBeNotifiy) {      // TO
         }
     }
 
-    mm = (60 + mm - TimeToBeNotifiy) % 60;
+    mm = (120 + mm - TimeToBeNotifiy) % 60;     //support for 90 minute alert in case of delay
 
     date.setFullYear(YY);
     date.setMonth(MM);
