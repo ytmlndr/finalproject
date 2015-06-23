@@ -492,6 +492,24 @@ module.exports = function (app, passport) {
         })(req, res, next);
     });
 
+    app.get('/appHistory', ensureAuthenticated, function (req, res) {
+        res.render("appHistory", {"appointments": {}});
+    });
+
+    app.post('/appHistory', ensureAuthenticated, function (req, res) {
+        var url_parts = URL.parse(req.url, true);
+        var query = url_parts.query;
+        var q = Appointment.find({});
+        q.where('patientID', 'doctorID').equals(parseInt(req.body.pid), parseInt(req.session.user.userID)).exec(function (err, appointments) {
+            var oldAppointment = appointments.filter(utils.getOldAppointments);
+            if (oldAppointment.length > 0) {
+                res.render("appHistory", {"appointments": oldAppointment});
+            } else {
+                res.render("appHistory", {"appointments": {}});
+            }
+        });
+    });
+
     app.get('/logout', function (req, res) {
         req.logout();
         res.redirect('/');
@@ -603,7 +621,7 @@ module.exports = function (app, passport) {
             ], function (err, nextavailableApps, doctor) {
                 if (!err) {
                     console.log("going to render");
-
+                    nextavailableApps.splice(0, 1);
                     res.render('doctorAvaApp', {doctor: doctor, availableappointments: nextavailableApps});
                 }
             }
