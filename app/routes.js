@@ -425,7 +425,7 @@ module.exports = function (app, passport) {
                 //var msg="you have an appiuntment at "+appointment.date+" "+appointment.startTime+"!";
                 patient.findOne({}).where('userID').equals(parseInt(req.session.user.userID)).exec(function (err, pat) {
                     if (!err) {
-                        var NotificationCode = Mod.sendPushHandler(appointment.date, appointment.realStartTime, pat.MinutesToBeNotifyBefor, GLOBAL.token, false).then(function (notificationCode) {
+                        var NotificationCode = Mod.sendPushHandler(appointment.date, appointment.realStartTime, pat.MinutesToBeNotifyBefor, pat.TokenID, false).then(function (notificationCode) {
                             console.log("the NotificationCode is:  " + notificationCode); // <<NotificationCode>> need to be saved in the DB!
                             appointment.pushID = notificationCode;
 
