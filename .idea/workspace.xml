@@ -2,686 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c47c2ab-8e88-477a-9e25-c9fbe40f9261" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\async\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\bcrypt-nodejs\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\body-parser\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\body-parser\node_modules\bytes\Readme.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\body-parser\node_modules\content-type\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\body-parser\node_modules\debug\Readme.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\body-parser\node_modules\debug\node_modules\ms\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\body-parser\node_modules\depd\Readme.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\body-parser\node_modules\iconv-lite\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\body-parser\node_modules\on-finished\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\body-parser\node_modules\on-finished\node_modules\ee-first\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\body-parser\node_modules\qs\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\body-parser\node_modules\raw-body\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\body-parser\node_modules\type-is\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\body-parser\node_modules\type-is\node_modules\media-typer\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\body-parser\node_modules\type-is\node_modules\mime-types\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\body-parser\node_modules\type-is\node_modules\mime-types\node_modules\mime-db\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\cookie-parser\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\cookie-parser\node_modules\cookie-signature\Readme.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\cookie-parser\node_modules\cookie\.npmignore" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\cookie-parser\node_modules\cookie\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\cookie-session\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\cookie-session\node_modules\cookies\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\cookie-session\node_modules\cookies\node_modules\keygrip\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\cookie-session\node_modules\debug\Readme.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\cookie-session\node_modules\debug\node_modules\ms\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\cookie-session\node_modules\on-headers\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\datejs\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\ejs\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\express-session\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\express-session\node_modules\cookie-signature\Readme.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\express-session\node_modules\cookie\.npmignore" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\express-session\node_modules\cookie\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\express-session\node_modules\crc\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\express-session\node_modules\debug\Readme.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\express-session\node_modules\debug\node_modules\ms\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\express-session\node_modules\depd\Readme.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\express-session\node_modules\on-headers\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\express-session\node_modules\parseurl\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\express-session\node_modules\uid-safe\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\express-session\node_modules\uid-safe\node_modules\base64-url\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\express-session\node_modules\uid-safe\node_modules\native-or-bluebird\LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\express-session\node_modules\uid-safe\node_modules\native-or-bluebird\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\express-session\node_modules\uid-safe\node_modules\native-or-bluebird\package.json" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\express-session\node_modules\uid-safe\node_modules\native-or-bluebird\promise.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\express-session\node_modules\utils-merge\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\express\Readme.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\express\node_modules\accepts\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\express\node_modules\accepts\node_modules\mime-types\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\express\node_modules\accepts\node_modules\mime-types\node_modules\mime-db\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\express\node_modules\accepts\node_modules\negotiator\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\express\node_modules\content-disposition\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\express\node_modules\content-type\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\express\node_modules\cookie-signature\Readme.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\express\node_modules\cookie\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\express\node_modules\debug\Readme.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\express\node_modules\debug\node_modules\ms\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\express\node_modules\depd\Readme.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\express\node_modules\escape-html\Readme.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\express\node_modules\etag\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\express\node_modules\finalhandler\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\express\node_modules\fresh\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\express\node_modules\merge-descriptors\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\express\node_modules\methods\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\express\node_modules\on-finished\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\express\node_modules\on-finished\node_modules\ee-first\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\express\node_modules\parseurl\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\express\node_modules\path-to-regexp\Readme.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\express\node_modules\proxy-addr\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\express\node_modules\proxy-addr\node_modules\forwarded\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\express\node_modules\proxy-addr\node_modules\ipaddr.js\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\express\node_modules\qs\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\express\node_modules\range-parser\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\express\node_modules\send\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\express\node_modules\send\node_modules\destroy\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\express\node_modules\send\node_modules\mime\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\express\node_modules\send\node_modules\ms\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\express\node_modules\serve-static\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\express\node_modules\type-is\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\express\node_modules\type-is\node_modules\media-typer\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\express\node_modules\type-is\node_modules\mime-types\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\express\node_modules\type-is\node_modules\mime-types\node_modules\mime-db\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\express\node_modules\utils-merge\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\express\node_modules\vary\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongo\node_modules\mongodb\Readme.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongo\node_modules\mongodb\node_modules\bson\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongo\node_modules\mongodb\node_modules\kerberos\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongo\node_modules\mongodb\node_modules\readable-stream\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongo\node_modules\mongodb\node_modules\readable-stream\node_modules\core-util-is\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongo\node_modules\mongodb\node_modules\readable-stream\node_modules\inherits\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongo\node_modules\mongodb\node_modules\readable-stream\node_modules\isarray\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongo\node_modules\mongodb\node_modules\readable-stream\node_modules\string_decoder\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\.gitmodules" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\CONTRIBUTING.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\lib\mongodb\admin.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\lib\mongodb\aggregation_cursor.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\lib\mongodb\auth\mongodb_cr.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\lib\mongodb\auth\mongodb_gssapi.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\lib\mongodb\auth\mongodb_plain.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\lib\mongodb\auth\mongodb_scram.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\lib\mongodb\auth\mongodb_sspi.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\lib\mongodb\collection\batch\ordered.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\lib\mongodb\collection\batch\unordered.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\lib\mongodb\collection\commands.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\lib\mongodb\collection\core.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\lib\mongodb\collection\geo.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\lib\mongodb\collection\index.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\lib\mongodb\collection\query.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\lib\mongodb\collection\shared.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\lib\mongodb\commands\base_command.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\lib\mongodb\commands\db_command.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\lib\mongodb\commands\delete_command.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\lib\mongodb\commands\insert_command.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\lib\mongodb\commands\kill_cursor_command.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\lib\mongodb\commands\query_command.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\lib\mongodb\commands\update_command.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\lib\mongodb\connection\base.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\lib\mongodb\connection\connection_utils.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\lib\mongodb\connection\read_preference.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\lib\mongodb\connection\repl_set\repl_set_state.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\lib\mongodb\connection\repl_set\strategies\statistics_strategy.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\lib\mongodb\connection\server.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\lib\mongodb\connection\server_capabilities.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\lib\mongodb\cursorstream.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\lib\mongodb\gridfs\grid.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\lib\mongodb\gridfs\gridstore.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\lib\mongodb\gridfs\readstream.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\lib\mongodb\index.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\lib\mongodb\mongo_client.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\lib\mongodb\responses\mongo_reply.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\bson\.travis.yml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\bson\LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\bson\Makefile" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\bson\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\bson\binding.gyp" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\bson\browser_build\bson.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\bson\browser_build\package.json" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\bson\build_browser.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\bson\ext\bson.cc" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\bson\ext\bson.h" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\bson\ext\win32\ia32\bson.node" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\bson\ext\win32\x64\bson.node" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\bson\ext\wscript" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\bson\lib\bson\binary_parser.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\bson\lib\bson\bson.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\bson\lib\bson\bson_new.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\bson\lib\bson\db_ref.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\bson\lib\bson\double.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\bson\lib\bson\float_parser.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\bson\lib\bson\long.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\bson\lib\bson\max_key.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\bson\lib\bson\min_key.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\bson\lib\bson\objectid.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\bson\node_modules\nan\CHANGELOG.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\bson\node_modules\nan\LICENSE.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\bson\node_modules\nan\appveyor.yml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\bson\node_modules\nan\nan.h" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\bson\node_modules\nan\nan_implementation_12_inl.h" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\bson\node_modules\nan\nan_implementation_pre_12_inl.h" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\bson\node_modules\nan\nan_new.h" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\bson\node_modules\nan\nan_string_bytes.h" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\bson\node_modules\nan\package.json" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\bson\package.json" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\bson\tools\gleak.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\bson\tools\jasmine-1.1.0\MIT.LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\bson\tools\jasmine-1.1.0\jasmine.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\bson\tools\jasmine-1.1.0\jasmine_favicon.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\kerberos\LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\kerberos\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\kerberos\binding.gyp" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\kerberos\builderror.log" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\kerberos\lib\auth_processes\mongodb.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\kerberos\lib\base64.c" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\kerberos\lib\base64.h" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\kerberos\lib\kerberos.h" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\kerberos\lib\kerberos.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\kerberos\lib\kerberosgss.c" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\kerberos\lib\kerberosgss.h" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\kerberos\lib\win32\base64.c" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\kerberos\lib\win32\base64.h" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\kerberos\lib\win32\kerberos.cc" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\kerberos\lib\win32\worker.cc" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\kerberos\lib\win32\worker.h" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\kerberos\lib\win32\wrappers\security_buffer.cc" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\kerberos\lib\win32\wrappers\security_buffer_descriptor.cc" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\kerberos\lib\win32\wrappers\security_buffer_descriptor.h" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\kerberos\lib\win32\wrappers\security_buffer_descriptor.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\kerberos\lib\win32\wrappers\security_context.cc" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\kerberos\lib\win32\wrappers\security_context.h" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\kerberos\lib\win32\wrappers\security_context.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\kerberos\lib\win32\wrappers\security_credentials.cc" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\kerberos\lib\win32\wrappers\security_credentials.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\kerberos\lib\worker.cc" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\kerberos\lib\worker.h" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\kerberos\node_modules\nan\.dntrc" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\kerberos\node_modules\nan\CHANGELOG.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\kerberos\node_modules\nan\nan.h" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\kerberos\node_modules\nan\nan_implementation_12_inl.h" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\kerberos\node_modules\nan\nan_implementation_pre_12_inl.h" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\kerberos\node_modules\nan\nan_new.h" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\kerberos\node_modules\nan\nan_string_bytes.h" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\kerberos\node_modules\nan\package.json" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\kerberos\test\kerberos_tests.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\kerberos\test\kerberos_win32_test.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\kerberos\test\win32\security_buffer_descriptor_tests.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\kerberos\test\win32\security_buffer_tests.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\readable-stream\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\readable-stream\node_modules\core-util-is\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\readable-stream\node_modules\inherits\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\readable-stream\node_modules\isarray\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongodb\node_modules\readable-stream\node_modules\string_decoder\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongoose-schema\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongoose\examples\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongoose\examples\express\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongoose\examples\express\connection-sharing\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongoose\node_modules\bson\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongoose\node_modules\hooks-fixed\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongoose\node_modules\kareem\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongoose\node_modules\mongodb\node_modules\mongodb-core\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongoose\node_modules\mongodb\node_modules\mongodb-core\node_modules\kerberos\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongoose\node_modules\mongodb\node_modules\mongodb-core\node_modules\kerberos\node_modules\nan\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongoose\node_modules\mongodb\node_modules\readable-stream\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongoose\node_modules\mongodb\node_modules\readable-stream\node_modules\core-util-is\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongoose\node_modules\mongodb\node_modules\readable-stream\node_modules\inherits\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongoose\node_modules\mongodb\node_modules\readable-stream\node_modules\isarray\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongoose\node_modules\mongodb\node_modules\readable-stream\node_modules\string_decoder\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongoose\node_modules\mpath\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongoose\node_modules\mpromise\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongoose\node_modules\mquery\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongoose\node_modules\mquery\node_modules\bluebird\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongoose\node_modules\mquery\node_modules\debug\Readme.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongoose\node_modules\mquery\node_modules\debug\index.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongoose\node_modules\mquery\node_modules\debug\lib\debug.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongoose\node_modules\ms\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongoose\node_modules\muri\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongoose\node_modules\regexp-clone\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\mongoose\node_modules\sliced\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\morgan\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\morgan\node_modules\basic-auth\Readme.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\morgan\node_modules\debug\Readme.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\morgan\node_modules\debug\node_modules\ms\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\morgan\node_modules\depd\Readme.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\morgan\node_modules\on-finished\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\morgan\node_modules\on-finished\node_modules\ee-first\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\passport-local-mongoose\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\passport-local\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\passport-local\node_modules\passport-strategy\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\passport\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\passport\node_modules\passport-strategy\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\passport\node_modules\pause\Readme.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\כפיר\.WebStorm10\finalproject\node_modules\pushwoosh\node_modules\q\README.md" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/node_modules/nan/.dntrc" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/node_modules/nan/.dntrc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/morgan/node_modules/debug/.jshintrc" afterPath="$PROJECT_DIR$/node_modules/morgan/node_modules/debug/.jshintrc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/passport/node_modules/passport-strategy/.jshintrc" afterPath="$PROJECT_DIR$/node_modules/passport/node_modules/passport-strategy/.jshintrc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cookie-parser/node_modules/cookie-signature/.npmignore" afterPath="$PROJECT_DIR$/node_modules/cookie-parser/node_modules/cookie-signature/.npmignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/express-session/node_modules/cookie-signature/.npmignore" afterPath="$PROJECT_DIR$/node_modules/express-session/node_modules/cookie-signature/.npmignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/express-session/node_modules/crc/.npmignore" afterPath="$PROJECT_DIR$/node_modules/express-session/node_modules/crc/.npmignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/express-session/node_modules/on-headers/.npmignore" afterPath="$PROJECT_DIR$/node_modules/express-session/node_modules/on-headers/.npmignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/express-session/node_modules/parseurl/.npmignore" afterPath="$PROJECT_DIR$/node_modules/express-session/node_modules/parseurl/.npmignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/readable-stream/.npmignore" afterPath="$PROJECT_DIR$/node_modules/mongodb/node_modules/readable-stream/.npmignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/readable-stream/node_modules/string_decoder/.npmignore" afterPath="$PROJECT_DIR$/node_modules/mongodb/node_modules/readable-stream/node_modules/string_decoder/.npmignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/.npmignore" afterPath="$PROJECT_DIR$/node_modules/mongoose/.npmignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/kareem/.npmignore" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/kareem/.npmignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/.npmignore" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/.npmignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/node_modules/string_decoder/.npmignore" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/node_modules/string_decoder/.npmignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mpath/.npmignore" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mpath/.npmignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/.npmignore" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/.npmignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/ms/.npmignore" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/ms/.npmignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/muri/.npmignore" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/muri/.npmignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/regexp-clone/.npmignore" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/regexp-clone/.npmignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/sliced/.npmignore" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/sliced/.npmignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/morgan/node_modules/debug/.npmignore" afterPath="$PROJECT_DIR$/node_modules/morgan/node_modules/debug/.npmignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/morgan/node_modules/debug/node_modules/ms/.npmignore" afterPath="$PROJECT_DIR$/node_modules/morgan/node_modules/debug/node_modules/ms/.npmignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/passport/node_modules/pause/.npmignore" afterPath="$PROJECT_DIR$/node_modules/passport/node_modules/pause/.npmignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/async/.travis.yml" afterPath="$PROJECT_DIR$/node_modules/async/.travis.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/express-session/node_modules/utils-merge/.travis.yml" afterPath="$PROJECT_DIR$/node_modules/express-session/node_modules/utils-merge/.travis.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongodb/.travis.yml" afterPath="$PROJECT_DIR$/node_modules/mongodb/.travis.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/.travis.yml" afterPath="$PROJECT_DIR$/node_modules/mongoose/.travis.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/kareem/.travis.yml" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/kareem/.travis.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/.travis.yml" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/.travis.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/.travis.yml" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/.travis.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mpath/.travis.yml" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mpath/.travis.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mpromise/.travis.yml" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mpromise/.travis.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/sliced/.travis.yml" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/sliced/.travis.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/lib/wireprotocol/2_4_support.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/lib/wireprotocol/2_4_support.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/lib/wireprotocol/2_6_support.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/lib/wireprotocol/2_6_support.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/node_modules/nan/CHANGELOG.md" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/node_modules/nan/CHANGELOG.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/CONTRIBUTING.md" afterPath="$PROJECT_DIR$/node_modules/mongoose/CONTRIBUTING.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cookie-parser/HISTORY.md" afterPath="$PROJECT_DIR$/node_modules/cookie-parser/HISTORY.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/express-session/node_modules/parseurl/HISTORY.md" afterPath="$PROJECT_DIR$/node_modules/express-session/node_modules/parseurl/HISTORY.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/express-session/node_modules/uid-safe/HISTORY.md" afterPath="$PROJECT_DIR$/node_modules/express-session/node_modules/uid-safe/HISTORY.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/HISTORY.md" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/HISTORY.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/morgan/node_modules/on-finished/HISTORY.md" afterPath="$PROJECT_DIR$/node_modules/morgan/node_modules/on-finished/HISTORY.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cookie-parser/node_modules/cookie-signature/History.md" afterPath="$PROJECT_DIR$/node_modules/cookie-parser/node_modules/cookie-signature/History.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/express-session/node_modules/cookie-signature/History.md" afterPath="$PROJECT_DIR$/node_modules/express-session/node_modules/cookie-signature/History.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/express-session/node_modules/debug/History.md" afterPath="$PROJECT_DIR$/node_modules/express-session/node_modules/debug/History.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/express-session/node_modules/depd/History.md" afterPath="$PROJECT_DIR$/node_modules/express-session/node_modules/depd/History.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/History.md" afterPath="$PROJECT_DIR$/node_modules/mongoose/History.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mpath/History.md" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mpath/History.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mpromise/History.md" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mpromise/History.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/muri/History.md" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/muri/History.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/regexp-clone/History.md" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/regexp-clone/History.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/sliced/History.md" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/sliced/History.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/morgan/node_modules/depd/History.md" afterPath="$PROJECT_DIR$/node_modules/morgan/node_modules/depd/History.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/async/LICENSE" afterPath="$PROJECT_DIR$/node_modules/async/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/express-session/LICENSE" afterPath="$PROJECT_DIR$/node_modules/express-session/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/express-session/node_modules/crc/LICENSE" afterPath="$PROJECT_DIR$/node_modules/express-session/node_modules/crc/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/express-session/node_modules/debug/node_modules/ms/LICENSE" afterPath="$PROJECT_DIR$/node_modules/express-session/node_modules/debug/node_modules/ms/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/express-session/node_modules/depd/LICENSE" afterPath="$PROJECT_DIR$/node_modules/express-session/node_modules/depd/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/express-session/node_modules/on-headers/LICENSE" afterPath="$PROJECT_DIR$/node_modules/express-session/node_modules/on-headers/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/express-session/node_modules/parseurl/LICENSE" afterPath="$PROJECT_DIR$/node_modules/express-session/node_modules/parseurl/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/express-session/node_modules/uid-safe/LICENSE" afterPath="$PROJECT_DIR$/node_modules/express-session/node_modules/uid-safe/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/express-session/node_modules/utils-merge/LICENSE" afterPath="$PROJECT_DIR$/node_modules/express-session/node_modules/utils-merge/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/readable-stream/LICENSE" afterPath="$PROJECT_DIR$/node_modules/mongodb/node_modules/readable-stream/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/readable-stream/node_modules/inherits/LICENSE" afterPath="$PROJECT_DIR$/node_modules/mongodb/node_modules/readable-stream/node_modules/inherits/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/kareem/LICENSE" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/kareem/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/LICENSE" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/LICENSE" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/LICENSE" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/node_modules/inherits/LICENSE" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/node_modules/inherits/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/node_modules/string_decoder/LICENSE" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/node_modules/string_decoder/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mpath/LICENSE" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mpath/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/LICENSE" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/LICENSE" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/regexp-clone/LICENSE" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/regexp-clone/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/sliced/LICENSE" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/sliced/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/morgan/LICENSE" afterPath="$PROJECT_DIR$/node_modules/morgan/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/morgan/node_modules/debug/node_modules/ms/LICENSE" afterPath="$PROJECT_DIR$/node_modules/morgan/node_modules/debug/node_modules/ms/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/morgan/node_modules/depd/LICENSE" afterPath="$PROJECT_DIR$/node_modules/morgan/node_modules/depd/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/morgan/node_modules/on-finished/LICENSE" afterPath="$PROJECT_DIR$/node_modules/morgan/node_modules/on-finished/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/morgan/node_modules/on-finished/node_modules/ee-first/LICENSE" afterPath="$PROJECT_DIR$/node_modules/morgan/node_modules/on-finished/node_modules/ee-first/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/passport/node_modules/passport-strategy/LICENSE" afterPath="$PROJECT_DIR$/node_modules/passport/node_modules/passport-strategy/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/express-session/node_modules/debug/Makefile" afterPath="$PROJECT_DIR$/node_modules/express-session/node_modules/debug/Makefile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongodb/Makefile" afterPath="$PROJECT_DIR$/node_modules/mongodb/Makefile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/hooks-fixed/Makefile" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/hooks-fixed/Makefile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/kareem/Makefile" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/kareem/Makefile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mpath/Makefile" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mpath/Makefile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/Makefile" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/Makefile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/passport/node_modules/pause/Makefile" afterPath="$PROJECT_DIR$/node_modules/passport/node_modules/pause/Makefile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/lib/drivers/SPEC.md" afterPath="$PROJECT_DIR$/node_modules/mongoose/lib/drivers/SPEC.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/TESTING.md" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/TESTING.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/readable-stream/lib/_stream_duplex.js" afterPath="$PROJECT_DIR$/node_modules/mongodb/node_modules/readable-stream/lib/_stream_duplex.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/lib/_stream_duplex.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/lib/_stream_duplex.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/readable-stream/lib/_stream_passthrough.js" afterPath="$PROJECT_DIR$/node_modules/mongodb/node_modules/readable-stream/lib/_stream_passthrough.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/lib/_stream_passthrough.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/lib/_stream_passthrough.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/readable-stream/lib/_stream_readable.js" afterPath="$PROJECT_DIR$/node_modules/mongodb/node_modules/readable-stream/lib/_stream_readable.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/readable-stream/lib/_stream_transform.js" afterPath="$PROJECT_DIR$/node_modules/mongodb/node_modules/readable-stream/lib/_stream_transform.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/lib/_stream_transform.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/lib/_stream_transform.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/lib/_stream_writable.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/lib/_stream_writable.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/examples/aggregate/aggregate.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/examples/aggregate/aggregate.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/lib/aggregate.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/lib/aggregate.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/lib/aggregation_cursor.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/lib/aggregation_cursor.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/any.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/any.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/examples/express/connection-sharing/app.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/examples/express/connection-sharing/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/node_modules/nan/appveyor.yml" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/node_modules/nan/appveyor.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/lib/types/array.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/lib/types/array.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/assert.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/assert.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/async/lib/async.js" afterPath="$PROJECT_DIR$/node_modules/async/lib/async.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/async.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/async.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/passport/lib/middleware/authenticate.js" afterPath="$PROJECT_DIR$/node_modules/passport/lib/middleware/authenticate.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/passport/lib/errors/authenticationerror.js" afterPath="$PROJECT_DIR$/node_modules/passport/lib/errors/authenticationerror.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/passport/lib/authenticator.js" afterPath="$PROJECT_DIR$/node_modules/passport/lib/authenticator.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/passport-local-mongoose/lib/badrequesterror.js" afterPath="$PROJECT_DIR$/node_modules/passport-local-mongoose/lib/badrequesterror.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/lib/base64.c" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/lib/base64.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/lib/win32/base64.c" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/lib/win32/base64.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/lib/base64.h" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/lib/base64.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/lib/win32/base64.h" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/lib/win32/base64.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/lib/drivers/node-mongodb-native/binary.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/lib/drivers/node-mongodb-native/binary.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/bson/lib/bson/binary_parser.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/bson/lib/bson/binary_parser.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/bind.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/bind.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/binding.gyp" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/binding.gyp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/browser/bluebird.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/browser/bluebird.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/lib/schema/boolean.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/lib/schema/boolean.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/morgan/node_modules/debug/bower.json" afterPath="$PROJECT_DIR$/node_modules/morgan/node_modules/debug/bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/lib/browser.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/lib/browser.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/morgan/node_modules/debug/browser.js" afterPath="$PROJECT_DIR$/node_modules/morgan/node_modules/debug/browser.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/lib/browserDocument.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/lib/browserDocument.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/lib/error/browserMissingSchema.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/lib/error/browserMissingSchema.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/bson/browser_build/bson.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/bson/browser_build/bson.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/bson/lib/bson/bson.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/bson/lib/bson/bson.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/express-session/node_modules/depd/lib/compat/buffer-concat.js" afterPath="$PROJECT_DIR$/node_modules/express-session/node_modules/depd/lib/compat/buffer-concat.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/lib/schema/buffer.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/lib/schema/buffer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/lib/types/buffer.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/lib/types/buffer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/node_modules/isarray/build/build.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/node_modules/isarray/build/build.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/builderror.log" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/builderror.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/call_get.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/call_get.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/express-session/node_modules/depd/lib/compat/callsite-tostring.js" afterPath="$PROJECT_DIR$/node_modules/express-session/node_modules/depd/lib/compat/callsite-tostring.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/morgan/node_modules/depd/lib/compat/callsite-tostring.js" afterPath="$PROJECT_DIR$/node_modules/morgan/node_modules/depd/lib/compat/callsite-tostring.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/captured_trace.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/captured_trace.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/lib/error/cast.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/lib/error/cast.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/lib/gridfs/chunk.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/lib/gridfs/chunk.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/bson/lib/bson/code.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/bson/lib/bson/code.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/lib/collection.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/lib/collection.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/lib/collection.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/lib/collection.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/lib/collection/collection.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/lib/collection/collection.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/lib/topologies/command_result.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/lib/topologies/command_result.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/lib/connection/commands.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/lib/connection/commands.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/lib/bulk/common.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/lib/bulk/common.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/express-session/node_modules/debug/component.json" afterPath="$PROJECT_DIR$/node_modules/express-session/node_modules/debug/component.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/morgan/node_modules/debug/component.json" afterPath="$PROJECT_DIR$/node_modules/morgan/node_modules/debug/component.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/conf.json" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/conf.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/conf.json" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/conf.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/passport/lib/framework/connect.js" afterPath="$PROJECT_DIR$/node_modules/passport/lib/framework/connect.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/lib/connection.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/lib/connection.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/lib/connectionstate.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/lib/connectionstate.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/contRun.sh" afterPath="$PROJECT_DIR$/node_modules/mongoose/contRun.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/context.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/context.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/express-session/session/cookie.js" afterPath="$PROJECT_DIR$/node_modules/express-session/session/cookie.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/express-session/node_modules/crc/lib/crc.js" afterPath="$PROJECT_DIR$/node_modules/express-session/node_modules/crc/lib/crc.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/express-session/node_modules/crc/lib/crc16.js" afterPath="$PROJECT_DIR$/node_modules/express-session/node_modules/crc/lib/crc16.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/express-session/node_modules/crc/lib/crc16_modbus.js" afterPath="$PROJECT_DIR$/node_modules/express-session/node_modules/crc/lib/crc16_modbus.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/express-session/node_modules/crc/lib/crc24.js" afterPath="$PROJECT_DIR$/node_modules/express-session/node_modules/crc/lib/crc24.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/express-session/node_modules/crc/lib/crc32.js" afterPath="$PROJECT_DIR$/node_modules/express-session/node_modules/crc/lib/crc32.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/express-session/node_modules/crc/lib/crc8.js" afterPath="$PROJECT_DIR$/node_modules/express-session/node_modules/crc/lib/crc8.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/express-session/node_modules/crc/lib/create.js" afterPath="$PROJECT_DIR$/node_modules/express-session/node_modules/crc/lib/create.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/lib/cursor.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/lib/cursor.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/lib/cursor.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/lib/cursor.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/lib/schema/date.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/lib/schema/date.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/lib/db.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/lib/db.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/bson/lib/bson/db_ref.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/bson/lib/bson/db_ref.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/express-session/node_modules/debug/debug.js" afterPath="$PROJECT_DIR$/node_modules/express-session/node_modules/debug/debug.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/debug/debug.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/debug/debug.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/debuggability.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/debuggability.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/direct_resolve.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/direct_resolve.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/kareem/docs.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/kareem/docs.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/lib/document.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/lib/document.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/lib/document_provider.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/lib/document_provider.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/lib/types/documentarray.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/lib/types/documentarray.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/bson/lib/bson/double.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/bson/lib/bson/double.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/duplex.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/duplex.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/each.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/each.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/lib/types/embedded.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/lib/types/embedded.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/lib/env.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/lib/env.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/test/env.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/test/env.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/lib/error.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/lib/error.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/errors.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/errors.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/es5.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/es5.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/kareem/test/examples.test.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/kareem/test/examples.test.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/filter.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/filter.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/finally.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/finally.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/readable-stream/node_modules/core-util-is/float.patch" afterPath="$PROJECT_DIR$/node_modules/mongodb/node_modules/readable-stream/node_modules/core-util-is/float.patch" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/node_modules/core-util-is/float.patch" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/node_modules/core-util-is/float.patch" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/bson/lib/bson/float_parser.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/bson/lib/bson/float_parser.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/examples/geospatial/geoJSONexample.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/examples/geospatial/geoJSONexample.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/bson/tools/gleak.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/bson/tools/gleak.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/examples/globalschemas/gs_example.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/examples/globalschemas/gs_example.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/lib/auth/gssapi.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/lib/auth/gssapi.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/express-session/node_modules/crc/lib/hex.js" afterPath="$PROJECT_DIR$/node_modules/express-session/node_modules/crc/lib/hex.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/hooks-fixed/hooks.alt.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/hooks-fixed/hooks.alt.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/hooks-fixed/hooks.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/hooks-fixed/hooks.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/node_modules/nan/include_dirs.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/node_modules/nan/include_dirs.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/ms/test/index.html" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/ms/test/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cookie-parser/index.js" afterPath="$PROJECT_DIR$/node_modules/cookie-parser/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cookie-parser/node_modules/cookie/index.js" afterPath="$PROJECT_DIR$/node_modules/cookie-parser/node_modules/cookie/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cookie-parser/node_modules/cookie-signature/index.js" afterPath="$PROJECT_DIR$/node_modules/cookie-parser/node_modules/cookie-signature/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/express-session/node_modules/cookie/index.js" afterPath="$PROJECT_DIR$/node_modules/express-session/node_modules/cookie/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/express-session/node_modules/cookie-signature/index.js" afterPath="$PROJECT_DIR$/node_modules/express-session/node_modules/cookie-signature/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/express-session/node_modules/depd/index.js" afterPath="$PROJECT_DIR$/node_modules/express-session/node_modules/depd/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/express-session/node_modules/depd/lib/compat/index.js" afterPath="$PROJECT_DIR$/node_modules/express-session/node_modules/depd/lib/compat/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/express-session/node_modules/parseurl/index.js" afterPath="$PROJECT_DIR$/node_modules/express-session/node_modules/parseurl/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/express-session/node_modules/uid-safe/index.js" afterPath="$PROJECT_DIR$/node_modules/express-session/node_modules/uid-safe/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/express-session/node_modules/utils-merge/index.js" afterPath="$PROJECT_DIR$/node_modules/express-session/node_modules/utils-merge/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongodb/index.js" afterPath="$PROJECT_DIR$/node_modules/mongodb/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/readable-stream/node_modules/string_decoder/index.js" afterPath="$PROJECT_DIR$/node_modules/mongodb/node_modules/readable-stream/node_modules/string_decoder/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/lib/index.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/lib/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/lib/schema/index.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/lib/schema/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/lib/types/index.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/lib/types/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/bson/lib/bson/index.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/bson/lib/bson/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/kareem/index.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/kareem/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/index.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/index.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/node_modules/isarray/index.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/node_modules/isarray/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/node_modules/string_decoder/index.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/node_modules/string_decoder/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mpath/index.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mpath/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mpath/lib/index.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mpath/lib/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/test/index.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/test/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/muri/index.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/muri/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/muri/test/index.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/muri/test/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/regexp-clone/test/index.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/regexp-clone/test/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/morgan/index.js" afterPath="$PROJECT_DIR$/node_modules/morgan/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/morgan/node_modules/basic-auth/index.js" afterPath="$PROJECT_DIR$/node_modules/morgan/node_modules/basic-auth/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/morgan/node_modules/depd/lib/compat/index.js" afterPath="$PROJECT_DIR$/node_modules/morgan/node_modules/depd/lib/compat/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/morgan/node_modules/on-finished/node_modules/ee-first/index.js" afterPath="$PROJECT_DIR$/node_modules/morgan/node_modules/on-finished/node_modules/ee-first/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/passport/lib/index.js" afterPath="$PROJECT_DIR$/node_modules/passport/lib/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/passport/node_modules/passport-strategy/lib/index.js" afterPath="$PROJECT_DIR$/node_modules/passport/node_modules/passport-strategy/lib/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/passport/node_modules/pause/index.js" afterPath="$PROJECT_DIR$/node_modules/passport/node_modules/pause/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/readable-stream/node_modules/inherits/inherits.js" afterPath="$PROJECT_DIR$/node_modules/mongodb/node_modules/readable-stream/node_modules/inherits/inherits.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/readable-stream/node_modules/inherits/inherits_browser.js" afterPath="$PROJECT_DIR$/node_modules/mongodb/node_modules/readable-stream/node_modules/inherits/inherits_browser.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/node_modules/inherits/inherits_browser.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/node_modules/inherits/inherits_browser.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/passport/lib/middleware/initialize.js" afterPath="$PROJECT_DIR$/node_modules/passport/lib/middleware/initialize.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/lib/internal.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/lib/internal.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/lib/kerberos.h" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/lib/kerberos.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/lib/win32/kerberos.h" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/lib/win32/kerberos.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/lib/kerberos.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/lib/kerberos.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/lib/kerberos_context.cc" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/lib/kerberos_context.cc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/lib/win32/kerberos_sspi.c" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/lib/win32/kerberos_sspi.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/lib/win32/kerberos_sspi.h" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/lib/win32/kerberos_sspi.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/test/kerberos_tests.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/test/kerberos_tests.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/lib/connection/logger.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/lib/connection/logger.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/map.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/map.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/examples/mapreduce/mapreduce.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/examples/mapreduce/mapreduce.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/method.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/method.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/bson/lib/bson/min_key.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/bson/lib/bson/min_key.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/lib/error/missingSchema.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/lib/error/missingSchema.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/lib/schema/mixed.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/lib/schema/mixed.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/lib/model.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/lib/model.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/examples/express/connection-sharing/modelA.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/examples/express/connection-sharing/modelA.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/lib/mongo_client.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/lib/mongo_client.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/lib/auth/mongocr.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/lib/auth/mongocr.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/lib/auth_processes/mongodb.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/lib/auth_processes/mongodb.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/lib/mongos.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/lib/mongos.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/lib/topologies/mongos.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/lib/topologies/mongos.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/ms/ms.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/ms/ms.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/node_modules/nan/nan_implementation_12_inl.h" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/node_modules/nan/nan_implementation_12_inl.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/node_modules/nan/nan_implementation_pre_12_inl.h" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/node_modules/nan/nan_implementation_pre_12_inl.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/node_modules/nan/nan_new.h" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/node_modules/nan/nan_new.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/node_modules/nan/nan_string_bytes.h" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/node_modules/nan/nan_string_bytes.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/express-session/node_modules/debug/node.js" afterPath="$PROJECT_DIR$/node_modules/express-session/node_modules/debug/node.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/lib/collection/node.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/lib/collection/node.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/morgan/node_modules/debug/node.js" afterPath="$PROJECT_DIR$/node_modules/morgan/node_modules/debug/node.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/nodeify.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/nodeify.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/npm-debug.log" afterPath="$PROJECT_DIR$/npm-debug.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/lib/schema/number.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/lib/schema/number.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/lib/drivers/node-mongodb-native/objectid.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/lib/drivers/node-mongodb-native/objectid.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/lib/schema/objectid.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/lib/schema/objectid.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/lib/types/objectid.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/lib/types/objectid.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/bson/lib/bson/objectid.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/bson/lib/bson/objectid.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/lib/bulk/ordered.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/lib/bulk/ordered.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/async/package.json" afterPath="$PROJECT_DIR$/node_modules/async/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cookie-parser/package.json" afterPath="$PROJECT_DIR$/node_modules/cookie-parser/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cookie-parser/node_modules/cookie/package.json" afterPath="$PROJECT_DIR$/node_modules/cookie-parser/node_modules/cookie/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cookie-parser/node_modules/cookie-signature/package.json" afterPath="$PROJECT_DIR$/node_modules/cookie-parser/node_modules/cookie-signature/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/express-session/package.json" afterPath="$PROJECT_DIR$/node_modules/express-session/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/express-session/node_modules/cookie/package.json" afterPath="$PROJECT_DIR$/node_modules/express-session/node_modules/cookie/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/express-session/node_modules/cookie-signature/package.json" afterPath="$PROJECT_DIR$/node_modules/express-session/node_modules/cookie-signature/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/express-session/node_modules/debug/node_modules/ms/package.json" afterPath="$PROJECT_DIR$/node_modules/express-session/node_modules/debug/node_modules/ms/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/express-session/node_modules/depd/package.json" afterPath="$PROJECT_DIR$/node_modules/express-session/node_modules/depd/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/express-session/node_modules/parseurl/package.json" afterPath="$PROJECT_DIR$/node_modules/express-session/node_modules/parseurl/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/express-session/node_modules/uid-safe/node_modules/base64-url/package.json" afterPath="$PROJECT_DIR$/node_modules/express-session/node_modules/uid-safe/node_modules/base64-url/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongodb/package.json" afterPath="$PROJECT_DIR$/node_modules/mongodb/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/readable-stream/node_modules/inherits/package.json" afterPath="$PROJECT_DIR$/node_modules/mongodb/node_modules/readable-stream/node_modules/inherits/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/readable-stream/node_modules/isarray/package.json" afterPath="$PROJECT_DIR$/node_modules/mongodb/node_modules/readable-stream/node_modules/isarray/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/readable-stream/node_modules/string_decoder/package.json" afterPath="$PROJECT_DIR$/node_modules/mongodb/node_modules/readable-stream/node_modules/string_decoder/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/package.json" afterPath="$PROJECT_DIR$/node_modules/mongoose/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/examples/aggregate/package.json" afterPath="$PROJECT_DIR$/node_modules/mongoose/examples/aggregate/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/examples/geospatial/package.json" afterPath="$PROJECT_DIR$/node_modules/mongoose/examples/geospatial/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/examples/lean/package.json" afterPath="$PROJECT_DIR$/node_modules/mongoose/examples/lean/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/examples/promises/package.json" afterPath="$PROJECT_DIR$/node_modules/mongoose/examples/promises/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/examples/querybuilder/package.json" afterPath="$PROJECT_DIR$/node_modules/mongoose/examples/querybuilder/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/examples/replicasets/package.json" afterPath="$PROJECT_DIR$/node_modules/mongoose/examples/replicasets/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/bson/package.json" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/bson/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/bson/browser_build/package.json" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/bson/browser_build/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/hooks-fixed/package.json" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/hooks-fixed/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/kareem/package.json" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/kareem/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/package.json" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/package.json" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/package.json" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/node_modules/core-util-is/package.json" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/node_modules/core-util-is/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/node_modules/inherits/package.json" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/node_modules/inherits/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/node_modules/isarray/package.json" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/node_modules/isarray/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/node_modules/string_decoder/package.json" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/node_modules/string_decoder/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mpath/package.json" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mpath/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mpromise/package.json" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mpromise/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/package.json" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/package.json" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/debug/package.json" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/debug/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/ms/package.json" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/ms/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/regexp-clone/package.json" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/regexp-clone/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/sliced/package.json" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/sliced/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/morgan/package.json" afterPath="$PROJECT_DIR$/node_modules/morgan/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/morgan/node_modules/debug/package.json" afterPath="$PROJECT_DIR$/node_modules/morgan/node_modules/debug/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/morgan/node_modules/depd/package.json" afterPath="$PROJECT_DIR$/node_modules/morgan/node_modules/depd/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/morgan/node_modules/on-finished/package.json" afterPath="$PROJECT_DIR$/node_modules/morgan/node_modules/on-finished/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/morgan/node_modules/on-finished/node_modules/ee-first/package.json" afterPath="$PROJECT_DIR$/node_modules/morgan/node_modules/on-finished/node_modules/ee-first/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/passport/package.json" afterPath="$PROJECT_DIR$/node_modules/passport/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/passport-local-mongoose/package.json" afterPath="$PROJECT_DIR$/node_modules/passport-local-mongoose/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/passport/node_modules/passport-strategy/package.json" afterPath="$PROJECT_DIR$/node_modules/passport/node_modules/passport-strategy/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/passport/node_modules/pause/package.json" afterPath="$PROJECT_DIR$/node_modules/passport/node_modules/pause/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cookie-parser/lib/parse.js" afterPath="$PROJECT_DIR$/node_modules/cookie-parser/lib/parse.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/passport-local-mongoose/lib/passport-local-mongoose.js" afterPath="$PROJECT_DIR$/node_modules/passport-local-mongoose/lib/passport-local-mongoose.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/readable-stream/passthrough.js" afterPath="$PROJECT_DIR$/node_modules/mongodb/node_modules/readable-stream/passthrough.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/passthrough.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/passthrough.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/examples/geospatial/person.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/examples/geospatial/person.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/examples/globalschemas/person.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/examples/globalschemas/person.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/examples/lean/person.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/examples/lean/person.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/examples/mapreduce/person.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/examples/mapreduce/person.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/examples/querybuilder/person.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/examples/querybuilder/person.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/examples/replicasets/person.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/examples/replicasets/person.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/examples/statics/person.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/examples/statics/person.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/lib/topologies/strategies/ping.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/lib/topologies/strategies/ping.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/lib/connection/pool.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/lib/connection/pool.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/examples/population/population-across-three-collections.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/examples/population/population-across-three-collections.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/examples/population/population-basic.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/examples/population/population-basic.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/examples/population/population-of-existing-doc.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/examples/population/population-of-existing-doc.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/examples/population/population-of-multiple-existing-docs.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/examples/population/population-of-multiple-existing-docs.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/kareem/test/post.test.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/kareem/test/post.test.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/kareem/test/pre.test.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/kareem/test/pre.test.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mpromise/test/promise.domain.test.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mpromise/test/promise.domain.test.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/examples/promises/promise.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/examples/promises/promise.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/lib/promise.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/lib/promise.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mpromise/lib/promise.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mpromise/lib/promise.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/promise.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/promise.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mpromise/test/promise.test.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mpromise/test/promise.test.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/promise_array.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/promise_array.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/promise_resolver.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/promise_resolver.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/promisify.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/promisify.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/pushHandler.js" afterPath="$PROJECT_DIR$/app/pushHandler.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/lib/query.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/lib/query.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/examples/querybuilder/querybuilder.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/examples/querybuilder/querybuilder.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/lib/queryhelpers.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/lib/queryhelpers.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/lib/querystream.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/lib/querystream.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/race.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/race.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/lib/read_preference.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/lib/read_preference.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/lib/topologies/read_preference.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/lib/topologies/read_preference.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/readable.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/readable.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/release-items.md" afterPath="$PROJECT_DIR$/node_modules/mongoose/release-items.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/lib/replset.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/lib/replset.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/lib/topologies/replset.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/lib/topologies/replset.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/lib/topologies/replset_state.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/lib/topologies/replset_state.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/passport/lib/http/request.js" afterPath="$PROJECT_DIR$/node_modules/passport/lib/http/request.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/examples/express/connection-sharing/routes.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/examples/express/connection-sharing/routes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/examples/schema/schema.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/examples/schema/schema.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/examples/schema/storing-schemas-as-json/schema.json" afterPath="$PROJECT_DIR$/node_modules/mongoose/examples/schema/storing-schemas-as-json/schema.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/lib/win32/wrappers/security_buffer.cc" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/lib/win32/wrappers/security_buffer.cc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/lib/win32/wrappers/security_buffer.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/lib/win32/wrappers/security_buffer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/lib/win32/wrappers/security_buffer_descriptor.cc" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/lib/win32/wrappers/security_buffer_descriptor.cc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/lib/win32/wrappers/security_buffer_descriptor.h" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/lib/win32/wrappers/security_buffer_descriptor.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/lib/win32/wrappers/security_buffer_descriptor.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/lib/win32/wrappers/security_buffer_descriptor.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/test/win32/security_buffer_descriptor_tests.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/test/win32/security_buffer_descriptor_tests.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/test/win32/security_buffer_tests.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/test/win32/security_buffer_tests.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/lib/win32/wrappers/security_context.cc" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/lib/win32/wrappers/security_context.cc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/lib/win32/wrappers/security_context.h" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/lib/win32/wrappers/security_context.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/lib/win32/wrappers/security_context.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/lib/win32/wrappers/security_context.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/lib/win32/wrappers/security_credentials.h" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/lib/win32/wrappers/security_credentials.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/lib/topologies/server.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/lib/topologies/server.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/express-session/session/session.js" afterPath="$PROJECT_DIR$/node_modules/express-session/session/session.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/sliced/lib/sliced.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/sliced/lib/sliced.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/lib/auth/sspi.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/lib/auth/sspi.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/lib/sspi.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/lib/sspi.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/lib/statemachine.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/lib/statemachine.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/static.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/static.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/examples/statics/statics.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/examples/statics/statics.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/express-session/session/store.js" afterPath="$PROJECT_DIR$/node_modules/express-session/session/store.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/passport/node_modules/passport-strategy/lib/strategy.js" afterPath="$PROJECT_DIR$/node_modules/passport/node_modules/passport-strategy/lib/strategy.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/muri/strict.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/muri/strict.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/lib/schema/string.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/lib/schema/string.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/synchronous_inspection.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/synchronous_inspection.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/t.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/t.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/t1.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/t1.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/readable-stream/node_modules/inherits/test.js" afterPath="$PROJECT_DIR$/node_modules/mongodb/node_modules/readable-stream/node_modules/inherits/test.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/hooks-fixed/test.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/hooks-fixed/test.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/node_modules/inherits/test.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/node_modules/inherits/test.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/ms/test/test.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/ms/test/test.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/thenables.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/thenables.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/timers.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/timers.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/bson/lib/bson/timestamp.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/bson/lib/bson/timestamp.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/lib/topology_base.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/lib/topology_base.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/readable-stream/transform.js" afterPath="$PROJECT_DIR$/node_modules/mongodb/node_modules/readable-stream/transform.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/transform.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/transform.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/lib/services/updateValidators.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/lib/services/updateValidators.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/lib/url_parser.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/lib/url_parser.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/using.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/node_modules/bluebird/js/main/using.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/readable-stream/node_modules/core-util-is/util.js" afterPath="$PROJECT_DIR$/node_modules/mongodb/node_modules/readable-stream/node_modules/core-util-is/util.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongodb/node_modules/readable-stream/node_modules/core-util-is/lib/util.js" afterPath="$PROJECT_DIR$/node_modules/mongodb/node_modules/readable-stream/node_modules/core-util-is/lib/util.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/node_modules/core-util-is/util.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/node_modules/core-util-is/util.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/node_modules/core-util-is/lib/util.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/node_modules/core-util-is/lib/util.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/lib/utils.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/lib/utils.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/lib/connection/utils.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/lib/connection/utils.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/lib/utils.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/lib/utils.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/test/utils.test.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mquery/test/utils.test.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/lib/error/validation.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/lib/error/validation.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/lib/error/version.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/lib/error/version.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongodb/wercker.yml" afterPath="$PROJECT_DIR$/node_modules/mongodb/wercker.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/wercker.yml" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/wercker.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/lib/worker.cc" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/lib/worker.cc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/lib/win32/worker.cc" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/mongodb-core/node_modules/kerberos/lib/win32/worker.cc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/appSummary.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/appSummary.ejs" afterPath="$PROJECT_DIR$/views/appSummary.ejs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/delayNotifierComponent.js" afterPath="$PROJECT_DIR$/config/delayNotifierComponent.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/kareem/test/wrap.test.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/kareem/test/wrap.test.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/writable.js" afterPath="$PROJECT_DIR$/node_modules/mongoose/node_modules/mongodb/node_modules/readable-stream/writable.js" />
     </list>
     <ignored path="finalproject.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -702,98 +26,43 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="routes.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/routes.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="450" column="11" selection-start-line="450" selection-start-column="11" selection-end-line="450" selection-end-column="11" />
-              <folding>
-                <element signature="e#1563#3801#0" expanded="false" />
-                <element signature="e#4466#4523#0" expanded="false" />
-                <element signature="e#4596#4669#0" expanded="false" />
-                <element signature="e#4748#4827#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dropdowns-enhancement.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/dropdowns-enhancement.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="patient.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/patient.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="delayNotifierComponent.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/delayNotifierComponent.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="181" column="82" selection-start-line="181" selection-start-column="82" selection-end-line="181" selection-end-column="82" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="npm-debug.log" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/npm-debug.log">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="appSummary.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/appSummary.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.038462">
-              <caret line="23" column="56" selection-start-line="23" selection-start-column="56" selection-end-line="23" selection-end-column="56" />
+            <state vertical-scroll-proportion="6.927273">
+              <caret line="10" column="46" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pushHandler.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pushHandler.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/pushHandler.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.46341464">
-              <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="1" column="43" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="43" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="doctoreditdetails.ejs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/doctoreditdetails.ejs">
+      <file leaf-file-name="appSummary.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/appSummary.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="28" column="40" selection-start-line="28" selection-start-column="40" selection-end-line="28" selection-end-column="40" />
-              <folding />
+              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="27" selection-end-column="27" />
+              <folding>
+                <element signature="e#0#41#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="doctorSchedule.ejs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/doctorSchedule.ejs">
+      <file leaf-file-name="delayNotifierComponent.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config/delayNotifierComponent.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="44" column="16" selection-start-line="44" selection-start-column="16" selection-end-line="44" selection-end-column="16" />
+            <state vertical-scroll-proportion="0.060212515">
+              <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -802,8 +71,8 @@
       <file leaf-file-name="appHistory.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/appHistory.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="19" column="46" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
+            <state vertical-scroll-proportion="-11.769231">
+              <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -825,7 +94,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/views/login.ejs" />
         <option value="$PROJECT_DIR$/config/database.js" />
         <option value="$PROJECT_DIR$/views/signup.html" />
         <option value="$PROJECT_DIR$/views/css/index.css" />
@@ -867,15 +135,16 @@
         <option value="$PROJECT_DIR$/views/cancelApp.ejs" />
         <option value="$PROJECT_DIR$/views/doctorAvaApp.ejs" />
         <option value="$PROJECT_DIR$/app/models/Appointment.js" />
-        <option value="$PROJECT_DIR$/config/delayNotifierComponent.js" />
         <option value="$PROJECT_DIR$/views/doctoreditdetails.ejs" />
         <option value="$PROJECT_DIR$/views/doctorprofile.ejs" />
         <option value="$PROJECT_DIR$/views/doctorSchedule.ejs" />
         <option value="$PROJECT_DIR$/app/functionsUtils.js" />
         <option value="$PROJECT_DIR$/views/appHistory.ejs" />
-        <option value="$PROJECT_DIR$/views/appSummary.ejs" />
         <option value="$PROJECT_DIR$/app/routes.js" />
         <option value="$PROJECT_DIR$/app/pushHandler.js" />
+        <option value="$PROJECT_DIR$/js/appSummary.js" />
+        <option value="$PROJECT_DIR$/views/appSummary.ejs" />
+        <option value="$PROJECT_DIR$/config/delayNotifierComponent.js" />
       </list>
     </option>
   </component>
@@ -957,7 +226,35 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="node_modules" />
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="finalproject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="finalproject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="finalproject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="finalproject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1260,7 +557,13 @@
       <option name="project" value="LOCAL" />
       <updated>1435334269492</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Pushwoosh API - update">
+      <created>1436201954764</created>
+      <option name="number" value="00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1436201954765</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -1274,11 +577,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="984" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32996634" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17142858" sideWeight="0.48869047" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17142858" sideWeight="0.48869047" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4456693" sideWeight="0.534407" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.336" sideWeight="0.49050632" order="9" side_tool="false" content_ui="tabs" />
@@ -1368,34 +671,11 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/views/doctoreditdetails.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="40" selection-start-line="28" selection-start-column="40" selection-end-line="28" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/doctorSchedule.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="44" column="16" selection-start-line="44" selection-start-column="16" selection-end-line="44" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/appHistory.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="46" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/index.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="26" column="64" selection-start-line="26" selection-start-column="51" selection-end-line="26" selection-end-column="64" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1578,6 +858,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.423077">
           <caret line="57" column="94" selection-start-line="57" selection-start-column="94" selection-end-line="57" selection-end-column="94" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1641,6 +922,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="26" column="64" selection-start-line="26" selection-start-column="51" selection-end-line="26" selection-end-column="64" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1668,14 +950,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/appHistory.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="46" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/patient.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1688,14 +962,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.029982364">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/delayNotifierComponent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="181" column="82" selection-start-line="181" selection-start-column="82" selection-end-line="181" selection-end-column="82" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1720,9 +986,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/dropdowns-enhancement.js">
+    <entry file="file://$PROJECT_DIR$/views/css/profile.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/css/editdetails.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/dropdowns-enhancement.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.020070838">
           <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
@@ -1730,18 +1012,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/appHistory.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.769231">
+          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/appSummary.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="27" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#41#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/appSummary.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.038462">
-          <caret line="23" column="56" selection-start-line="23" selection-start-column="56" selection-end-line="23" selection-end-column="56" />
+        <state vertical-scroll-proportion="6.927273">
+          <caret line="10" column="46" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/pushHandler.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46341464">
-          <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="43" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/delayNotifierComponent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.060212515">
+          <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
           <folding />
         </state>
       </provider>
