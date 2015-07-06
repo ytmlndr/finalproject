@@ -22,7 +22,7 @@ module.exports = {
     removeOldAppointments: function (apo) {
         var now = new Date();
         var apodate = new Date();
-
+        now.addMinutes(180); //add for c9 GMT time
         apodate.setYear(apo.date.split('/')[2]);
         apodate.setMonth(apo.date.split('/')[1] - 1);
         apodate.setDate(apo.date.split('/')[0]);

@@ -295,7 +295,7 @@ module.exports = function (app, passport) {
                     var nextAppointment = appointments.filter(utils.removeOldAppointments);
                     nextAppointment = nextAppointment[0];
                     var today = new Date();
-
+                    today.addMinutes(180); //add for c9 GMT time
                     if (nextAppointment && ((nextAppointment.date.split('/')[1] - 1) == today.getMonth() &&
                         nextAppointment.date.split('/')[0] == today.getDate())) {
                         res.redirect('/appSummary?pid=' + nextAppointment.patientID + "&pname=" + nextAppointment.patientName + "&date=" + nextAppointment.date);
