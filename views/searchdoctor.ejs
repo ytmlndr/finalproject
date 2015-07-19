@@ -42,6 +42,15 @@
             <input id="lastname" class="form-control" name="lname" value="" placeholder="Last Name">
         </div>
         <div class="btn-group">
+            <input id="fromhour" class="form-control"  name="fhour" value="<%= fhour %>"
+                   placeholder="Enter Start Hour"> <!--type="time -->
+
+        </div>
+        <div class="btn-group">
+            <input id="tohour" class="form-control" name="thour" value='<%= thour %>'
+                   placeholder="Enter End Hour">
+        </div>
+        <div class="btn-group">
             <button data-toggle="dropdown" class="btn btn-default dropdown-toggle" data-placeholder="Medical Fields">
                 Medical Fields<span class="caret"></span></button>
             <ul class="dropdown-menu">
@@ -62,8 +71,11 @@
             </ul>
         </div>
         <div class="btn-group">
-            <button data-toggle="dropdown" class="btn btn-default dropdown-toggle" data-placeholder="Days">Days<span
-                        class="caret"></span></button>
+            <button data-toggle="dropdown" id="days" value='<%= days %>' class="btn btn-default dropdown-toggle">Days
+                <span
+                        class="caret">
+                </span>
+            </button>
             <ul class="dropdown-menu">
                 <li><input type="checkbox" id="day0" name="days" value="Sunday"><label for="day0">Sunday</label></li>
                 <li><input type="checkbox" id="day1" name="days" value="Monday"><label for="day1">Monday</label></li>
@@ -84,6 +96,7 @@
         </div>
     </div>
 </form>
+
 <% for(var i = 0; i < doctors.length; i++) { %>
 <div class="container-fluid container-doctor">
     <table class="table table-responsive table-striped">
@@ -115,8 +128,12 @@
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="dropdowns-enhancement.js"></script>
 <script type="text/javascript">
+
     $('.container-doctor').click(function () {
-        window.document.location = '/doctorAvaApp?userID=' + $(this).children('span').text();
+        window.document.location = '/doctorAvaApp?userID=' + $(this).children('span').text() +
+                '&fhour=' + window.document.getElementById('fromhour').value +
+                '&thour=' + window.document.getElementById('tohour').value +
+                '&days=' + window.document.getElementById('days').value;
     })
 </script>
 </body>

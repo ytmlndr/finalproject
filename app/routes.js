@@ -152,14 +152,21 @@ module.exports = function (app, passport) {
             },
             function (langs, callback) {
                 medicalFields.find({}, function (err, mfs) {
-                    callback(null, mfs, langs);
+                    callback(null, mfs, langs, "", "", null);
                 });
             }
         ], function (error, mfs, langs) {
             if (error) {
                 res.render("searchdoctor");
             }
-            res.render("searchdoctor", {"doctors": {}, "mfs": mfs, "langs": langs});
+            res.render("searchdoctor", {
+                "doctors": {},
+                "mfs": mfs,
+                "langs": langs,
+                "fhour": "",
+                "thour": "",
+                "days": {}
+            });
         });
     });
 
@@ -244,16 +251,32 @@ module.exports = function (app, passport) {
                 }
 
                 // executing query
-                query.exec(function (err, docs) {
+                query.exec(function (err, docs, days) {
                     // searching doctor in Users collection to retrieve user data
                     if (docs) {
+                        var docflag;
                         docs.forEach(function (doc) {
                             for (var i = 0; i < users.length; i++) {
                                 if (users[i].userID == doc.userID) {
-                                    doctors.push({
-                                        "docVals": doc,
-                                        "userVals": users[i]
-                                    });
+                                    docflag = false;
+                                    for (var j = 0; j < doc.WorkDay.length; j++) {
+                                        if (req.body.days == undefined) {
+                                            req.body.days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+                                        }
+                                        if (req.body.days.indexOf(doc.WorkDay[j].day) > -1 && ((doc.WorkDay[j].startTime <= req.body.fhour && doc.WorkDay[j].endTime >= req.body.thour) ||
+                                            (doc.WorkDay[j].startTime <= req.body.fhour && doc.WorkDay[j].endTime <= req.body.thour && doc.WorkDay[j].endTime >= req.body.fhour) ||
+                                            (doc.WorkDay[j].startTime >= req.body.fhour && doc.WorkDay[j].endTime >= req.body.thour && doc.WorkDay[j].startTime <= req.body.thour) ||
+                                            (doc.WorkDay[j].startTime >= req.body.fhour && doc.WorkDay[j].endTime <= req.body.thour ))) {
+                                            if (docflag == false) {
+                                                docflag = true;
+                                                doctors.push({
+                                                    "docVals": doc,
+                                                    "userVals": users[i]
+                                                });
+
+                                            }
+                                        }
+                                    }
                                 }
                             }
                         });
@@ -268,9 +291,23 @@ module.exports = function (app, passport) {
             }
         ], function (error, doctors, mfs, langs) {
             if (error) {
-                res.render("searchdoctor", {"doctors": {}, "mfs": mfs, "langs": langs});
+                res.render("searchdoctor", {
+                    "doctors": {},
+                    "mfs": mfs,
+                    "langs": langs,
+                    "fhour": null,
+                    "thour": null,
+                    "days": null
+                });
             }
-            res.render("searchdoctor", {"doctors": doctors, "mfs": mfs, "langs": langs});
+            res.render("searchdoctor", {
+                "doctors": doctors,
+                "mfs": mfs,
+                "langs": langs,
+                "fhour": req.body.fhour,
+                "thour": req.body.thour,
+                "days": req.body.days
+            });
         });
     });
 
@@ -530,87 +567,92 @@ module.exports = function (app, passport) {
                     });
                 },
                 function (doctor, userID, doctorAppointments, callback) {
+                    var url_parts = URL.parse(req.url, true);
+                    var query = url_parts.query;
                     var availableApps = [];
                     for (var i = 0; i < doctor.WorkDay.length; i++) {
-                        console.log('workday ' + i);
-                        var startTimeOfWorkDay = new Date();
-                        var endTimeOfWorkDay = new Date();
-                        var hourStart = parseInt(doctor.WorkDay[i].startTime.split(':')[0]);
-                        var mintStart = parseInt(doctor.WorkDay[i].startTime.split(':')[1]);
-                        var hourEnd = parseInt(doctor.WorkDay[i].endTime.split(':')[0]);
-                        var mintEnd = parseInt(doctor.WorkDay[i].endTime.split(':')[1]);
-                        var day;
-                        var diff;
-                        startTimeOfWorkDay.at({hour: hourStart, minute: mintStart});
-                        endTimeOfWorkDay.at({hour: hourEnd, minute: mintEnd});
-                        switch (doctor.WorkDay[i].day) {
-                            case "Sunday":
-                                day = 0;
-                                break;
-                            case "Monday":
-                                day = 1;
-                                break;
-                            case "Tuesday":
-                                day = 2;
-                                break;
-                            case "Wednesday":
-                                day = 3;
-                                break;
-                            case "Thursday":
-                                day = 4;
-                                break;
-                            case "Friday":
-                                day = 5;
-                                break;
-                        }
-                        if (startTimeOfWorkDay.getDay() <= day) {
-                            diff = day - startTimeOfWorkDay.getDay();
-                        }
-                        else {
-                            diff = 7 - (startTimeOfWorkDay.getDay() - day);
-                        }
-                        startTimeOfWorkDay.addDays(diff);
-                        endTimeOfWorkDay.addDays(diff);
-                        var hourIsInDoctorAppointments;
-                        while (startTimeOfWorkDay.isBefore(endTimeOfWorkDay)) {
-                            var date = new Date();
-                            var appointmentTime = startTimeOfWorkDay.toTimeString().split(':')[0].toString() + ":" + startTimeOfWorkDay.toTimeString().split(':')[1].toString();
-                            var appointmentDate = startTimeOfWorkDay.getDate() + '/' + (startTimeOfWorkDay.getMonth() + 1) + '/' + startTimeOfWorkDay.getFullYear();
-                            //console.log('j is ' + appointmentDate + ' ' + appointmentTime);
-                            hourIsInDoctorAppointments = false;
-
-                            // check if there is an appointment at hour j exists
-                            for (var t = 0; t < doctorAppointments.length; t++) {
-                                var diffBetweenAppo = utils.diffInMinutesBetweenTwoHours(doctorAppointments[t].startTime, appointmentTime);
-                                //console.log('comparing between ' + doctorAppointments[t].date + ' ' + appointmentDate + ' and between ' + doctorAppointments[t].startTime + ' ' + appointmentTime);
-                                if ((doctorAppointments[t].date.split('/')[0] == startTimeOfWorkDay.getDate())
-                                    && (doctorAppointments[t].date.split('/')[1] == (startTimeOfWorkDay.getMonth() + 1))
-                                    && (doctorAppointments[t].date.split('/')[2] == startTimeOfWorkDay.getFullYear())
-                                    && (diffBetweenAppo >= 0 && diffBetweenAppo < doctor.appointmentDuration)) {
-                                    // && (doctorAppointments[t].startTime == appointmentTime)) {
-                                    hourIsInDoctorAppointments = true;
-                                    console.log('found hour as an appointment: ' + appointmentTime);
+                        if (query.days.indexOf(doctor.WorkDay[i].day) > -1) {
+                            console.log('workday ' + i);
+                            var startTimeOfWorkDay = new Date();
+                            var endTimeOfWorkDay = new Date();
+                            var hourStart = parseInt(doctor.WorkDay[i].startTime.split(':')[0]);
+                            var mintStart = parseInt(doctor.WorkDay[i].startTime.split(':')[1]);
+                            var hourEnd = parseInt(doctor.WorkDay[i].endTime.split(':')[0]);
+                            var mintEnd = parseInt(doctor.WorkDay[i].endTime.split(':')[1]);
+                            var day;
+                            var diff;
+                            startTimeOfWorkDay.at({hour: hourStart, minute: mintStart});
+                            endTimeOfWorkDay.at({hour: hourEnd, minute: mintEnd});
+                            switch (doctor.WorkDay[i].day) {
+                                case "Sunday":
+                                    day = 0;
                                     break;
+                                case "Monday":
+                                    day = 1;
+                                    break;
+                                case "Tuesday":
+                                    day = 2;
+                                    break;
+                                case "Wednesday":
+                                    day = 3;
+                                    break;
+                                case "Thursday":
+                                    day = 4;
+                                    break;
+                                case "Friday":
+                                    day = 5;
+                                    break;
+                            }
+                            if (startTimeOfWorkDay.getDay() <= day) {
+                                diff = day - startTimeOfWorkDay.getDay();
+                            }
+                            else {
+                                diff = 7 - (startTimeOfWorkDay.getDay() - day);
+                            }
+                            startTimeOfWorkDay.addDays(diff);
+                            endTimeOfWorkDay.addDays(diff);
+                            var hourIsInDoctorAppointments;
+                            while (startTimeOfWorkDay.isBefore(endTimeOfWorkDay)) {
+                                var date = new Date();
+                                var appointmentTime = startTimeOfWorkDay.toTimeString().split(':')[0].toString() + ":" + startTimeOfWorkDay.toTimeString().split(':')[1].toString();
+                                var appointmentDate = startTimeOfWorkDay.getDate() + '/' + (startTimeOfWorkDay.getMonth() + 1) + '/' + startTimeOfWorkDay.getFullYear();
+                                //console.log('j is ' + appointmentDate + ' ' + appointmentTime);
+                                hourIsInDoctorAppointments = false;
 
+                                // check if there is an appointment at hour j exists
+                                for (var t = 0; t < doctorAppointments.length; t++) {
+                                    var diffBetweenAppo = utils.diffInMinutesBetweenTwoHours(doctorAppointments[t].startTime, appointmentTime);
+                                    //console.log('comparing between ' + doctorAppointments[t].date + ' ' + appointmentDate + ' and between ' + doctorAppointments[t].startTime + ' ' + appointmentTime);
+                                    if ((doctorAppointments[t].date.split('/')[0] == startTimeOfWorkDay.getDate())
+                                        && (doctorAppointments[t].date.split('/')[1] == (startTimeOfWorkDay.getMonth() + 1))
+                                        && (doctorAppointments[t].date.split('/')[2] == startTimeOfWorkDay.getFullYear())
+                                        && (diffBetweenAppo >= 0 && diffBetweenAppo < doctor.appointmentDuration)) {
+                                        // && (doctorAppointments[t].startTime == appointmentTime)) {
+                                        hourIsInDoctorAppointments = true;
+                                        console.log('found hour as an appointment: ' + appointmentTime);
+                                        break;
+                                    }
+                                }
+                                if (hourIsInDoctorAppointments == false) {
 
+                                    if (startTimeOfWorkDay.toString("HH:mm") >= query.fhour && startTimeOfWorkDay.toString("HH:mm") <= query.thour) {
+                                        availableApps.push({
+                                            date: startTimeOfWorkDay.toString("dd/MM/yyyy"),
+                                            day: doctor.WorkDay[i].day,
+                                            startTime: startTimeOfWorkDay.toString("HH:mm"),
+                                            realStartTime: startTimeOfWorkDay.toString("HH:mm"),
+                                            endTime: startTimeOfWorkDay.addMinutes(doctor.appointmentDuration).toString("HH:mm"),
+                                            realEndTime: startTimeOfWorkDay.toString("HH:mm"),  //this is the starttimr + appointment duration as we did in the line before
+                                            dateObj: startTimeOfWorkDay
+                                        });
+
+                                    } else {
+                                        startTimeOfWorkDay.addMinutes(doctor.appointmentDuration);
+                                    }
                                 }
                             }
-                            if (hourIsInDoctorAppointments == false) {
-                                //console.log('going to add an appointment to display');
-                                availableApps.push({
-                                    date: startTimeOfWorkDay.toString("dd/MM/yyyy"),
-                                    day: doctor.WorkDay[i].day,
-                                    startTime: startTimeOfWorkDay.toString("HH:mm"),
-                                    realStartTime: startTimeOfWorkDay.toString("HH:mm"),
-                                    endTime: startTimeOfWorkDay.addMinutes(doctor.appointmentDuration).toString("HH:mm"),
-                                    realEndTime: startTimeOfWorkDay.toString("HH:mm"),
-                                    dateObj: startTimeOfWorkDay
-                                });
-                            } else {
-                                startTimeOfWorkDay.addMinutes(doctor.appointmentDuration).toString("HH:mm");
-                            }
                         }
-                    } // workdays FOR loop
+                    }
 
                     availableApps.sort(utils.compareAppointments);
                     var nextavailableApps = availableApps.filter(utils.removeOldAppointments);
@@ -621,7 +663,7 @@ module.exports = function (app, passport) {
             ], function (err, nextavailableApps, doctor) {
                 if (!err) {
                     console.log("going to render");
-                    nextavailableApps.splice(0, 1);
+                    //nextavailableApps.splice(0, 1);
                     res.render('doctorAvaApp', {doctor: doctor, availableappointments: nextavailableApps});
                 }
             }
@@ -638,5 +680,4 @@ module.exports = function (app, passport) {
         res.redirect('/login');
     }
 
-}
-;
+};
