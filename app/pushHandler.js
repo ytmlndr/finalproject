@@ -1,32 +1,48 @@
 var pushWoosh = require('pushwoosh');
-var pushClient = new pushWoosh("A3F4F-4631C", "OUKdt9XDdEHd8x6VlAWx559MI1VX8r56a1goq2xnR5RNvYWJne9kvrndfzKuk1lD3KxsPiXRAyAOssNEm0wH");
+var pushClient = new pushWoosh("984C1-E7C57", "qFM3WHd4n36PyFHXcFcUGdYHkNBcOtl77jaFfuYVkIVIXAQLvJH9qXPEoBPmqoAd0T2fxN6VTNDujchBaeLt");
+var NEWAPPOINTMENTNOTIFIER = 1;
+var DELAYNOTIFIER = 2;
+var PREFERNOTIFIER = 3;
 
-function sendPushHandler(i_date, i_appintmentTime, i_timeToBeNotify, i_tokenArry, i_delaymessage) {
+function sendPushHandler(i_date, i_appointmentTime, i_MinutesToBeNotify, i_tokenArry, i_msg) {
 
     // setup config vars
     var icon = "http://s30.postimg.org/puwlu78vl/doctor1.png";
     var android_header = "AppointMe";
-    var msg;
-    if (i_delaymessage == false)
-        msg = "You have an appiontment at " + i_date + " " + i_appintmentTime + "!";      // TO DO - choose better msg :)
+    //var msg;
+    
+   // switch(i_delaymessage){
+       // case NEWAPPOINTMENTNOTIFIER:
+       //     msg = "You have an appiontment at " + i_date + " " + i_appointmentTime + "!";      // TO DO - choose better msg :)
+       //     break;
+       // case DELAYNOTIFIER:
+       //        msg = "Delay detected!, new Estimated time is:" + i_appointmentTime + "!";
+        //    break;
+       // case PREFERNOTIFIER:
+        //     msg = "Preferd appoitment freed on " + i_date +  ' at ' + i_appointmentTime + " check now!";
+         //   break;
+    //}
+    
+   /* if (i_delaymessage == false)
+        msg = "You have an appiontment at " + i_date + " " + i_appointmentTime + "!";      // TO DO - choose better msg :)
     else
-        msg = "Delay detected!, new Estimated time is:" + i_appintmentTime + "!";
-
+        msg = "Delay detected!, new Estimated time is:" + i_appointmentTime + "!";
+*/
     // Converts the date as required from Pushwoosh
 
     //temp
-    var hh = i_appintmentTime.split(":")[0];
-    var mm = i_appintmentTime.split(":")[1];
+    var hh = i_appointmentTime.split(":")[0];
+    var mm = i_appointmentTime.split(":")[1];
     //
 
-    var date = calctNotificationSendTime(i_date, hh, mm, i_timeToBeNotify);
+    var date = calctNotificationSendTime(i_date, hh, mm, i_MinutesToBeNotify);
     var now = date.toJSON();
     var ScheduledPush = now.replace("T", " ");
     ScheduledPush = ScheduledPush.slice(0, 16);
     console.log(ScheduledPush);
 
     // setup the configuration sent to pushwoosh
-    var config = setUpConfig(ScheduledPush, android_header, icon, msg, i_tokenArry);
+    var config = setUpConfig(ScheduledPush, android_header, icon, i_msg, i_tokenArry);
 
     // call the "sendMessage" method from pushWoosh module to send the notification request to Pushwoosh server
     var messageId = pushClient.sendMessage(config).then(function (data) {
@@ -46,8 +62,8 @@ function deletePushHandler(NotificationCode) {
 }
 
 // For notification to be send on time;
-//function calctNotificationSendTime(YY,MM,DD,HH,mm, TimeToBeNotifiy){
-function calctNotificationSendTime(i_date, hh, mm, TimeToBeNotifiy) {      // TO DO - need to change func and variables name!
+//function calctNotificationSendTime(YY,MM,DD,HH,mm, MinutesToBeNotify){
+function calctNotificationSendTime(i_date, hh, mm, MinutesToBeNotify) {      // TO DO - need to change func and variables name!
 
     var date = new Date();
 
@@ -57,29 +73,29 @@ function calctNotificationSendTime(i_date, hh, mm, TimeToBeNotifiy) {      // TO
 
     // HH -= 3; // Because its may be depend on GMT time?
     MM -= 1; // counting month starting from 0
-    if (mm < TimeToBeNotifiy) {
+    if (mm < MinutesToBeNotify) {
         if (hh === 0) {
             hh = 23;
-            if (TimeToBeNotifiy > 60)
+            if (MinutesToBeNotify > 60)
                 hh--;
 
             date = date - 1;
         } else {
             hh--;
-            if (TimeToBeNotifiy > 60)
+            if (MinutesToBeNotify > 60)
                 hh--;
         }
 
-    } else if (mm - TimeToBeNotifiy >= 60) {
+    } else if (mm - MinutesToBeNotify >= 60) {
         if (hh === 23) {
-            hh = 00;
+            hh = 0;
             date = date + 1;
         } else {
             hh++;
         }
     }
 
-    mm = (120 + mm - TimeToBeNotifiy) % 60;     //support for 90 minute alert in case of delay
+    mm = (120 + mm - MinutesToBeNotify) % 60;     //support for 90 minute alert in case of delay
 
     date.setFullYear(YY);
     date.setMonth(MM);

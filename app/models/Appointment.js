@@ -15,7 +15,9 @@ var appointmentSchema = new Schema({
     realEndTime: {type: String},
     delayTime: {type: Number},
     pushID: {type: String},
-    summary: {type: String}
+    summary: {type: String},
+    waitingPatientArray: {type: [Number]}
+
 });
 
 module.exports = mongoose.model('Appointment', appointmentSchema);

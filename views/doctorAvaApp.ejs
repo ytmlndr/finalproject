@@ -58,12 +58,34 @@
                     <td id="start" class="col-ms-2"><%= availableappointments[i].realStartTime %></td>
                 </tr>
                 <% } %>
+
                 </tbody>
             </table>
         </div>
+            <% if (message.length > 0) { %>
+            <div class="alert alert-danger"><%= message %>
+                <button id="btn-Notify" href="#" onclick="post()" class="btn btn-success">Notify</button>
+            </div>
+            <% } %>
     </div>
 </div>
 <script type="text/javascript">
+    function post(){
+        var pathname = window.location.search;
+
+        $.ajax({
+            url: '/doctorAvaApp'+pathname,
+            type: 'POST',
+            data: {},
+            dataType: 'json',
+            success: function (data, textStatus, jqXHR) {
+                if (typeof data.redirect == 'string') {
+                    window.document.location = data.redirect;
+                }
+            }
+        });
+    };
+
     $(document).ready(function () {
         $('tr').click(function () {
             var date = $(this).children('#date').text();

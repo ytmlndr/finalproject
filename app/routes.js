@@ -4,12 +4,17 @@ var doctor = require('./models/doctor');
 var Appointment = require('./models/Appointment');
 var medicalFields = require('./models/medicalfield');
 var languages = require('./models/languages');
+ var pushHandler = require('./pushHandler') // do not include the dot js
 var URL = require('url');
 var async = require('async');
 var datejs = require('datejs'); // DO NOT DELETE THIS
 var utils = require('./functionsUtils');
 var delayNotification = require('../config/delayNotifierComponent');
 GLOBAL.token; //tokenID will be here
+
+var NEWAPPOINTMENTNOTIFIER = 1;
+var DELAYNOTIFIER = 2;
+var PREFERNOTIFIER = 3;
 
 module.exports = function (app, passport) {
 
@@ -45,6 +50,37 @@ module.exports = function (app, passport) {
                 appointments.sort(utils.compareAppointments);
                 var nextAppointments = appointments.filter(utils.removeOldAppointments);
 
+//adding the push of prefered appointment
+
+        patient.find({}).where('userID').in(nextAppointments[i].waitingPatientArray).exec(function (err, patients) {
+                    if (!err) {
+                        var tokenArray=[];
+                        var now = new Date();
+                        
+                        // TODO copy code! need to be seperate!!!
+                        var year = now.getFullYear();  // YOTAM fuck this DAteJS its calc the years since 1900, why?!!? :)
+                        var month = now.getMonth() + 1;
+                        if (month < 10)
+                            month = '0' + month;
+                        var day = now.getDate();
+                        
+                        now = day + '/' + month + '/' + year;
+                        //kfir
+                        
+                        patients.forEach(function (pat) {
+                            tokenArray.push(pat.TokenID);
+
+                        });
+                        
+                        var msg = "Preferd appoitment freed on " + nextAppointments[i].date +  " at " + nextAppointments[i].realStartTime + " check now!";  // TO DO - choose better msg :)
+                        pushHandler.sendPushHandler(now, "06:00", 0, tokenArray, msg); // set 06:00 to be send today - and if tis midnight so at 09:00 AM
+                       
+                    }
+                });
+
+//end of prefered appointment code
+
+                //findOneAndRemove
                 Appointment.where().findOneAndRemove({
                     patientID: nextAppointments[i].patientID,
                     doctorID: nextAppointments[i].doctorID,
@@ -452,8 +488,8 @@ module.exports = function (app, passport) {
                 appointment.endTime = appointment.startTime;
                 var hh = appointment.endTime.toString().split(":")[0];
                 var mm = appointment.endTime.toString().split(":")[1];
-                var Mod = require('./pushHandler') // do not include the dot js
-                appointment.endTime = Mod.calctNotificationSendTime(req.body.date, hh, mm, doctor.appointmentDuration * (-1));
+                
+                appointment.endTime = pushHandler.calctNotificationSendTime(req.body.date, hh, mm, doctor.appointmentDuration * (-1));
                 appointment.endTime = appointment.endTime.toString().split(" ")[4];
                 appointment.endTime = appointment.endTime.toString().substr(0, 5);
                 appointment.realEndTime = appointment.endTime;
@@ -462,10 +498,11 @@ module.exports = function (app, passport) {
                 //var msg="you have an appiuntment at "+appointment.date+" "+appointment.startTime+"!";
                 patient.findOne({}).where('userID').equals(parseInt(req.session.user.userID)).exec(function (err, pat) {
                     if (!err) {
-                        var NotificationCode = Mod.sendPushHandler(appointment.date, appointment.realStartTime, pat.MinutesToBeNotifyBefor, pat.TokenID, false).then(function (notificationCode) {
-                            console.log("the NotificationCode is:  " + notificationCode); // <<NotificationCode>> need to be saved in the DB!
+                        var msg = "You have an appiontment at " + appointment.date + " " + appointment.realStartTime + "!";      // TO DO - choose better msg :)
+                        var NotificationCode = pushHandler.sendPushHandler(appointment.date, appointment.realStartTime, pat.MinutesToBeNotifyBefor, pat.TokenID, msg).then(function (notificationCode) {
+                            console.log("the NotificationCode is:  " + notificationCode); // TODO <<NotificationCode>> need to be saved in the DB!
                             appointment.pushID = notificationCode;
-
+              
                             appointment.save(function (err) {
                                 console.log('inside save callback');
                                 if (err) {
@@ -476,6 +513,38 @@ module.exports = function (app, passport) {
                                     res.send({redirect: '/profile'});
                                 }
                             });
+                            
+                                                    
+// removing patient preferred appointment 
+                           //kfir
+                            Appointment.find({}).where('doctorID').equals(parseInt(req.body.doctorID)).exec(function (err, appointments) {
+                            appointments.sort(utils.compareAppointments);
+                            var UpcomingAppointments = appointments.filter(utils.removeOldAppointments);
+                            for(var i=0;i<UpcomingAppointments.length;i++){ //removing userID from all next appoinmet preferd list with the corrent doctor
+                                
+                                var j = UpcomingAppointments[i].waitingPatientArray.indexOf(parseInt(req.session.user.userID));
+                                if(j != -1) {
+                                	UpcomingAppointments[i].waitingPatientArray.splice(j, 1);
+                                	
+                                	//TODO update!!!
+                                	Appointment.update({'_id': UpcomingAppointments[i]._id}, {
+                                        $set: {
+                                            "waitingPatientArray": UpcomingAppointments[i].waitingPatientArray
+                                        }
+                                    }, function (err) {
+                                        if (err) {
+                                            res.render('scheduleAppointment', {message: "error please contac someone?! :)"}); // TODO :)
+                                        } else {
+                                            console.log("preferd for patient with the doctoer were deleted!");// TODO change message?
+                                        }
+                                    });
+                                }
+                            }
+                            
+                            });//find
+                           //parseInt(req.body.doctorID)                    
+//
+          
                             return notificationCode;
                         });
                     }
@@ -552,6 +621,87 @@ module.exports = function (app, passport) {
         res.redirect('/');
     });
 
+    app.post('/doctorAvaApp', function (req, res) {
+        var url_parts = URL.parse(req.url, true);
+        var query = url_parts.query;
+        var fhour = query.fhour;
+        var thour = query.thour;
+        var days = query.days;
+        days = days.split(',');
+        var docID = query.userID;
+        console.log(fhour);
+        console.log(thour);
+        console.log(days);
+        
+        var day;
+        // TODO - this is a copy pase from app.get('/doctorAvaApp'... - need to move to utils 
+        for(var i=0;i<days.length;i++){
+              switch (days[i]) {
+                                    case "Sunday":
+                                        day = 0;
+                                        break;
+                                    case "Monday":
+                                        day = 1;
+                                        break;
+                                    case "Tuesday":
+                                        day = 2;
+                                        break;
+                                    case "Wednesday":
+                                        day = 3;
+                                        break;
+                                    case "Thursday":
+                                        day = 4;
+                                        break;
+                                    case "Friday":
+                                        day = 5;
+                                        break;
+                                }
+            
+            
+            var apodate = new Date();
+            console.log(apodate);
+            apodate.addMinutes(180); // to UTC time dut to c9 server
+            var adddays = day - apodate.getDay();
+            if (adddays<0){
+                adddays+=7;
+            }
+            apodate.addDays(adddays);
+            
+            // TODO copy code! need to be seperate!!!
+            var year = apodate.getFullYear();  
+            var month = apodate.getMonth() + 1;
+            if (month < 10)
+                month = '0' + month;
+            day = apodate.getDate();
+            
+            apodate = day + '/' + month + '/' + year;
+            // KFIR WORK
+            Appointment.find({}).where('doctorID', 'date').equals(docID, apodate).exec(function (err, appointments) {
+                console.log('UPDATING prefer appo');
+                
+                 for(var i=0;i<appointments.length;i++){
+                   if (appointments[i].realStartTime >= fhour && appointments[i].realStartTime <= thour){
+                       if(appointments[i].waitingPatientArray.indexOf(req.session.user.userID)== -1){
+                       appointments[i].waitingPatientArray.push(req.session.user.userID);
+                       Appointment.update({'_id': appointments[i]._id}, {
+                        $set: {
+                            "waitingPatientArray": appointments[i].waitingPatientArray
+                        }
+                        }, function (err) {
+                            if (err) {
+                                res.render('doctorAvaApp', {message: "error please contac someone?! :)"}); // TODO :)
+                            } else {
+                                console.log("preferd appointment updated successfully");
+                            }
+                        });
+                       } // push if  
+                   }//if
+                }//for
+            });//find
+
+        }
+    });
+
     app.get('/doctorAvaApp', ensureAuthenticated, function (req, res) {
         async.waterfall([
                 function (callback) {
@@ -612,7 +762,7 @@ module.exports = function (app, passport) {
                             startTimeOfWorkDay.addDays(diff);
                             endTimeOfWorkDay.addDays(diff);
                             var hourIsInDoctorAppointments;
-                            while (startTimeOfWorkDay.isBefore(endTimeOfWorkDay)) {
+                            while (startTimeOfWorkDay.compareTo(endTimeOfWorkDay)!=1){
                                 var date = new Date();
                                 var appointmentTime = startTimeOfWorkDay.toTimeString().split(':')[0].toString() + ":" + startTimeOfWorkDay.toTimeString().split(':')[1].toString();
                                 var appointmentDate = startTimeOfWorkDay.getDate() + '/' + (startTimeOfWorkDay.getMonth() + 1) + '/' + startTimeOfWorkDay.getFullYear();
@@ -649,6 +799,8 @@ module.exports = function (app, passport) {
                                     } else {
                                         startTimeOfWorkDay.addMinutes(doctor.appointmentDuration);
                                     }
+                                } else {
+                                    startTimeOfWorkDay.addMinutes(doctor.appointmentDuration);
                                 }
                             }
                         }
@@ -663,8 +815,21 @@ module.exports = function (app, passport) {
             ], function (err, nextavailableApps, doctor) {
                 if (!err) {
                     console.log("going to render");
-                    //nextavailableApps.splice(0, 1);
-                    res.render('doctorAvaApp', {doctor: doctor, availableappointments: nextavailableApps});
+                    if (nextavailableApps.length == 0) {
+                        res.render('doctorAvaApp', {
+                            doctor: doctor,
+                            availableappointments: nextavailableApps,
+                            message: "There is no available appointments in this selected " +
+                            "houres whould you like to be notified in case a place will be freed?"
+                        });
+
+                    } else {
+                        res.render('doctorAvaApp', {
+                            doctor: doctor,
+                            availableappointments: nextavailableApps,
+                            message: ""
+                        });
+                    }
                 }
             }
         );
