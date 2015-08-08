@@ -8,9 +8,9 @@ var patient = require('../app/models/patient');
 var minutesRange = 90;
 var minutesDelayToNotify = 1;
 
-var NEWAPPOINTMENTNOTIFIER = 1;
-var DELAYNOTIFIER = 2;
-var PREFERNOTIFIER = 3;
+//var NEWAPPOINTMENTNOTIFIER = 1;
+//var DELAYNOTIFIER = 2;
+//var PREFERNOTIFIER = 3;
 
 module.exports = {
 
@@ -173,11 +173,11 @@ module.exports = {
                                 pushHandler.deletePushHandler(appsAndPatients[i + 1].appointment.pushID);
                                 //delay detact alert (90 minute before)
                                  var msg = "Delay detected!, new Estimated time is:" + realSTime + "!";
-                                pushHandler.sendPushHandler(appsAndPatients[i + 1].appointment.date, realSTime, minutesRange, appsAndPatients[i + 1].patient.TokenID, DELAYNOTIFIER);
+                                pushHandler.sendPushHandler(appsAndPatients[i + 1].appointment.date, realSTime, minutesRange, appsAndPatients[i + 1].patient.TokenID, msg);
 
                                 //set new alert
                                  msg = "You have an appiontment at " + appsAndPatients[i + 1].appointment.date + " " + realSTime + "!";      // TO DO - choose better msg :)
-                                pushHandler.sendPushHandler(appsAndPatients[i + 1].appointment.date, realSTime, appsAndPatients[i + 1].patient.MinutesToBeNotifyBefor, appsAndPatients[i + 1].patient.TokenID, NEWAPPOINTMENTNOTIFIER);
+                                pushHandler.sendPushHandler(appsAndPatients[i + 1].appointment.date, realSTime, appsAndPatients[i + 1].patient.MinutesToBeNotifyBefor, appsAndPatients[i + 1].patient.TokenID, msg);
                             }
                         }
 

@@ -72,7 +72,7 @@ module.exports = function (app, passport) {
 
                         });
                         
-                        var msg = "Preferd appoitment freed on " + nextAppointments[i].date +  " at " + nextAppointments[i].realStartTime + " check now!";  // TO DO - choose better msg :)
+                        var msg = "Preferd appoitment is now available on " + nextAppointments[i].date +  " at " + nextAppointments[i].realStartTime + " check now!";  // TO DO - choose better msg :)
                         pushHandler.sendPushHandler(now, "06:00", 0, tokenArray, msg); // set 06:00 to be send today - and if tis midnight so at 09:00 AM
                        
                     }
@@ -397,7 +397,7 @@ module.exports = function (app, passport) {
                     }
                 }
                 else {
-                    console.log("NoT Found Appointments");
+                    console.log("Not Found Appointments");
                     res.render('doctorprofile', {message: "Patient Dose Not Have Appointments Today"});
                 }
             });
@@ -820,7 +820,7 @@ module.exports = function (app, passport) {
                             doctor: doctor,
                             availableappointments: nextavailableApps,
                             message: "There is no available appointments in this selected " +
-                            "houres whould you like to be notified in case a place will be freed?"
+                            "houres whould you like to be notified in case a place will be available?"
                         });
 
                     } else {

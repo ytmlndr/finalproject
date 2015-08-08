@@ -1,5 +1,5 @@
 var pushWoosh = require('pushwoosh');
-var pushClient = new pushWoosh("984C1-E7C57", "qFM3WHd4n36PyFHXcFcUGdYHkNBcOtl77jaFfuYVkIVIXAQLvJH9qXPEoBPmqoAd0T2fxN6VTNDujchBaeLt");
+var pushClient = new pushWoosh("4345B-7C66B", "Cg4prtHRBxkKns9AtqHyH7hmpcwmlgueVkH4UDBDKfSbpG0ILNfBLFrl2o3AMkUX3CFKhlStJcVu6Tg4WCUZ");
 var NEWAPPOINTMENTNOTIFIER = 1;
 var DELAYNOTIFIER = 2;
 var PREFERNOTIFIER = 3;
@@ -32,6 +32,7 @@ function sendPushHandler(i_date, i_appointmentTime, i_MinutesToBeNotify, i_token
 
     //temp
     var hh = i_appointmentTime.split(":")[0];
+    hh-=3 // GMT time
     var mm = i_appointmentTime.split(":")[1];
     //
 
@@ -71,7 +72,7 @@ function calctNotificationSendTime(i_date, hh, mm, MinutesToBeNotify) {      // 
     var MM = i_date.split("/")[1];
     var YY = i_date.split("/")[2];
 
-    // HH -= 3; // Because its may be depend on GMT time?
+    //hh -= 3; // Because its may be depend on GMT time?
     MM -= 1; // counting month starting from 0
     if (mm < MinutesToBeNotify) {
         if (hh === 0) {
